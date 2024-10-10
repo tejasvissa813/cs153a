@@ -1,0 +1,13 @@
+timestamp=[2024-10-09 19:24:06], mode=WORKBENCH_START, duration=0:00:07.081, duration_ms=7081, data={}
+timestamp=[2024-10-09 19:24:07], mode=WORKBENCH_UI_INIT, duration=0:00:00.598, duration_ms=598, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2024-10-09 19:24:10], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.852, duration_ms=1852, data={}
+timestamp=[2024-10-09 19:25:39], mode=PLATFORM_CREATION, duration=0:00:04.922, duration_ms=4922, data={platform_source=dsa, os=standalone, processor=microblaze, platform=null}
+timestamp=[2024-10-09 19:29:14], mode=APP_CREATION, duration=0:00:02.492, duration_ms=2492, data={name=Lab_1a_attempt, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=lab_1a, application_type=application}
+timestamp=[2024-10-10 09:28:09], mode=WORKBENCH_START, duration=0:00:09.016, duration_ms=9016, data={}
+timestamp=[2024-10-10 09:28:10], mode=WORKBENCH_UI_INIT, duration=0:00:01.041, duration_ms=1041, data={editors_count=5, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=Lab_1a_attempt,Lab_1a_attempt_system,RemoteSystemsTempFiles,lab_1a}
+timestamp=[2024-10-10 09:28:13], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.473, duration_ms=1473, data={}
+timestamp=[2024-10-10 09:48:05], mode=PLATFORM_GENERATION, duration=0:00:12.577, duration_ms=12577, data={name=lab_1a}
+timestamp=[2024-10-10 09:48:08], mode=BUILD, duration=0:00:02.549, duration_ms=2549, data={name=Lab_1a_attempt, configuration=Debug, clean_build=false}
+timestamp=[2024-10-10 09:48:29], mode=BUILD, duration=0:00:00.171, duration_ms=171, data={name=Lab_1a_attempt, configuration=Debug, clean_build=false}
+timestamp=[2024-10-10 09:50:36], mode=PLATFORM_GENERATION, duration=0:00:03.644, duration_ms=3644, data={name=lab_1a}
+timestamp=[2024-10-10 09:56:20], mode=BUILD, duration=0:00:00.833, duration_ms=833, data={name=Lab_1a_attempt, configuration=Debug, clean_build=false}

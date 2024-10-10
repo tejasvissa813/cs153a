@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Tue Oct  8 19:34:46 2024
+# Process ID: 4000
+# Current directory: C:/Users/ranchen/project_1/project_1.runs/design_1_mdm_1_0_synth_1
+# Command line: vivado.exe -log design_1_mdm_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_mdm_1_0.tcl
+# Log file: C:/Users/ranchen/project_1/project_1.runs/design_1_mdm_1_0_synth_1/design_1_mdm_1_0.vds
+# Journal file: C:/Users/ranchen/project_1/project_1.runs/design_1_mdm_1_0_synth_1\vivado.jou
+# Running On: 556eci22, OS: Windows, CPU Frequency: 3312 MHz, CPU Physical cores: 4, Host memory: 17108 MB
+#-----------------------------------------------------------
+source design_1_mdm_1_0.tcl -notrace
