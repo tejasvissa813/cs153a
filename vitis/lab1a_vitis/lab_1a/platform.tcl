@@ -25,3 +25,6 @@ bsp reload
 platform generate
 bsp write
 platform generate -domains 
+platform generate -domains standalone_domain 
+platform active {lab_1a}
+platform generate -domains 

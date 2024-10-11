@@ -1706,3 +1706,578 @@ TRACE::2024-10-10.09:50:36::SCWMssOS::Checking the sw design at  C:/Users/ranche
 TRACE::2024-10-10.09:50:36::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/workspace/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
 
 TRACE::2024-10-10.09:50:36::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/workspace/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:58::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:58::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:58::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:58::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:58::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:58::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:58::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened new HwDB with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWReader::Active system found as  lab_1a
+TRACE::2024-10-10.15:39:59::SCWReader::Handling sysconfig lab_1a
+TRACE::2024-10-10.15:39:59::SCWDomain::checking for install qemu data   : 
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-10-10.15:39:59::SCWMssOS::No sw design opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::mss exists loading the mss file  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::Opened the sw design from mss  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::Adding the swdes entry C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-10-10.15:39:59::SCWMssOS::updating the scw layer about changes
+TRACE::2024-10-10.15:39:59::SCWMssOS::Opened the sw design.  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::Saving the mss changes C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-10-10.15:39:59::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-10-10.15:39:59::SCWMssOS::Commit changes completed.
+TRACE::2024-10-10.15:39:59::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2024-10-10.15:39:59::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWReader::No isolation master present  
+LOG::2024-10-10.15:39:59::SCWPlatform::Started generating the artifacts platform lab_1a
+TRACE::2024-10-10.15:39:59::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-10-10.15:39:59::SCWPlatform::Started generating the artifacts for system configuration lab_1a
+LOG::2024-10-10.15:39:59::SCWSystem::Checking the domain standalone_domain
+LOG::2024-10-10.15:39:59::SCWSystem::Not a boot domain 
+LOG::2024-10-10.15:39:59::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2024-10-10.15:39:59::SCWDomain::Generating domain artifcats
+TRACE::2024-10-10.15:39:59::SCWMssOS::Generating standalone artifcats
+TRACE::2024-10-10.15:39:59::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:39:59::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:39:59::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:39:59::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:39:59::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::Completed writing the mss file at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp
+TRACE::2024-10-10.15:39:59::SCWMssOS::Mss edits present, copying mssfile into export location C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:39:59::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-10-10.15:39:59::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-10-10.15:39:59::SCWDomain::Building the domain :  standalone_domain
+TRACE::2024-10-10.15:39:59::SCWMssOS::doing bsp build ... 
+TRACE::2024-10-10.15:39:59::SCWMssOS::System Command Ran  C: & cd  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp & make 
+TRACE::2024-10-10.15:39:59::SCWMssOS::make --no-print-directory seq_libs
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::'Finished building libraries sequentially.'
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::make -j 2 --no-print-directory par_libs
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::"Running Make include in microblaze_0/libsrc/bram_v4_7/src"
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-10-10.15:39:59::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+TRACE::2024-10-10.15:39:59::SCWMssOS::fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::"Running Make include in microblaze_0/libsrc/cpu_v2_15/src"
+
+TRACE::2024-10-10.15:39:59::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-10-10.15:39:59::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+TRACE::2024-10-10.15:39:59::SCWMssOS::fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make include in microblaze_0/libsrc/gpio_v4_9/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/gpio_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-10-10.15:40:00::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+TRACE::2024-10-10.15:40:00::SCWMssOS::fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make include in microblaze_0/libsrc/intc_v3_14/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_14/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-10-10.15:40:00::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections 
+TRACE::2024-10-10.15:40:00::SCWMssOS::-fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make include in microblaze_0/libsrc/standalone_v7_7/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/standalone_v7_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "C
+TRACE::2024-10-10.15:40:00::SCWMssOS::OMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sect
+TRACE::2024-10-10.15:40:00::SCWMssOS::ions -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make include in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+TRACE::2024-10-10.15:40:00::SCWMssOS::LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+TRACE::2024-10-10.15:40:00::SCWMssOS:: -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make include in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+TRACE::2024-10-10.15:40:00::SCWMssOS::PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sectio
+TRACE::2024-10-10.15:40:00::SCWMssOS::ns -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make libs in microblaze_0/libsrc/bram_v4_7/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-10-10.15:40:00::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+TRACE::2024-10-10.15:40:00::SCWMssOS::ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make libs in microblaze_0/libsrc/cpu_v2_15/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_15/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-10-10.15:40:00::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+TRACE::2024-10-10.15:40:00::SCWMssOS::ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::"Running Make libs in microblaze_0/libsrc/gpio_v4_9/src"
+
+TRACE::2024-10-10.15:40:00::SCWMssOS::make -C microblaze_0/libsrc/gpio_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-10-10.15:40:00::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+TRACE::2024-10-10.15:40:00::SCWMssOS::ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:01::SCWMssOS::"Running Make libs in microblaze_0/libsrc/intc_v3_14/src"
+
+TRACE::2024-10-10.15:40:01::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_14/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+TRACE::2024-10-10.15:40:01::SCWMssOS::FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fd
+TRACE::2024-10-10.15:40:01::SCWMssOS::ata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:01::SCWMssOS::"Running Make libs in microblaze_0/libsrc/standalone_v7_7/src"
+
+TRACE::2024-10-10.15:40:01::SCWMssOS::make -C microblaze_0/libsrc/standalone_v7_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
+TRACE::2024-10-10.15:40:01::SCWMssOS::ILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-section
+TRACE::2024-10-10.15:40:01::SCWMssOS::s -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:02::SCWMssOS::"Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-10-10.15:40:02::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+TRACE::2024-10-10.15:40:02::SCWMssOS::_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -f
+TRACE::2024-10-10.15:40:02::SCWMssOS::data-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:03::SCWMssOS::"Running Make libs in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-10-10.15:40:03::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-10-10.15:40:03::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections 
+TRACE::2024-10-10.15:40:03::SCWMssOS::-fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-10-10.15:40:04::SCWMssOS::"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
+
+TRACE::2024-10-10.15:40:05::SCWMssOS::'Finished building libraries parallelly.'
+
+TRACE::2024-10-10.15:40:05::SCWMssOS::make --no-print-directory archive
+
+TRACE::2024-10-10.15:40:05::SCWMssOS::mb-ar -r  microblaze_0/lib/libxil.a microblaze_0/lib/xplatform_info.o microblaze_0/lib/xuartlite.o microblaze_0/lib/microblaze_
+TRACE::2024-10-10.15:40:05::SCWMssOS::disable_exceptions.o microblaze_0/lib/print.o microblaze_0/lib/xtmrctr_options.o microblaze_0/lib/_exit.o microblaze_0/lib/xil_
+TRACE::2024-10-10.15:40:05::SCWMssOS::testio.o microblaze_0/lib/microblaze_disable_dcache.o microblaze_0/lib/microblaze_flush_dcache_range.o microblaze_0/lib/xuartli
+TRACE::2024-10-10.15:40:05::SCWMssOS::te_sinit.o microblaze_0/lib/microblaze_flush_cache_ext.o microblaze_0/lib/xbram_sinit.o microblaze_0/lib/xil_misc_psreset_api.o
+TRACE::2024-10-10.15:40:05::SCWMssOS:: microblaze_0/lib/xinterrupt_wrap.o microblaze_0/lib/xil_cache.o microblaze_0/lib/xil_util.o microblaze_0/lib/inbyte.o microbla
+TRACE::2024-10-10.15:40:05::SCWMssOS::ze_0/lib/xintc_intr.o microblaze_0/lib/xuartlite_stats.o microblaze_0/lib/microblaze_exception_handler.o microblaze_0/lib/xbram
+TRACE::2024-10-10.15:40:05::SCWMssOS::_g.o microblaze_0/lib/microblaze_scrub.o microblaze_0/lib/microblaze_invalidate_dcache.o microblaze_0/lib/microblaze_disable_in
+TRACE::2024-10-10.15:40:05::SCWMssOS::terrupts.o microblaze_0/lib/xbram_selftest.o microblaze_0/lib/microblaze_interrupt_handler.o microblaze_0/lib/microblaze_disabl
+TRACE::2024-10-10.15:40:05::SCWMssOS::e_icache.o microblaze_0/lib/xgpio_g.o microblaze_0/lib/xil_mem.o microblaze_0/lib/microblaze_flush_cache_ext_range.o microblaze
+TRACE::2024-10-10.15:40:05::SCWMssOS::_0/lib/xtmrctr_intr.o microblaze_0/lib/xbram_intr.o microblaze_0/lib/xil_sleepcommon.o microblaze_0/lib/xil_printf.o microblaze
+TRACE::2024-10-10.15:40:05::SCWMssOS::_0/lib/xintc_g.o microblaze_0/lib/xuartlite_g.o microblaze_0/lib/xtmrctr_l.o microblaze_0/lib/xintc_selftest.o microblaze_0/lib
+TRACE::2024-10-10.15:40:05::SCWMssOS::/xintc_l.o microblaze_0/lib/outbyte.o microblaze_0/lib/microblaze_enable_exceptions.o microblaze_0/lib/xgpio_intr.o microblaze_
+TRACE::2024-10-10.15:40:05::SCWMssOS::0/lib/microblaze_invalidate_dcache_range.o microblaze_0/lib/microblaze_invalidate_cache_ext.o microblaze_0/lib/microblaze_sleep
+TRACE::2024-10-10.15:40:05::SCWMssOS::.o microblaze_0/lib/hw_exception_handler.o microblaze_0/lib/xtmrctr.o microblaze_0/lib/xuartlite_selftest.o microblaze_0/lib/xg
+TRACE::2024-10-10.15:40:05::SCWMssOS::pio_sinit.o microblaze_0/lib/microblaze_update_dcache.o microblaze_0/lib/xil_testcache.o microblaze_0/lib/microblaze_selftest.o
+TRACE::2024-10-10.15:40:05::SCWMssOS:: microblaze_0/lib/microblaze_interrupts_g.o microblaze_0/lib/xio.o microblaze_0/lib/xtmrctr_g.o microblaze_0/lib/microblaze_ena
+TRACE::2024-10-10.15:40:05::SCWMssOS::ble_dcache.o microblaze_0/lib/xbram.o microblaze_0/lib/microblaze_invalidate_icache_range.o microblaze_0/lib/xtmrctr_selftest.o
+TRACE::2024-10-10.15:40:05::SCWMssOS:: microblaze_0/lib/microblaze_init_dcache_range.o microblaze_0/lib/microblaze_invalidate_icache.o microblaze_0/lib/errno.o micro
+TRACE::2024-10-10.15:40:05::SCWMssOS::blaze_0/lib/xuartlite_l.o microblaze_0/lib/xintc_options.o microblaze_0/lib/microblaze_invalidate_cache_ext_range.o microblaze_
+TRACE::2024-10-10.15:40:05::SCWMssOS::0/lib/xil_exception.o microblaze_0/lib/pvr.o microblaze_0/lib/xgpio.o microblaze_0/lib/xil_testmem.o microblaze_0/lib/microblaz
+TRACE::2024-10-10.15:40:05::SCWMssOS::e_update_icache.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/microblaze_flush_dcache.o microblaze_0/lib/xil_clocking.o 
+TRACE::2024-10-10.15:40:05::SCWMssOS::microblaze_0/lib/xil_assert.o microblaze_0/lib/microblaze_enable_interrupts.o microblaze_0/lib/xgpio_extra.o microblaze_0/lib/m
+TRACE::2024-10-10.15:40:05::SCWMssOS::icroblaze_enable_icache.o microblaze_0/lib/xintc.o microblaze_0/lib/xtmrctr_stats.o microblaze_0/lib/microblaze_init_icache_ran
+TRACE::2024-10-10.15:40:05::SCWMssOS::ge.o microblaze_0/lib/xtmrctr_sinit.o microblaze_0/lib/fcntl.o microblaze_0/lib/xgpio_selftest.o
+
+TRACE::2024-10-10.15:40:05::SCWMssOS::'Finished building libraries'
+
+TRACE::2024-10-10.15:40:05::SCWMssOS::Copying to export directory.
+TRACE::2024-10-10.15:40:05::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-10-10.15:40:05::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-10-10.15:40:05::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2024-10-10.15:40:05::SCWSystem::Completed Processing the sysconfig lab_1a
+LOG::2024-10-10.15:40:05::SCWPlatform::Completed generating the artifacts for system configuration lab_1a
+TRACE::2024-10-10.15:40:05::SCWPlatform::Started preparing the platform 
+TRACE::2024-10-10.15:40:05::SCWSystem::Writing the bif file for system config lab_1a
+TRACE::2024-10-10.15:40:05::SCWSystem::dir created 
+TRACE::2024-10-10.15:40:05::SCWSystem::Writing the bif 
+TRACE::2024-10-10.15:40:05::SCWPlatform::Started writing the spfm file 
+TRACE::2024-10-10.15:40:05::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-10-10.15:40:05::SCWPlatform::Completed generating the platform
+TRACE::2024-10-10.15:40:05::SCWMssOS::Saving the mss changes C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:05::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-10-10.15:40:05::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-10-10.15:40:05::SCWMssOS::Commit changes completed.
+TRACE::2024-10-10.15:40:05::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:05::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:05::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:05::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:05::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:40:05::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:40:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:05::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:40:05::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:05::SCWWriter::formatted JSON is {
+	"platformName":	"lab_1a",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab_1a",
+	"platHandOff":	"C:/Users/ranchen/Downloads/project_1/project_1/design_1_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_1_wrapper.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab_1a",
+	"systems":	[{
+			"systemName":	"lab_1a",
+			"systemDesc":	"lab_1a",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab_1a",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"cec8119290ad086884dd157461b2432e",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"changedDrivers":	{
+						"sevenSeg_0":	"generic:3.0",
+						"changedCells":	["sevenSeg_0"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-10-10.15:40:05::SCWPlatform::updated the xpfm file.
+TRACE::2024-10-10.15:40:06::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:06::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:06::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:06::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:06::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:06::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:06::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper
+TRACE::2024-10-10.15:40:06::SCWPlatform::Opened existing hwdb design_1_wrapper
+TRACE::2024-10-10.15:40:06::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:06::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:06::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:40:06::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:31::SCWPlatform::Clearing the existing platform
+TRACE::2024-10-10.15:40:31::SCWSystem::Clearing the existing sysconfig
+TRACE::2024-10-10.15:40:31::SCWMssOS::Removing the swdes entry for  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:31::SCWSystem::Clearing the domains completed.
+TRACE::2024-10-10.15:40:31::SCWPlatform::Clearing the opened hw db.
+TRACE::2024-10-10.15:40:31::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform:: Platform location is C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:31::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:31::SCWPlatform::Removing the HwDB with name C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:31::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:31::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:31::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened new HwDB with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWReader::Active system found as  lab_1a
+TRACE::2024-10-10.15:40:32::SCWReader::Handling sysconfig lab_1a
+TRACE::2024-10-10.15:40:32::SCWDomain::checking for install qemu data   : 
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:32::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-10-10.15:40:32::SCWMssOS::No sw design opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::mss exists loading the mss file  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::Opened the sw design from mss  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::Adding the swdes entry C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-10-10.15:40:32::SCWMssOS::updating the scw layer about changes
+TRACE::2024-10-10.15:40:32::SCWMssOS::Opened the sw design.  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:32::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:40:32::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::Saving the mss changes C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-10-10.15:40:32::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-10-10.15:40:32::SCWMssOS::Commit changes completed.
+TRACE::2024-10-10.15:40:32::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2024-10-10.15:40:32::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.15:40:32::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.15:40:32::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.15:40:32::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.15:40:32::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.15:40:32::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.15:40:32::SCWReader::No isolation master present  
+LOG::2024-10-10.16:09:23::SCWPlatform::Started generating the artifacts platform lab_1a
+TRACE::2024-10-10.16:09:23::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-10-10.16:09:23::SCWPlatform::Started generating the artifacts for system configuration lab_1a
+LOG::2024-10-10.16:09:23::SCWSystem::Checking the domain standalone_domain
+LOG::2024-10-10.16:09:23::SCWSystem::Not a boot domain 
+LOG::2024-10-10.16:09:23::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2024-10-10.16:09:23::SCWDomain::Generating domain artifcats
+TRACE::2024-10-10.16:09:23::SCWMssOS::Generating standalone artifcats
+TRACE::2024-10-10.16:09:23::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-10-10.16:09:23::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:23::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:23::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:23::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.16:09:23::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:23::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.16:09:23::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.16:09:23::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.16:09:23::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.16:09:23::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:23::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.16:09:23::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:23::SCWMssOS::Completed writing the mss file at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp
+TRACE::2024-10-10.16:09:23::SCWMssOS::Mss edits present, copying mssfile into export location C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:23::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-10-10.16:09:23::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-10-10.16:09:23::SCWDomain::Skipping the build for domain :  standalone_domain
+TRACE::2024-10-10.16:09:23::SCWMssOS::skipping the bsp build ... 
+TRACE::2024-10-10.16:09:23::SCWMssOS::Copying to export directory.
+TRACE::2024-10-10.16:09:24::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-10-10.16:09:24::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-10-10.16:09:24::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2024-10-10.16:09:24::SCWSystem::Completed Processing the sysconfig lab_1a
+LOG::2024-10-10.16:09:24::SCWPlatform::Completed generating the artifacts for system configuration lab_1a
+TRACE::2024-10-10.16:09:24::SCWPlatform::Started preparing the platform 
+TRACE::2024-10-10.16:09:24::SCWSystem::Writing the bif file for system config lab_1a
+TRACE::2024-10-10.16:09:24::SCWSystem::dir created 
+TRACE::2024-10-10.16:09:24::SCWSystem::Writing the bif 
+TRACE::2024-10-10.16:09:24::SCWPlatform::Started writing the spfm file 
+TRACE::2024-10-10.16:09:24::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-10-10.16:09:24::SCWPlatform::Completed generating the platform
+TRACE::2024-10-10.16:09:24::SCWMssOS::Saving the mss changes C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:24::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-10-10.16:09:24::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-10-10.16:09:24::SCWMssOS::Commit changes completed.
+TRACE::2024-10-10.16:09:24::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:24::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:24::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:24::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.16:09:24::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:24::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.16:09:24::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.16:09:24::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.16:09:24::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.16:09:24::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:24::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.16:09:24::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:24::SCWWriter::formatted JSON is {
+	"platformName":	"lab_1a",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab_1a",
+	"platHandOff":	"C:/Users/ranchen/Downloads/project_1/project_1/design_1_wrapper.xsa",
+	"platIntHandOff":	"<platformDir>/hw/design_1_wrapper.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab_1a",
+	"systems":	[{
+			"systemName":	"lab_1a",
+			"systemDesc":	"lab_1a",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab_1a",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"cec8119290ad086884dd157461b2432e",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"changedDrivers":	{
+						"sevenSeg_0":	"generic:3.0",
+						"changedCells":	["sevenSeg_0"]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-10-10.16:09:24::SCWPlatform::updated the xpfm file.
+TRACE::2024-10-10.16:09:25::SCWPlatform::Trying to open the hw design at C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:25::SCWPlatform::DSA given C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:25::SCWPlatform::DSA absoulate path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:25::SCWPlatform::DSA directory C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw
+TRACE::2024-10-10.16:09:25::SCWPlatform:: Platform Path C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/hw/design_1_wrapper.xsa
+TRACE::2024-10-10.16:09:25::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-10-10.16:09:25::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-10-10.16:09:25::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-10-10.16:09:25::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-10-10.16:09:25::SCWMssOS::Checking the sw design at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-10-10.16:09:25::SCWMssOS::DEBUG:  swdes dump  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-10-10.16:09:25::SCWMssOS::Sw design exists and opened at  C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/microblaze_0/standalone_domain/bsp/system.mss

@@ -14,8 +14,8 @@
 #include "extra.h" 		// Provides a source of bus contention
 #include "xgpio.h" 		// LED driver, used for General purpose I/i
 
-#define NUMBER_OF_TRIALS 150
-#define NUMBER_OF_BINS 15
+#define NUMBER_OF_TRIALS 10000
+#define NUMBER_OF_BINS 3
 #define BUFFER_SIZE (1024*1024)
 unsigned int buffer[BUFFER_SIZE]; //buffer for read/write operations to the DDR memory
 
@@ -71,6 +71,8 @@ int main() {
 	int timer_val_before; //Used to store the timer value before executing the operation being timed
 	u32 Addr;
 	volatile unsigned int Data;
+	float number = 9.55;
+	char str[10] = "adfsfdjfdt";
 
 	// Extra Method contains an interrupt routine which is set to go off at timed intervals
 	extra_method();
@@ -96,9 +98,14 @@ int main() {
 
 		//Store the timer value before executing the operation being timed
 		timer_val_before = XTmrCtr_GetTimerCounterReg(XPAR_TMRCTR_0_BASEADDR, 1);
+		xil_printf("%s\n", str);
 
 		// Enter the line of Code to time.
-		REPEAT_40(Data = buffer[Addr]);
+//		REPEAT_5
+//		Data = buffer[Addr];
+//		Data = 17 + 23;
+
+		//number = 10.3485 + 0.99999;
 
 		//XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, 0x1); //Turns on one LED
 
@@ -109,9 +116,13 @@ int main() {
 	}
 
 	//Prints the collected data
+	int average = 0;
 	for (i = 0; i < NUMBER_OF_TRIALS; i++) {
 		xil_printf("%d,%d\n\r", i, numClockCycles[i]);
+		average += numClockCycles[i];
 	}
+	average = average / NUMBER_OF_TRIALS;
+	xil_printf("Average Number of Clock Cycles: %d\n\r", average);
 
 	histogram(); //Creates a histogram for the measured data
 
@@ -161,6 +172,9 @@ void histogram(void) {
 	for (i = 0; i < NUMBER_OF_BINS; i++) {
 		xil_printf("Bin %d: %d\n\r", i, histData[i]);
 	}
+
+	xil_printf("Bin Size: %d\n\r", binSize);
+	xil_printf("Min: %d\n\r", min);
 
 	xil_printf("Done!\n\r");
 

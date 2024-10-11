@@ -1,20 +1,41 @@
 Nothing to build in platform 'lab_1a'
 
-09:56:19 **** Incremental Build of configuration Debug for project Lab_1a_attempt ****
+18:46:26 **** Incremental Build of configuration Debug for project Lab_1a_attempt ****
 make all 
-'Building file: ../src/platform.c'
+'Building file: ../src/timing.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -IC:/Users/ranchen/workspace/lab_1a/export/lab_1a/sw/lab_1a/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
-'Finished building: ../src/platform.c'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timing.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/export/lab_1a/sw/lab_1a/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timing.d" -MT"src/timing.o" -o "src/timing.o" "../src/timing.c"
+In file included from ../src/extra.h:7,
+                 from ../src/timing.c:14:
+C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/export/lab_1a/sw/lab_1a/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/export/lab_1a/sw/lab_1a/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+../src/timing.c: In function 'main':
+../src/timing.c:74:15: warning: unused variable 'number' [-Wunused-variable]
+   74 |         float number = 9.55;
+      |               ^~~~~~
+../src/timing.c:73:31: warning: unused variable 'Data' [-Wunused-variable]
+   73 |         volatile unsigned int Data;
+      |                               ^~~~
+../src/timing.c:72:13: warning: variable 'Addr' set but not used [-Wunused-but-set-variable]
+   72 |         u32 Addr;
+      |             ^~~~
+'Finished building: ../src/timing.c'
 ' '
 'Building target: Lab_1a_attempt.elf'
 'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/workspace/lab_1a/export/lab_1a/sw/lab_1a/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab_1a_attempt.elf"  ./src/helloworld.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1a_vitis/lab_1a/export/lab_1a/sw/lab_1a/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "Lab_1a_attempt.elf"  ./src/extra.o ./src/platform.o ./src/timing.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: Lab_1a_attempt.elf'
 ' '
 'Invoking: MicroBlaze Print Size'
 mb-size Lab_1a_attempt.elf  |tee "Lab_1a_attempt.elf.size"
    text	   data	    bss	    dec	    hex	filename
-   2884	    340	   8232	  11456	   2cc0	Lab_1a_attempt.elf
+  16480	   1444	  43404	  61328	   ef90	Lab_1a_attempt.elf
 'Finished building: Lab_1a_attempt.elf.size'
 ' '
+18:46:27 **** Incremental Build of configuration Debug for project Lab_1a_attempt_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
