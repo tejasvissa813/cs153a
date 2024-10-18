@@ -4,10 +4,13 @@
 
 XIntc sys_intc;
 XTmrCtr sys_tmrctr;
+XGpio BtnGpio;
 Xuint32 data;
 
 volatile int count = 0;
 unsigned int digit = 0;
+unsigned int timer = 1;
+unsigned int direction = 1;
 
 //void displaytime(int count,int sep){
 //	int ms, sec, min;
@@ -49,8 +52,14 @@ void extra_handler() {
 	// XGpio_DiscreteWrite(&led,1,count);
 	//count++;			// increment count
 
-	if(count == 999999) count = 0;
-	else count++;
+	if(direction){
+		if(count == 99999) count = count;
+		else count++;
+	}
+	else {
+		if(count == 0) count = count;
+		else count--;
+	}
 	//count++;
 	//xil_printf("%d\n", count);
 //	digit = count % 10;
@@ -63,6 +72,34 @@ void extra_handler() {
 	XTmrCtr_WriteReg(sys_tmrctr.BaseAddress, 0, XTC_TCSR_OFFSET,
 			ControlStatusReg |XTC_CSR_INT_OCCURED_MASK);
 
+}
+
+void btn_handler(void *CallbackRef){
+	XGpio *GpioPtr = (XGpio *)CallbackRef;
+
+	unsigned int btn = XGpio_DiscreteRead(&BtnGpio, 1);
+	if(btn == 16){
+		if(timer){
+			extra_disable();
+			timer = 0;
+		} else {
+			extra_enable();
+			timer = 1;
+		}
+	}
+	else if(btn == 4){
+		count = 0;
+	}
+	else if(btn == 1){
+		direction = 1;
+	}
+	else if(btn == 8){
+		direction = 0;
+	}
+
+	//xil_printf("%d", btn);
+
+	XGpio_InterruptClear(GpioPtr, 1);
 }
 
 void extra_disable() {
@@ -108,6 +145,8 @@ int extra_method() {
 		return XST_FAILURE;
 	}
 	xil_printf("Connected to Interrupt Controller!\r\n");
+	XIntc_Connect(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_GPIO_BTN_IP2INTC_IRPT_INTR,
+			(XInterruptHandler) btn_handler, &BtnGpio);
 
 	/*
 	 * Start the interrupt controller such that interrupts are enabled for
@@ -123,6 +162,7 @@ int extra_method() {
 	 * Enable the interrupt for the timer counter
 	 */
 	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_0_INTERRUPT_INTR);
+	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_GPIO_BTN_IP2INTC_IRPT_INTR);
 	/*
 	 * Initialize the timer counter so that it's ready to use,
 	 * specify the device ID that is generated in xparameters.h
@@ -155,6 +195,14 @@ int extra_method() {
 	 * Register the intc device driver’s handler with the Standalone
 	 * software platform’s interrupt table
 	 */
+
+
+	//Button Interrupt Creation
+	XGpio_Initialize(&BtnGpio, XPAR_AXI_GPIO_BTN_DEVICE_ID);
+	XGpio_InterruptEnable(&BtnGpio, 1);
+	XGpio_InterruptGlobalEnable(&BtnGpio);
+
+
 	microblaze_register_handler(
 			(XInterruptHandler) XIntc_DeviceInterruptHandler,
 			(void*) XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID);

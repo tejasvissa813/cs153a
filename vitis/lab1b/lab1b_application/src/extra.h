@@ -1,4 +1,5 @@
 #include "xtmrctr.h"
+#include "xgpio.h"
 #include "xintc.h"
 #include "xparameters.h"
 #include "xtmrctr_l.h"
@@ -8,11 +9,12 @@
 #include <xio.h>
 
 #define INTC_DEVICE_ID                 XPAR_INTC_0_DEVICE_ID
-#define RESET_VALUE 1000000
+#define RESET_VALUE 10000000
 
 extern volatile int count;
 
 void extra_handler();
+void btn_handler(void*);
 void extra_disable();
 void extra_enable();
 int extra_method();
