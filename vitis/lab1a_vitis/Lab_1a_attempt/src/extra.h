@@ -8,7 +8,9 @@
 #include <xio.h>
 
 #define INTC_DEVICE_ID                 XPAR_INTC_0_DEVICE_ID
-#define RESET_VALUE 1000
+#define RESET_VALUE 1000000
+
+extern int count = 0;
 
 void extra_handler();
 void extra_disable();

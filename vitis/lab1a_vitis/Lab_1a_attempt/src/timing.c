@@ -26,6 +26,7 @@ unsigned int buffer[BUFFER_SIZE]; //buffer for read/write operations to the DDR 
 #define LED_CHANNEL 1
 
 void histogram(void); // This function creates a histogram for the measured data
+void display(int);
 
 /*
  * The following are declared globally so they are zeroed and so they are
@@ -76,6 +77,7 @@ int main() {
 
 	// Extra Method contains an interrupt routine which is set to go off at timed intervals
 	extra_method();
+	xil_printf("hello");
 
 	//TIMER RESET CODE
 	//Turn off the timer
@@ -92,40 +94,23 @@ int main() {
 	//INITIALIZATION FOR AXI GPIO LED PORT
 	XGpio_Initialize(&Gpio, XPAR_AXI_GPIO_LED_DEVICE_ID);
 
-	for (i = 0; i < NUMBER_OF_TRIALS; i++) {
+//	while(1 == 1){
+//		display_time(count);
+//	}
 
-		Addr = rand() % BUFFER_SIZE; //Will be used to access a random buffer index
+}
 
-		//Store the timer value before executing the operation being timed
-		timer_val_before = XTmrCtr_GetTimerCounterReg(XPAR_TMRCTR_0_BASEADDR, 1);
-		xil_printf("%s\n", str);
+void display(int ms){
+	int d0, d1, d2, d3, d4, d5;
 
-		// Enter the line of Code to time.
-//		REPEAT_5
-//		Data = buffer[Addr];
-//		Data = 17 + 23;
+	d0 = ms % 10;
+	d1 = (ms / 10) % 10;
+	d2 = (ms / 100) % 10;
+	d3 = (ms / 1000) % 10;
+	d4 = (ms / 10000) % 10;
+	d5 = (ms / 100000) % 10;
 
-		//number = 10.3485 + 0.99999;
-
-		//XGpio_DiscreteWrite(&Gpio, LED_CHANNEL, 0x1); //Turns on one LED
-
-		numClockCycles[i] =
-		XTmrCtr_GetTimerCounterReg(XPAR_TMRCTR_0_BASEADDR, 1)
-				- timer_val_before; //Stores the time to execute the operation
-
-	}
-
-	//Prints the collected data
-	int average = 0;
-	for (i = 0; i < NUMBER_OF_TRIALS; i++) {
-		xil_printf("%d,%d\n\r", i, numClockCycles[i]);
-		average += numClockCycles[i];
-	}
-	average = average / NUMBER_OF_TRIALS;
-	xil_printf("Average Number of Clock Cycles: %d\n\r", average);
-
-	histogram(); //Creates a histogram for the measured data
-
+	xil_printf("%d%d%d%d:%d%d\n". d5, d4, d3, d2, d1, d0);
 }
 
 /*
