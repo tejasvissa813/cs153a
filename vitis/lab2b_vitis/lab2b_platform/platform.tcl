@@ -19,3 +19,4 @@ bsp reload
 bsp write
 platform generate
 platform generate
+platform generate

@@ -52,6 +52,7 @@
     <stringAttribute key="com.xilinx.sdx.sdsoc.debug.ui.versal.system.emulation" value="false"/>
     <stringAttribute key="ide.launch.pdi.path" value=""/>
     <stringAttribute key="ide.launch.program.device" value="false"/>
+    <booleanAttribute key="ignore_elfs_validation_warning" value="true"/>
     <stringAttribute key="launch.version" value="2022.1"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
         <listEntry value="/lab2b_application"/>

@@ -1,31 +1,187 @@
-Nothing to build in platform 'lab1b_platform'
+15:05:19 **** Build of project lab1b_platform ****
+buildplatform.bat 54983 lab1b_platform  
+XSDB Server Channel: tcfchan#1
+Reading the platform  : "lab1b_platform"
+Building the BSP Library for domain  - standalone_microblaze_0 on processor microblaze_0
+make --no-print-directory seq_libs
 
-09:28:52 **** Incremental Build of configuration Debug for project lab1b_application ****
+'Finished building libraries sequentially.'
+
+make -j 2 --no-print-directory par_libs
+
+"Running Make include in microblaze_0/libsrc/bram_v4_7/src"
+
+make -C microblaze_0/libsrc/bram_v4_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/cpu_v2_15/src"
+
+make -C microblaze_0/libsrc/cpu_v2_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/gpio_v4_9/src"
+
+make -C microblaze_0/libsrc/gpio_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/intc_v3_14/src"
+
+make -C microblaze_0/libsrc/intc_v3_14/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections 
+-fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/standalone_v7_7/src"
+
+make -C microblaze_0/libsrc/standalone_v7_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "C
+OMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sect
+ions -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+make -C microblaze_0/libsrc/tmrctr_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+ -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make include in microblaze_0/libsrc/uartlite_v3_7/src"
+
+make -C microblaze_0/libsrc/uartlite_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sectio
+ns -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/bram_v4_7/src"
+
+make -C microblaze_0/libsrc/bram_v4_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/cpu_v2_15/src"
+
+make -C microblaze_0/libsrc/cpu_v2_15/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/gpio_v4_9/src"
+
+make -C microblaze_0/libsrc/gpio_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/intc_v3_14/src"
+
+make -C microblaze_0/libsrc/intc_v3_14/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fd
+ata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/standalone_v7_7/src"
+
+make -C microblaze_0/libsrc/standalone_v7_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
+ILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-section
+s -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -f
+data-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+"Running Make libs in microblaze_0/libsrc/uartlite_v3_7/src"
+
+make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections 
+-fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+microblaze_sleep.c:73:9: note: '#pragma message: For the sleep routines, assembly instructions are used'
+   73 | #pragma message ("For the sleep routines, assembly instructions are used")
+      |         ^~~~~~~
+"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
+
+'Finished building libraries parallelly.'
+
+make --no-print-directory archive
+
+mb-ar -r  microblaze_0/lib/libxil.a microblaze_0/lib/xplatform_info.o microblaze_0/lib/xuartlite.o microblaze_0/lib/microblaze_
+disable_exceptions.o microblaze_0/lib/print.o microblaze_0/lib/xtmrctr_options.o microblaze_0/lib/_exit.o microblaze_0/lib/xil_
+testio.o microblaze_0/lib/microblaze_disable_dcache.o microblaze_0/lib/microblaze_flush_dcache_range.o microblaze_0/lib/xuartli
+te_sinit.o microblaze_0/lib/microblaze_flush_cache_ext.o microblaze_0/lib/xbram_sinit.o microblaze_0/lib/xil_misc_psreset_api.o
+ microblaze_0/lib/xinterrupt_wrap.o microblaze_0/lib/xil_cache.o microblaze_0/lib/xil_util.o microblaze_0/lib/inbyte.o microbla
+ze_0/lib/xintc_intr.o microblaze_0/lib/xuartlite_stats.o microblaze_0/lib/microblaze_exception_handler.o microblaze_0/lib/xbram
+_g.o microblaze_0/lib/microblaze_scrub.o microblaze_0/lib/microblaze_invalidate_dcache.o microblaze_0/lib/microblaze_disable_in
+terrupts.o microblaze_0/lib/xbram_selftest.o microblaze_0/lib/microblaze_interrupt_handler.o microblaze_0/lib/microblaze_disabl
+e_icache.o microblaze_0/lib/xgpio_g.o microblaze_0/lib/xil_mem.o microblaze_0/lib/microblaze_flush_cache_ext_range.o microblaze
+_0/lib/xtmrctr_intr.o microblaze_0/lib/xbram_intr.o microblaze_0/lib/xil_sleepcommon.o microblaze_0/lib/xil_printf.o microblaze
+_0/lib/xintc_g.o microblaze_0/lib/xuartlite_g.o microblaze_0/lib/xtmrctr_l.o microblaze_0/lib/xintc_selftest.o microblaze_0/lib
+/xintc_l.o microblaze_0/lib/outbyte.o microblaze_0/lib/microblaze_enable_exceptions.o microblaze_0/lib/xgpio_intr.o microblaze_
+0/lib/microblaze_invalidate_dcache_range.o microblaze_0/lib/microblaze_invalidate_cache_ext.o microblaze_0/lib/microblaze_sleep
+.o microblaze_0/lib/hw_exception_handler.o microblaze_0/lib/xtmrctr.o microblaze_0/lib/xuartlite_selftest.o microblaze_0/lib/xg
+pio_sinit.o microblaze_0/lib/microblaze_update_dcache.o microblaze_0/lib/xil_testcache.o microblaze_0/lib/microblaze_selftest.o
+ microblaze_0/lib/microblaze_interrupts_g.o microblaze_0/lib/xio.o microblaze_0/lib/xtmrctr_g.o microblaze_0/lib/microblaze_ena
+ble_dcache.o microblaze_0/lib/xbram.o microblaze_0/lib/microblaze_invalidate_icache_range.o microblaze_0/lib/xtmrctr_selftest.o
+ microblaze_0/lib/microblaze_init_dcache_range.o microblaze_0/lib/microblaze_invalidate_icache.o microblaze_0/lib/errno.o micro
+blaze_0/lib/xuartlite_l.o microblaze_0/lib/xintc_options.o microblaze_0/lib/microblaze_invalidate_cache_ext_range.o microblaze_
+0/lib/xil_exception.o microblaze_0/lib/pvr.o microblaze_0/lib/xgpio.o microblaze_0/lib/xil_testmem.o microblaze_0/lib/microblaz
+e_update_icache.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/microblaze_flush_dcache.o microblaze_0/lib/xil_clocking.o 
+microblaze_0/lib/xil_assert.o microblaze_0/lib/microblaze_enable_interrupts.o microblaze_0/lib/xgpio_extra.o microblaze_0/lib/m
+icroblaze_enable_icache.o microblaze_0/lib/xintc.o microblaze_0/lib/xtmrctr_stats.o microblaze_0/lib/microblaze_init_icache_ran
+ge.o microblaze_0/lib/xtmrctr_sinit.o microblaze_0/lib/fcntl.o microblaze_0/lib/xgpio_selftest.o
+
+'Finished building libraries'
+
+15:05:30 **** Build of configuration Debug for project lab1b_application ****
 make all 
 'Building file: ../src/extra.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/extra.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/extra.d" -MT"src/extra.o" -o "src/extra.o" "../src/extra.c"
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/extra.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/extra.d" -MT"src/extra.o" -o "src/extra.o" "../src/extra.c"
 In file included from ../src/extra.h:8,
                  from ../src/extra.c:1:
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
 'Finished building: ../src/extra.c'
 ' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/sevenSeg_new.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sevenSeg_new.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sevenSeg_new.d" -MT"src/sevenSeg_new.o" -o "src/sevenSeg_new.o" "../src/sevenSeg_new.c"
+'Finished building: ../src/sevenSeg_new.c'
+' '
+'Building file: ../src/timing.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timing.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timing.d" -MT"src/timing.o" -o "src/timing.o" "../src/timing.c"
+In file included from ../src/extra.h:8,
+                 from ../src/timing.c:14:
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+../src/timing.c: In function 'display':
+../src/timing.c:118:33: warning: unused variable 'd5' [-Wunused-variable]
+  118 |         int d0, d1, d2, d3, d4, d5;
+      |                                 ^~
+'Finished building: ../src/timing.c'
+' '
 'Building target: lab1b_application.elf'
 'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab1b_application.elf"  ./src/extra.o ./src/platform.o ./src/sevenSeg_new.o ./src/timing.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab1b_application.elf"  ./src/extra.o ./src/platform.o ./src/sevenSeg_new.o ./src/timing.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: lab1b_application.elf'
 ' '
 'Invoking: MicroBlaze Print Size'
 mb-size lab1b_application.elf  |tee "lab1b_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  13424	    412	   3348	  17184	   4320	lab1b_application.elf
+  13396	    412	   3352	  17160	   4308	lab1b_application.elf
 'Finished building: lab1b_application.elf.size'
 ' '
-09:28:53 **** Incremental Build of configuration Debug for project lab1b_system ****
+15:05:33 **** Build of configuration Debug for project lab1b_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

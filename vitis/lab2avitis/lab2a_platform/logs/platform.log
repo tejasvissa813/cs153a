@@ -1,0 +1,1054 @@
+TRACE::2024-11-08.15:00:01::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:01::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:01::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:01::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:01::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:01::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:01::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened new HwDB with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	""
+}
+TRACE::2024-11-08.15:00:02::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform"
+		}]
+}
+TRACE::2024-11-08.15:00:02::SCWPlatform::Boot application domains not present, creating them
+TRACE::2024-11-08.15:00:02::SCWPlatform::Pure FPGA device, no boot application will be created.
+TRACE::2024-11-08.15:00:02::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform"
+		}]
+}
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:02::SCWDomain::checking for install qemu data   : 
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:02::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:02::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:02::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-11-08.15:00:02::SCWMssOS::No sw design opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::mss does not exists at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::Creating sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::Adding the swdes entry, created swdb C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss with des name C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::updating the scw layer changes to swdes at   C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::Writing mss at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:02::SCWMssOS::Completed writing the mss file at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp
+TRACE::2024-11-08.15:00:02::SCWMssOS::Picking up changes from newly written mss file into SCW Layer. 
+TRACE::2024-11-08.15:00:02::SCWMssOS::Updated the changes from newly written mss file into SCW Layer. 
+TRACE::2024-11-08.15:00:02::SCWMssOS::Completed writing the mss file at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp
+TRACE::2024-11-08.15:00:02::SCWMssOS::Forcing BSP Sources regeneration.
+TRACE::2024-11-08.15:00:04::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::Adding the swdes entry, mss present, able to open swdb C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-11-08.15:00:04::SCWMssOS::Writing the mss file completed C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"dd395ccca094f7133f0448b999cd8d07",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+LOG::2024-11-08.15:00:04::SCWPlatform::Started generating the artifacts platform lab2a_platform
+TRACE::2024-11-08.15:00:04::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-11-08.15:00:04::SCWPlatform::Started generating the artifacts for system configuration lab2a_platform
+LOG::2024-11-08.15:00:04::SCWSystem::Checking the domain standalone_domain
+LOG::2024-11-08.15:00:04::SCWSystem::Not a boot domain 
+LOG::2024-11-08.15:00:04::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2024-11-08.15:00:04::SCWDomain::Generating domain artifcats
+TRACE::2024-11-08.15:00:04::SCWMssOS::Generating standalone artifcats
+TRACE::2024-11-08.15:00:04::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::Completed writing the mss file at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp
+TRACE::2024-11-08.15:00:04::SCWMssOS::Mss edits present, copying mssfile into export location C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-11-08.15:00:04::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-11-08.15:00:04::SCWDomain::Skipping the build for domain :  standalone_domain
+TRACE::2024-11-08.15:00:04::SCWMssOS::skipping the bsp build ... 
+TRACE::2024-11-08.15:00:04::SCWMssOS::Copying to export directory.
+TRACE::2024-11-08.15:00:04::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-11-08.15:00:04::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-11-08.15:00:04::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2024-11-08.15:00:04::SCWSystem::Completed Processing the sysconfig lab2a_platform
+LOG::2024-11-08.15:00:04::SCWPlatform::Completed generating the artifacts for system configuration lab2a_platform
+TRACE::2024-11-08.15:00:04::SCWPlatform::Started preparing the platform 
+TRACE::2024-11-08.15:00:04::SCWSystem::Writing the bif file for system config lab2a_platform
+TRACE::2024-11-08.15:00:04::SCWSystem::dir created 
+TRACE::2024-11-08.15:00:04::SCWSystem::Writing the bif 
+TRACE::2024-11-08.15:00:04::SCWPlatform::Started writing the spfm file 
+TRACE::2024-11-08.15:00:04::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-11-08.15:00:04::SCWPlatform::Completed generating the platform
+TRACE::2024-11-08.15:00:04::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-11-08.15:00:04::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-11-08.15:00:04::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:04::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:04::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:04::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:04::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:04::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"dd395ccca094f7133f0448b999cd8d07",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-11-08.15:00:04::SCWPlatform::updated the xpfm file.
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-11-08.15:00:05::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-11-08.15:00:05::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone_domain",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"dd395ccca094f7133f0448b999cd8d07",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-11-08.15:00:05::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-11-08.15:00:05::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"dd395ccca094f7133f0448b999cd8d07",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-11-08.15:00:05::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-11-08.15:00:05::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-11-08.15:00:05::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:05::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Opened existing hwdb design_1_wrapper_0
+TRACE::2024-11-08.15:00:05::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:05::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:05::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:05::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"dd395ccca094f7133f0448b999cd8d07",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+TRACE::2024-11-08.15:00:08::SCWPlatform::Clearing the existing platform
+TRACE::2024-11-08.15:00:08::SCWSystem::Clearing the existing sysconfig
+TRACE::2024-11-08.15:00:08::SCWMssOS::Removing the swdes entry for  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:08::SCWSystem::Clearing the domains completed.
+TRACE::2024-11-08.15:00:08::SCWPlatform::Clearing the opened hw db.
+TRACE::2024-11-08.15:00:08::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform:: Platform location is C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:08::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:08::SCWPlatform::Removing the HwDB with name C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:08::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:08::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:08::SCWPlatform::Do not have an existing db opened. 
+TRACE::2024-11-08.15:00:09::SCWPlatform::Opened new HwDB with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWReader::Active system found as  lab2a_platform
+TRACE::2024-11-08.15:00:09::SCWReader::Handling sysconfig lab2a_platform
+TRACE::2024-11-08.15:00:09::SCWDomain::checking for install qemu data   : 
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:09::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::DEBUG:  swdes dump  
+TRACE::2024-11-08.15:00:09::SCWMssOS::No sw design opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::mss exists loading the mss file  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::Opened the sw design from mss  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::Adding the swdes entry C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss with des name system
+TRACE::2024-11-08.15:00:09::SCWMssOS::updating the scw layer about changes
+TRACE::2024-11-08.15:00:09::SCWMssOS::Opened the sw design.  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-11-08.15:00:09::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-11-08.15:00:09::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:09::SCWReader::Adding prebuilt librarypaths as   
+TRACE::2024-11-08.15:00:09::SCWReader::Adding prebuilt incpaths  as   
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:09::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:09::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:09::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:09::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:09::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:09::SCWReader::No isolation master present  
+LOG::2024-11-08.15:00:15::SCWPlatform::Started generating the artifacts platform lab2a_platform
+TRACE::2024-11-08.15:00:15::SCWPlatform::Sanity checking of platform is completed
+LOG::2024-11-08.15:00:15::SCWPlatform::Started generating the artifacts for system configuration lab2a_platform
+LOG::2024-11-08.15:00:15::SCWSystem::Checking the domain standalone_domain
+LOG::2024-11-08.15:00:15::SCWSystem::Not a boot domain 
+LOG::2024-11-08.15:00:15::SCWSystem::Started Processing the domain standalone_domain
+TRACE::2024-11-08.15:00:15::SCWDomain::Generating domain artifcats
+TRACE::2024-11-08.15:00:15::SCWMssOS::Generating standalone artifcats
+TRACE::2024-11-08.15:00:15::SCWMssOS:: Copying the user libraries. 
+TRACE::2024-11-08.15:00:15::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:15::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:15::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:15::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:15::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:15::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:15::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:15::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:15::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:15::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:15::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:15::SCWMssOS::Completed writing the mss file at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp
+TRACE::2024-11-08.15:00:15::SCWMssOS::Mss edits present, copying mssfile into export location C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:15::SCWMssOS::bsp generated is upto date with the mss file. Skipping bsp generation.
+TRACE::2024-11-08.15:00:15::SCWMssOS::BSP is already built. skipping the bsp build ... 
+TRACE::2024-11-08.15:00:15::SCWDomain::Building the domain as part of full build :  standalone_domain
+TRACE::2024-11-08.15:00:15::SCWMssOS::doing bsp build ... 
+TRACE::2024-11-08.15:00:15::SCWMssOS::System Command Ran  C: & cd  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp & make 
+TRACE::2024-11-08.15:00:15::SCWMssOS::make --no-print-directory seq_libs
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::'Finished building libraries sequentially.'
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::make -j 2 --no-print-directory par_libs
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::"Running Make include in microblaze_0/libsrc/bram_v4_7/src"
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-11-08.15:00:15::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+TRACE::2024-11-08.15:00:15::SCWMssOS::fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::"Running Make include in microblaze_0/libsrc/cpu_v2_15/src"
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_15/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-11-08.15:00:15::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+TRACE::2024-11-08.15:00:15::SCWMssOS::fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:15::SCWMssOS::"Running Make include in microblaze_0/libsrc/gpio_v4_9/src"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::make -C microblaze_0/libsrc/gpio_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILE
+TRACE::2024-11-08.15:00:16::SCWMssOS::R_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -
+TRACE::2024-11-08.15:00:16::SCWMssOS::fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::"Running Make include in microblaze_0/libsrc/intc_v3_14/src"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_14/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-11-08.15:00:16::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections 
+TRACE::2024-11-08.15:00:16::SCWMssOS::-fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::"Running Make include in microblaze_0/libsrc/standalone_v7_7/src"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::make -C microblaze_0/libsrc/standalone_v7_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "C
+TRACE::2024-11-08.15:00:16::SCWMssOS::OMPILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sect
+TRACE::2024-11-08.15:00:16::SCWMssOS::ions -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::"Running Make include in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPI
+TRACE::2024-11-08.15:00:16::SCWMssOS::LER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections
+TRACE::2024-11-08.15:00:16::SCWMssOS:: -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::"Running Make include in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-11-08.15:00:16::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s include  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COM
+TRACE::2024-11-08.15:00:16::SCWMssOS::PILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sectio
+TRACE::2024-11-08.15:00:16::SCWMssOS::ns -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::"Running Make libs in microblaze_0/libsrc/bram_v4_7/src"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::"Running Make libs in microblaze_0/libsrc/cpu_v2_15/src"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::make -C microblaze_0/libsrc/bram_v4_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-11-08.15:00:17::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+TRACE::2024-11-08.15:00:17::SCWMssOS::ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::make -C microblaze_0/libsrc/cpu_v2_15/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-11-08.15:00:17::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+TRACE::2024-11-08.15:00:17::SCWMssOS::ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::"Running Make libs in microblaze_0/libsrc/gpio_v4_9/src"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::make -C microblaze_0/libsrc/gpio_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_F
+TRACE::2024-11-08.15:00:17::SCWMssOS::LAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fda
+TRACE::2024-11-08.15:00:17::SCWMssOS::ta-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::"Running Make libs in microblaze_0/libsrc/intc_v3_14/src"
+
+TRACE::2024-11-08.15:00:17::SCWMssOS::make -C microblaze_0/libsrc/intc_v3_14/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER_
+TRACE::2024-11-08.15:00:17::SCWMssOS::FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -fd
+TRACE::2024-11-08.15:00:17::SCWMssOS::ata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:18::SCWMssOS::"Running Make libs in microblaze_0/libsrc/standalone_v7_7/src"
+
+TRACE::2024-11-08.15:00:18::SCWMssOS::make -C microblaze_0/libsrc/standalone_v7_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMP
+TRACE::2024-11-08.15:00:18::SCWMssOS::ILER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-section
+TRACE::2024-11-08.15:00:18::SCWMssOS::s -fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:18::SCWMssOS::"Running Make libs in microblaze_0/libsrc/tmrctr_v4_9/src"
+
+TRACE::2024-11-08.15:00:18::SCWMssOS::make -C microblaze_0/libsrc/tmrctr_v4_9/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPILER
+TRACE::2024-11-08.15:00:18::SCWMssOS::_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections -f
+TRACE::2024-11-08.15:00:18::SCWMssOS::data-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:20::SCWMssOS::"Running Make libs in microblaze_0/libsrc/uartlite_v3_7/src"
+
+TRACE::2024-11-08.15:00:20::SCWMssOS::make -C microblaze_0/libsrc/uartlite_v3_7/src -s libs  "SHELL=CMD" "COMPILER=mb-gcc" "ASSEMBLER=mb-as" "ARCHIVER=mb-ar" "COMPIL
+TRACE::2024-11-08.15:00:20::SCWMssOS::ER_FLAGS=  -O2 -c -mcpu=v11.0 -mlittle-endian -mno-xl-soft-mul -mxl-barrel-shift" "EXTRA_COMPILER_FLAGS=-g -ffunction-sections 
+TRACE::2024-11-08.15:00:20::SCWMssOS::-fdata-sections -Wall -Wextra -fno-tree-loop-distribute-patterns"
+
+TRACE::2024-11-08.15:00:21::SCWMssOS::"DEBUG NON_LTO_OBJECTS is ../../../lib/microblaze_interrupt_handler.o"
+
+TRACE::2024-11-08.15:00:21::SCWMssOS::'Finished building libraries parallelly.'
+
+TRACE::2024-11-08.15:00:21::SCWMssOS::make --no-print-directory archive
+
+TRACE::2024-11-08.15:00:21::SCWMssOS::mb-ar -r  microblaze_0/lib/libxil.a microblaze_0/lib/xplatform_info.o microblaze_0/lib/xuartlite.o microblaze_0/lib/microblaze_
+TRACE::2024-11-08.15:00:21::SCWMssOS::disable_exceptions.o microblaze_0/lib/print.o microblaze_0/lib/xtmrctr_options.o microblaze_0/lib/_exit.o microblaze_0/lib/xil_
+TRACE::2024-11-08.15:00:21::SCWMssOS::testio.o microblaze_0/lib/microblaze_disable_dcache.o microblaze_0/lib/microblaze_flush_dcache_range.o microblaze_0/lib/xuartli
+TRACE::2024-11-08.15:00:21::SCWMssOS::te_sinit.o microblaze_0/lib/microblaze_flush_cache_ext.o microblaze_0/lib/xbram_sinit.o microblaze_0/lib/xil_misc_psreset_api.o
+TRACE::2024-11-08.15:00:21::SCWMssOS:: microblaze_0/lib/xinterrupt_wrap.o microblaze_0/lib/xil_cache.o microblaze_0/lib/xil_util.o microblaze_0/lib/inbyte.o microbla
+TRACE::2024-11-08.15:00:21::SCWMssOS::ze_0/lib/xuartlite_stats.o microblaze_0/lib/microblaze_exception_handler.o microblaze_0/lib/xbram_g.o microblaze_0/lib/microbla
+TRACE::2024-11-08.15:00:21::SCWMssOS::ze_scrub.o microblaze_0/lib/microblaze_invalidate_dcache.o microblaze_0/lib/microblaze_disable_interrupts.o microblaze_0/lib/xb
+TRACE::2024-11-08.15:00:21::SCWMssOS::ram_selftest.o microblaze_0/lib/microblaze_interrupt_handler.o microblaze_0/lib/microblaze_disable_icache.o microblaze_0/lib/xg
+TRACE::2024-11-08.15:00:21::SCWMssOS::pio_g.o microblaze_0/lib/xil_mem.o microblaze_0/lib/microblaze_flush_cache_ext_range.o microblaze_0/lib/xtmrctr_intr.o microbla
+TRACE::2024-11-08.15:00:21::SCWMssOS::ze_0/lib/xbram_intr.o microblaze_0/lib/xil_sleepcommon.o microblaze_0/lib/xil_printf.o microblaze_0/lib/xintc_g.o microblaze_0/
+TRACE::2024-11-08.15:00:21::SCWMssOS::lib/xuartlite_g.o microblaze_0/lib/xtmrctr_l.o microblaze_0/lib/xintc_selftest.o microblaze_0/lib/xintc_l.o microblaze_0/lib/ou
+TRACE::2024-11-08.15:00:21::SCWMssOS::tbyte.o microblaze_0/lib/xgpio_intr.o microblaze_0/lib/microblaze_invalidate_dcache_range.o microblaze_0/lib/microblaze_invalid
+TRACE::2024-11-08.15:00:21::SCWMssOS::ate_cache_ext.o microblaze_0/lib/microblaze_sleep.o microblaze_0/lib/hw_exception_handler.o microblaze_0/lib/xtmrctr.o microbla
+TRACE::2024-11-08.15:00:21::SCWMssOS::ze_0/lib/xuartlite_selftest.o microblaze_0/lib/xgpio_sinit.o microblaze_0/lib/microblaze_update_dcache.o microblaze_0/lib/xil_t
+TRACE::2024-11-08.15:00:21::SCWMssOS::estcache.o microblaze_0/lib/microblaze_selftest.o microblaze_0/lib/microblaze_interrupts_g.o microblaze_0/lib/microblaze_enable
+TRACE::2024-11-08.15:00:21::SCWMssOS::_exceptions.o microblaze_0/lib/xio.o microblaze_0/lib/xtmrctr_g.o microblaze_0/lib/microblaze_enable_dcache.o microblaze_0/lib/
+TRACE::2024-11-08.15:00:21::SCWMssOS::xbram.o microblaze_0/lib/microblaze_invalidate_icache_range.o microblaze_0/lib/xtmrctr_selftest.o microblaze_0/lib/microblaze_i
+TRACE::2024-11-08.15:00:21::SCWMssOS::nit_dcache_range.o microblaze_0/lib/microblaze_invalidate_icache.o microblaze_0/lib/errno.o microblaze_0/lib/xuartlite_l.o micr
+TRACE::2024-11-08.15:00:21::SCWMssOS::oblaze_0/lib/xintc_options.o microblaze_0/lib/microblaze_invalidate_cache_ext_range.o microblaze_0/lib/xintc_intr.o microblaze_
+TRACE::2024-11-08.15:00:21::SCWMssOS::0/lib/xil_exception.o microblaze_0/lib/pvr.o microblaze_0/lib/xgpio.o microblaze_0/lib/xil_testmem.o microblaze_0/lib/microblaz
+TRACE::2024-11-08.15:00:21::SCWMssOS::e_update_icache.o microblaze_0/lib/xuartlite_intr.o microblaze_0/lib/microblaze_flush_dcache.o microblaze_0/lib/xil_clocking.o 
+TRACE::2024-11-08.15:00:21::SCWMssOS::microblaze_0/lib/xil_assert.o microblaze_0/lib/microblaze_enable_interrupts.o microblaze_0/lib/xgpio_extra.o microblaze_0/lib/m
+TRACE::2024-11-08.15:00:21::SCWMssOS::icroblaze_enable_icache.o microblaze_0/lib/xintc.o microblaze_0/lib/xtmrctr_stats.o microblaze_0/lib/microblaze_init_icache_ran
+TRACE::2024-11-08.15:00:21::SCWMssOS::ge.o microblaze_0/lib/xtmrctr_sinit.o microblaze_0/lib/fcntl.o microblaze_0/lib/xgpio_selftest.o
+
+TRACE::2024-11-08.15:00:21::SCWMssOS::'Finished building libraries'
+
+TRACE::2024-11-08.15:00:22::SCWMssOS::Copying to export directory.
+TRACE::2024-11-08.15:00:22::SCWMssOS:: Checking if to create the Supporting Applications
+TRACE::2024-11-08.15:00:22::SCWMssOS:: No Linux domain exists, trying to generate FSBL 
+LOG::2024-11-08.15:00:22::SCWSystem::Completed Processing the domain standalone_domain
+LOG::2024-11-08.15:00:22::SCWSystem::Completed Processing the sysconfig lab2a_platform
+LOG::2024-11-08.15:00:22::SCWPlatform::Completed generating the artifacts for system configuration lab2a_platform
+TRACE::2024-11-08.15:00:22::SCWPlatform::Started preparing the platform 
+TRACE::2024-11-08.15:00:22::SCWSystem::Writing the bif file for system config lab2a_platform
+TRACE::2024-11-08.15:00:22::SCWSystem::dir created 
+TRACE::2024-11-08.15:00:22::SCWSystem::Writing the bif 
+TRACE::2024-11-08.15:00:22::SCWPlatform::Started writing the spfm file 
+TRACE::2024-11-08.15:00:22::SCWPlatform::Started writing the xpfm file 
+TRACE::2024-11-08.15:00:22::SCWPlatform::Completed generating the platform
+TRACE::2024-11-08.15:00:22::SCWMssOS::Saving the mss changes C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:22::SCWMssOS::Found a swdesign opened with the mssfile.
+TRACE::2024-11-08.15:00:22::SCWMssOS::Completed writemss as part of save.
+TRACE::2024-11-08.15:00:22::SCWMssOS::Commit changes completed.
+TRACE::2024-11-08.15:00:22::SCWPlatform::Trying to open the hw design at C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:22::SCWPlatform::DSA given C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:22::SCWPlatform::DSA absoulate path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:22::SCWPlatform::DSA directory C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw
+TRACE::2024-11-08.15:00:22::SCWPlatform:: Platform Path C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/hw/lab2a.xsa
+TRACE::2024-11-08.15:00:22::SCWPlatform:: Unique name xilinx:::0.0
+TRACE::2024-11-08.15:00:22::SCWPlatform::Trying to set the existing hwdb with name design_1_wrapper_1
+TRACE::2024-11-08.15:00:22::SCWPlatform::Opened existing hwdb design_1_wrapper_1
+TRACE::2024-11-08.15:00:22::SCWPlatform::Found the Hw Db part of the input DSA
+TRACE::2024-11-08.15:00:22::SCWMssOS::Checking the sw design at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:22::SCWMssOS::DEBUG:  swdes dump  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss|system||
+
+TRACE::2024-11-08.15:00:22::SCWMssOS::Sw design exists and opened at  C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/microblaze_0/standalone_domain/bsp/system.mss
+TRACE::2024-11-08.15:00:22::SCWWriter::formatted JSON is {
+	"platformName":	"lab2a_platform",
+	"sprVersion":	"2.0",
+	"mode":	"gui",
+	"dsaType":	"Fixed",
+	"platformDesc":	"lab2a_platform",
+	"platHandOff":	"C:/Users/ranchen/Documents/GitHub/cs153a/vivado/lab2a_vivado/lab2a.xsa",
+	"platIntHandOff":	"<platformDir>/hw/lab2a.xsa",
+	"deviceType":	"FPGA",
+	"platIsPrebuiltAutogen":	"false",
+	"platIsNoBootBsp":	"false",
+	"hasFsblMakeHasChanges":	"false",
+	"hasPmufwMakeHasChanges":	"false",
+	"platPreBuiltFlag":	false,
+	"platformSamplesDir":	"",
+	"platActiveSys":	"lab2a_platform",
+	"systems":	[{
+			"systemName":	"lab2a_platform",
+			"systemDesc":	"lab2a_platform",
+			"sysIsBootAutoGen":	"true",
+			"systemDispName":	"lab2a_platform",
+			"sysActiveDom":	"standalone_domain",
+			"sysDefaultDom":	"standalone_domain",
+			"domains":	[{
+					"domainName":	"standalone_domain",
+					"domainDispName":	"standalone on microblaze_0",
+					"domainDesc":	"standalone_domain",
+					"processors":	"microblaze_0",
+					"os":	"standalone",
+					"sdxOs":	"standalone",
+					"debugEnable":	"False",
+					"domRuntimes":	["cpp"],
+					"swRepo":	"",
+					"mssOsVer":	"7.7",
+					"mssFile":	"",
+					"md5Digest":	"dd395ccca094f7133f0448b999cd8d07",
+					"compatibleApp":	"",
+					"domType":	"mssDomain",
+					"arch":	"32-bit",
+					"appSettings":	{
+						"appCompilerFlags":	"",
+						"appLinkerFlags":	""
+					},
+					"addedLibs":	[],
+					"libOptions":	{
+						"libsContainingOptions":	[]
+					},
+					"prebuiltLibs":	{
+						"prebuiltIncPath":	[],
+						"prebuiltLibPath":	[]
+					},
+					"isolation":	{
+					}
+				}]
+		}]
+}
+KEYINFO::2024-11-08.15:00:22::SCWPlatform::updated the xpfm file.

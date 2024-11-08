@@ -1,29 +1,56 @@
-09:28:52 **** Incremental Build of configuration Debug for project lab1b_application ****
+15:05:30 **** Build of configuration Debug for project lab1b_application ****
 make all 
 'Building file: ../src/extra.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/extra.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/extra.d" -MT"src/extra.o" -o "src/extra.o" "../src/extra.c"
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/extra.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/extra.d" -MT"src/extra.o" -o "src/extra.o" "../src/extra.c"
 In file included from ../src/extra.h:8,
                  from ../src/extra.c:1:
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
 'Finished building: ../src/extra.c'
 ' '
+'Building file: ../src/platform.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
+' '
+'Building file: ../src/sevenSeg_new.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/sevenSeg_new.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/sevenSeg_new.d" -MT"src/sevenSeg_new.o" -o "src/sevenSeg_new.o" "../src/sevenSeg_new.c"
+'Finished building: ../src/sevenSeg_new.c'
+' '
+'Building file: ../src/timing.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/timing.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/timing.d" -MT"src/timing.o" -o "src/timing.o" "../src/timing.c"
+In file included from ../src/extra.h:8,
+                 from ../src/timing.c:14:
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+../src/timing.c: In function 'display':
+../src/timing.c:118:33: warning: unused variable 'd5' [-Wunused-variable]
+  118 |         int d0, d1, d2, d3, d4, d5;
+      |                                 ^~
+'Finished building: ../src/timing.c'
+' '
 'Building target: lab1b_application.elf'
 'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab1b_application.elf"  ./src/extra.o ./src/platform.o ./src/sevenSeg_new.o ./src/timing.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab1b/lab1b_platform/export/lab1b_platform/sw/lab1b_platform/standalone_microblaze_0/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab1b_application.elf"  ./src/extra.o ./src/platform.o ./src/sevenSeg_new.o ./src/timing.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: lab1b_application.elf'
 ' '
 'Invoking: MicroBlaze Print Size'
 mb-size lab1b_application.elf  |tee "lab1b_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  13424	    412	   3348	  17184	   4320	lab1b_application.elf
+  13396	    412	   3352	  17160	   4308	lab1b_application.elf
 'Finished building: lab1b_application.elf.size'
 ' '
 
-09:28:53 Build Finished (took 753ms)
+15:05:32 Build Finished (took 2s.252ms)
 

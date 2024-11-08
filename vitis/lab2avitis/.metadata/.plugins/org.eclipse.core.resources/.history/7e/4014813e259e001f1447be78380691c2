@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="lab_2a_application" location="C:/Users/ranchen/Downloads/lab2avitis/lab_2a_application" platform="C:/Users/ranchen/Downloads/lab2avitis/lab2avitis/lab_2a_hardware/export/lab_2a_hardware/lab_2a_hardware.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="lab_2a_application_system" sysConfig="lab_2a_hardware" runtime="C/C++" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" mssSignature="7a2c6f2725b64ce61a05482932bd9a91">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1267820318">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1121296102" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

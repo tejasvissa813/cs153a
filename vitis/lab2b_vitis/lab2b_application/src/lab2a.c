@@ -139,7 +139,7 @@ void Lab2A_ctor(void)  {
 	QActive_ctor(&me->super, (QStateHandler)&Lab2A_initial);
 	AO_Lab2A.volume = 0;
 	AO_Lab2A.seconds = 0;
-	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
+//	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
 }
 
 

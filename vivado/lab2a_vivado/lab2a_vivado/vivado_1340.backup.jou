@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Oct 24 18:34:15 2024
+# Process ID: 1340
+# Current directory: C:/Users/ranchen/Downloads/cs153a-main/cs153a-main/vivado/lab2a_vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7100 C:\Users\ranchen\Downloads\cs153a-main\cs153a-main\vivado\lab2a_vivado\project_1.xpr
+# Log file: C:/Users/ranchen/Downloads/cs153a-main/cs153a-main/vivado/lab2a_vivado/vivado.log
+# Journal file: C:/Users/ranchen/Downloads/cs153a-main/cs153a-main/vivado/lab2a_vivado\vivado.jou
+# Running On: 556eci21, OS: Windows, CPU Frequency: 3312 MHz, CPU Physical cores: 4, Host memory: 17108 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/ranchen/Downloads/cs153a-main/cs153a-main/vivado/lab2a_vivado/project_1.xpr
+update_compile_order -fileset sources_1
+open_hw_manager

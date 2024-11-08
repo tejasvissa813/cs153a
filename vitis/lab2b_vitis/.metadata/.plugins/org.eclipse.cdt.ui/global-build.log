@@ -1,23 +1,23 @@
 Nothing to build in platform 'lab2b_platform'
 
-09:54:00 **** Incremental Build of configuration Debug for project lab2b_application ****
+14:47:07 **** Incremental Build of configuration Debug for project lab2b_application ****
 make all 
 'Building file: ../src/lab2a.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab2a.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lab2a.d" -MT"src/lab2a.o" -o "src/lab2a.o" "../src/lab2a.c"
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab2a.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lab2a.d" -MT"src/lab2a.o" -o "src/lab2a.o" "../src/lab2a.c"
 In file included from ../src/qpn_port.h:38,
                  from ../src/lab2a.c:8:
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
-In file included from C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xgpio.h:116,
+In file included from C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xgpio.h:116,
                  from ../src/qpn_port.h:34,
                  from ../src/lab2a.c:8:
 ../src/lab2a.c: In function 'lcd_setup':
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:44:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:44:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    44 | #define XST_DEVICE_NOT_FOUND            2L
       |                                         ^~
 ../src/lab2a.c:66:24: note: in expansion of macro 'XST_DEVICE_NOT_FOUND'
@@ -26,10 +26,10 @@ C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/exp
 ../src/lab2a.c:56:6: note: declared here
    56 | void lcd_setup(){
       |      ^~~~~~~~~
-In file included from C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xgpio.h:116,
+In file included from C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xgpio.h:116,
                  from ../src/qpn_port.h:34,
                  from ../src/lab2a.c:8:
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
 ../src/lab2a.c:72:24: note: in expansion of macro 'XST_FAILURE'
@@ -47,12 +47,8 @@ C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/exp
       |                                     ^~
 ../src/lab2a.c:114:37: warning: comparison with string literal results in unspecified behavior [-Waddress]
 ../src/lab2a.c:131:34: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
-  131 |                 AO_Lab2A.text[4] = "BTN_6";
+  131 |                 AO_Lab2A.text[4] = "6";
       |                                  ^
-../src/lab2a.c: In function 'Lab2A_ctor':
-../src/lab2a.c:142:25: error: expected expression before '{' token
-  142 |         AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
-      |                         ^
 ../src/lab2a.c: In function 'Lab2A_on':
 ../src/lab2a.c:174:42: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
   174 |                         AO_Lab2A.text[4] = "1";
@@ -73,4 +69,73 @@ At top level:
 ../src/lab2a.c:57:22: warning: 'dc' defined but not used [-Wunused-variable]
    57 |         static XGpio dc;
       |                      ^~
-make: *** [src/subdir.mk:44: src/lab2a.o] Error 1
+'Finished building: ../src/lab2a.c'
+' '
+'Building file: ../src/lcd.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lcd.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lcd.d" -MT"src/lcd.o" -o "src/lcd.o" "../src/lcd.c"
+'Finished building: ../src/lcd.c'
+' '
+'Building file: ../src/main.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+In file included from ../src/qpn_port.h:38,
+                 from ../src/main.c:6:
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+'Finished building: ../src/main.c'
+' '
+'Building file: ../src/qepn.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/qepn.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/qepn.d" -MT"src/qepn.o" -o "src/qepn.o" "../src/qepn.c"
+In file included from ../src/qpn_port.h:38,
+                 from ../src/qepn.c:28:
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+'Finished building: ../src/qepn.c'
+' '
+'Building file: ../src/qfn.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/qfn.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/qfn.d" -MT"src/qfn.o" -o "src/qfn.o" "../src/qfn.c"
+In file included from ../src/qpn_port.h:38,
+                 from ../src/qfn.c:28:
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+'Finished building: ../src/qfn.c'
+' '
+'Building file: ../src/qfn_init.c'
+'Invoking: MicroBlaze gcc compiler'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/qfn_init.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/qfn_init.d" -MT"src/qfn_init.o" -o "src/qfn_init.o" "../src/qfn_init.c"
+In file included from ../src/qpn_port.h:38,
+                 from ../src/qfn_init.c:28:
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+'Finished building: ../src/qfn_init.c'
+' '
+'Building target: lab2b_application.elf'
+'Invoking: MicroBlaze gcc linker'
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab2b_application.elf"  ./src/bsp.o ./src/fonts.o ./src/lab2a.o ./src/lcd.o ./src/main.o ./src/qepn.o ./src/qfn.o ./src/qfn_init.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: lab2b_application.elf'
+' '
+'Invoking: MicroBlaze Print Size'
+mb-size lab2b_application.elf  |tee "lab2b_application.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  25264	   1636	   8652	  35552	   8ae0	lab2b_application.elf
+'Finished building: lab2b_application.elf.size'
+' '
