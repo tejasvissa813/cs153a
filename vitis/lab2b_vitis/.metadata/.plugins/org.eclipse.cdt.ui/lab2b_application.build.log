@@ -1,18 +1,5 @@
-20:56:18 **** Incremental Build of configuration Debug for project lab2b_application ****
+09:54:00 **** Incremental Build of configuration Debug for project lab2b_application ****
 make all 
-'Building file: ../src/bsp.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/bsp.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/bsp.d" -MT"src/bsp.o" -o "src/bsp.o" "../src/bsp.c"
-In file included from ../src/qpn_port.h:38,
-                 from ../src/bsp.c:7:
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
-  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
-      |  ^~~~~~~
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
-  103 | #warning  Please refer the Standalone BSP UG647 for further details
-      |  ^~~~~~~
-'Finished building: ../src/bsp.c'
-' '
 'Building file: ../src/lab2a.c'
 'Invoking: MicroBlaze gcc compiler'
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab2a.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lab2a.d" -MT"src/lab2a.o" -o "src/lab2a.o" "../src/lab2a.c"
@@ -31,11 +18,11 @@ In file included from C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vi
 C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:44:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    44 | #define XST_DEVICE_NOT_FOUND            2L
       |                                         ^~
-../src/lab2a.c:63:24: note: in expansion of macro 'XST_DEVICE_NOT_FOUND'
-   63 |                 return XST_DEVICE_NOT_FOUND;
+../src/lab2a.c:66:24: note: in expansion of macro 'XST_DEVICE_NOT_FOUND'
+   66 |                 return XST_DEVICE_NOT_FOUND;
       |                        ^~~~~~~~~~~~~~~~~~~~
-../src/lab2a.c:53:6: note: declared here
-   53 | void lcd_setup(){
+../src/lab2a.c:56:6: note: declared here
+   56 | void lcd_setup(){
       |      ^~~~~~~~~
 In file included from C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xgpio.h:116,
                  from ../src/qpn_port.h:34,
@@ -43,43 +30,48 @@ In file included from C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vi
 C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
-../src/lab2a.c:69:24: note: in expansion of macro 'XST_FAILURE'
-   69 |                 return XST_FAILURE;
+../src/lab2a.c:72:24: note: in expansion of macro 'XST_FAILURE'
+   72 |                 return XST_FAILURE;
       |                        ^~~~~~~~~~~
-../src/lab2a.c:53:6: note: declared here
-   53 | void lcd_setup(){
+../src/lab2a.c:56:6: note: declared here
+   56 | void lcd_setup(){
       |      ^~~~~~~~~
-../src/lab2a.c:54:22: warning: unused variable 'dc' [-Wunused-variable]
-   54 |         static XGpio dc;
+../src/lab2a.c:57:22: warning: unused variable 'dc' [-Wunused-variable]
+   57 |         static XGpio dc;
       |                      ^~
+../src/lab2a.c: In function 'drawVolume':
+../src/lab2a.c:114:37: warning: comparison between pointer and integer
+  114 |                 if(AO_Lab2A.text[4] != "6") lcdPrint(AO_Lab2A.text, 80, 80);
+      |                                     ^~
+../src/lab2a.c:114:37: warning: comparison with string literal results in unspecified behavior [-Waddress]
+../src/lab2a.c:131:34: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  131 |                 AO_Lab2A.text[4] = "BTN_6";
+      |                                  ^
+../src/lab2a.c: In function 'Lab2A_ctor':
+../src/lab2a.c:142:25: error: expected expression before '{' token
+  142 |         AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
+      |                         ^
+../src/lab2a.c: In function 'Lab2A_on':
+../src/lab2a.c:174:42: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  174 |                         AO_Lab2A.text[4] = "1";
+      |                                          ^
+../src/lab2a.c:179:42: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  179 |                         AO_Lab2A.text[4] = "2";
+      |                                          ^
+../src/lab2a.c:184:42: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  184 |                         AO_Lab2A.text[4] = "3";
+      |                                          ^
+../src/lab2a.c:189:42: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  189 |                         AO_Lab2A.text[4] = "4";
+      |                                          ^
+../src/lab2a.c:194:42: warning: assignment to 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  194 |                         AO_Lab2A.text[4] = "5";
+      |                                          ^
 At top level:
-../src/lab2a.c:54:22: warning: 'dc' defined but not used [-Wunused-variable]
-'Finished building: ../src/lab2a.c'
-' '
-'Building file: ../src/main.c'
-'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-In file included from ../src/qpn_port.h:38,
-                 from ../src/main.c:6:
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
-  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
-      |  ^~~~~~~
-C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
-  103 | #warning  Please refer the Standalone BSP UG647 for further details
-      |  ^~~~~~~
-'Finished building: ../src/main.c'
-' '
-'Building target: lab2b_application.elf'
-'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/tejasvissapragada/Documents/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mcpu=v11.0 -mno-xl-soft-mul -Wl,--no-relax -Wl,--gc-sections -o "lab2b_application.elf"  ./src/bsp.o ./src/fonts.o ./src/lab2a.o ./src/lcd.o ./src/main.o ./src/qepn.o ./src/qfn.o ./src/qfn_init.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
-'Finished building target: lab2b_application.elf'
-' '
-'Invoking: MicroBlaze Print Size'
-mb-size lab2b_application.elf  |tee "lab2b_application.elf.size"
-   text	   data	    bss	    dec	    hex	filename
-  21232	   1636	   8636	  31504	   7b10	lab2b_application.elf
-'Finished building: lab2b_application.elf.size'
-' '
+../src/lab2a.c:57:22: warning: 'dc' defined but not used [-Wunused-variable]
+   57 |         static XGpio dc;
+      |                      ^~
+make: *** [src/subdir.mk:44: src/lab2a.o] Error 1
 
-20:56:20 Build Finished (took 1s.212ms)
+09:54:00 Build Finished (took 314ms)
 

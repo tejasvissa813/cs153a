@@ -18,3 +18,4 @@ platform active {lab2b_platform}
 bsp reload
 bsp write
 platform generate
+platform generate
