@@ -1,0 +1,268 @@
+/*****************************************************************************
+* bsp.c for Lab2A of ECE 153a at UCSB
+* Date of the Last Update:  October 27,2019
+*****************************************************************************/
+
+/**/
+#include "qpn_port.h"
+#include "bsp.h"
+#include "lab2a.h"
+#include "xintc.h"
+#include "xil_exception.h"
+#include "xparameters.h"
+#include "lcd.h"
+#include "xgpio.h" 		// LED driver, used for General purpose I/i
+#include "xspi.h"
+#include "xspi_l.h"
+
+/*****************************/
+
+/* Define all variables and Gpio objects here  */
+
+#define GPIO_CHANNEL1 1
+
+void debounceInterrupt(); // Write This function
+
+// Create ONE interrupt controllers XIntc
+// Create two static XGpio variables
+// Suggest Creating two int's to use for determining the direction of twist
+XIntc sys_intc;
+XGpio EncoderGpio;
+XGpio ButtonGpio;
+
+enum States {
+	R,
+	CW1,
+	CW0,
+	CW2,
+	CCW2,
+	CCW0,
+	CCW1
+};
+volatile int enable = 1;
+enum States fsm = R;
+
+/*..........................................................................*/
+
+
+void BSP_init(void) {
+/* Setup LED's, etc */
+/* Setup interrupts and reference to interrupt handler function(s)  */
+
+
+	/*
+	 * Initialize the interrupt controller driver so that it's ready to use.
+	 * specify the device ID that was generated in xparameters.h
+	 *
+	 * Initialize GPIO and connect the interrupt controller to the GPIO.
+	 *
+	 */
+	XIntc_Initialize(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID);
+
+	XIntc_Connect(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_ENCODER_IP2INTC_IRPT_INTR,
+					(XInterruptHandler) TwistHandler, &EncoderGpio);
+	XIntc_Connect(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_GPIO_BTN_IP2INTC_IRPT_INTR,
+					(XInterruptHandler) GpioHandler, &ButtonGpio);
+
+	XIntc_Start(&sys_intc, XIN_REAL_MODE);
+
+	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_ENCODER_IP2INTC_IRPT_INTR);
+	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_GPIO_BTN_IP2INTC_IRPT_INTR);
+
+	XGpio_Initialize(&EncoderGpio, XPAR_GPIO_2_DEVICE_ID);
+	XGpio_InterruptEnable(&EncoderGpio, 1);
+	XGpio_InterruptGlobalEnable(&EncoderGpio);
+
+	XGpio_Initialize(&EncoderGpio, XPAR_AXI_GPIO_BTN_DEVICE_ID);
+	XGpio_InterruptEnable(&EncoderGpio, 1);
+	XGpio_InterruptGlobalEnable(&EncoderGpio);
+
+
+
+	microblaze_register_handler(
+			(XInterruptHandler) XIntc_DeviceInterruptHandler,
+			(void*) XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID);
+
+	microblaze_enable_interrupts();
+	xil_printf("Interrupts enabled!\r\n");
+
+
+
+	// Press Knob
+
+	// Twist Knob
+		
+}
+/*..........................................................................*/
+void QF_onStartup(void) {                 /* entered with interrupts locked */
+
+/* Enable interrupts */
+	xil_printf("\n\rQF_onStartup\n"); // Comment out once you are in your complete program
+
+	// Press Knob
+	// Enable interrupt controller
+	// Start interupt controller
+	// register handler with Microblaze
+	// Global enable of interrupt
+	// Enable interrupt on the GPIO
+
+	// Twist Knob
+
+	// General
+	// Initialize Exceptions
+	// Press Knob
+	// Register Exception
+	// Twist Knob
+	// Register Exception
+	// General
+	// Enable Exception
+
+	// Variables for reading Microblaze registers to debug your interrupts.
+//	{
+//		u32 axi_ISR =  Xil_In32(intcPress.BaseAddress + XIN_ISR_OFFSET);
+//		u32 axi_IPR =  Xil_In32(intcPress.BaseAddress + XIN_IPR_OFFSET);
+//		u32 axi_IER =  Xil_In32(intcPress.BaseAddress + XIN_IER_OFFSET);
+//		u32 axi_IAR =  Xil_In32(intcPress.BaseAddress + XIN_IAR_OFFSET);
+//		u32 axi_SIE =  Xil_In32(intcPress.BaseAddress + XIN_SIE_OFFSET);
+//		u32 axi_CIE =  Xil_In32(intcPress.BaseAddress + XIN_CIE_OFFSET);
+//		u32 axi_IVR =  Xil_In32(intcPress.BaseAddress + XIN_IVR_OFFSET);
+//		u32 axi_MER =  Xil_In32(intcPress.BaseAddress + XIN_MER_OFFSET);
+//		u32 axi_IMR =  Xil_In32(intcPress.BaseAddress + XIN_IMR_OFFSET);
+//		u32 axi_ILR =  Xil_In32(intcPress.BaseAddress + XIN_ILR_OFFSET) ;
+//		u32 axi_IVAR = Xil_In32(intcPress.BaseAddress + XIN_IVAR_OFFSET);
+//		u32 gpioTestIER  = Xil_In32(sw_Gpio.BaseAddress + XGPIO_IER_OFFSET);
+//		u32 gpioTestISR  = Xil_In32(sw_Gpio.BaseAddress  + XGPIO_ISR_OFFSET ) & 0x00000003; // & 0xMASK
+//		u32 gpioTestGIER = Xil_In32(sw_Gpio.BaseAddress  + XGPIO_GIE_OFFSET ) & 0x80000000; // & 0xMASK
+//	}
+}
+
+
+void QF_onIdle(void) {        /* entered with interrupts locked */
+
+    QF_INT_UNLOCK();                       /* unlock interrupts */
+
+    {
+    	// Write code to increment your interrupt counter here.
+    	// QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN); is used to post an event to your FSM
+
+
+
+// 			Useful for Debugging, and understanding your Microblaze registers.
+//    		u32 axi_ISR =  Xil_In32(intcPress.BaseAddress + XIN_ISR_OFFSET);
+//    	    u32 axi_IPR =  Xil_In32(intcPress.BaseAddress + XIN_IPR_OFFSET);
+//    	    u32 axi_IER =  Xil_In32(intcPress.BaseAddress + XIN_IER_OFFSET);
+//
+//    	    u32 axi_IAR =  Xil_In32(intcPress.BaseAddress + XIN_IAR_OFFSET);
+//    	    u32 axi_SIE =  Xil_In32(intcPress.BaseAddress + XIN_SIE_OFFSET);
+//    	    u32 axi_CIE =  Xil_In32(intcPress.BaseAddress + XIN_CIE_OFFSET);
+//    	    u32 axi_IVR =  Xil_In32(intcPress.BaseAddress + XIN_IVR_OFFSET);
+//    	    u32 axi_MER =  Xil_In32(intcPress.BaseAddress + XIN_MER_OFFSET);
+//    	    u32 axi_IMR =  Xil_In32(intcPress.BaseAddress + XIN_IMR_OFFSET);
+//    	    u32 axi_ILR =  Xil_In32(intcPress.BaseAddress + XIN_ILR_OFFSET) ;
+//    	    u32 axi_IVAR = Xil_In32(intcPress.BaseAddress + XIN_IVAR_OFFSET);
+//
+//    	    // Expect to see 0x00000001
+//    	    u32 gpioTestIER  = Xil_In32(sw_Gpio.BaseAddress + XGPIO_IER_OFFSET);
+//    	    // Expect to see 0x00000001
+//    	    u32 gpioTestISR  = Xil_In32(sw_Gpio.BaseAddress  + XGPIO_ISR_OFFSET ) & 0x00000003;
+//
+//    	    // Expect to see 0x80000000 in GIER
+//    		u32 gpioTestGIER = Xil_In32(sw_Gpio.BaseAddress  + XGPIO_GIE_OFFSET ) & 0x80000000;
+
+
+    }
+}
+
+/* Q_onAssert is called only when the program encounters an error*/
+/*..........................................................................*/
+void Q_onAssert(char const Q_ROM * const Q_ROM_VAR file, int line) {
+    (void)file;                                   /* name of the file that throws the error */
+    (void)line;                                   /* line of the code that throws the error */
+    QF_INT_LOCK();
+    printDebugLog();
+    for (;;) {
+    }
+}
+
+/* Interrupt handler functions here.  Do not forget to include them in lab2a.h!
+To post an event from an ISR, use this template:
+QActive_postISR((QActive *)&AO_Lab2A, SIGNALHERE);
+Where the Signals are defined in lab2a.h  */
+
+/******************************************************************************
+*
+* This is the interrupt handler routine for the GPIO for this example.
+*
+******************************************************************************/
+void GpioHandler(void *CallbackRef) {
+	// Increment A counter
+	xil_printf("handler working");
+}
+
+void TwistHandler(void *CallbackRef) {
+	//XGpio_DiscreteRead( &twist_Gpio, 1);
+
+	XGpio *GpioPtr = (XGpio *)CallbackRef;
+
+	unsigned int encoderVal = XGpio_DiscreteRead(&EncoderGpio, 1);
+	if(encoderVal > 3) enable = 1 - enable;
+
+	int bit0 = 1 & encoderVal;
+	int bit1 = (2 & encoderVal) >> 1;
+
+	if(enable){
+		switch(fsm){
+		case R:
+			if(bit0 == 0) fsm = CW1;
+			else if(bit1 == 0) fsm = CCW2;
+			//else xil_printf("ERROR");
+			break;
+		case CW1:
+			if(bit0 == 1) fsm = R;
+			else if(bit1 == 0) fsm = CW0;
+			//else xil_printf("ERROR");
+			break;
+		case CW0:
+			if(bit0 == 1) fsm = CW2;
+			else if(bit1 == 1) fsm = CW1;
+			//else xil_printf("ERROR");
+			break;
+		case CW2:
+			if(bit0 == 0) fsm = CW0;
+			else if(bit1 == 1) {
+				xil_printf("up");
+			}
+			//else xil_printf("ERROR");
+			break;
+		case CCW2:
+			if(bit0 == 0) fsm = CCW0;
+			else if(bit1 == 1) fsm = R;
+			//else xil_printf("ERROR");
+			break;
+		case CCW0:
+			if(bit0 == 1) fsm = CCW2;
+			else if(bit1 == 1) fsm = CCW1;
+			//else xil_printf("ERROR");
+			break;
+		case CCW1:
+			if(bit0 == 1){
+				xil_printf("down");
+			}
+			else if(bit1 == 0) fsm = CCW0;
+			//else xil_printf("ERROR");
+			break;
+		}
+	}
+	XGpio_InterruptClear(GpioPtr, 1);
+
+}
+
+void debounceTwistInterrupt(){
+	// Read both lines here? What is twist[0] and twist[1]?
+	// How can you use reading from the two GPIO twist input pins to figure out which way the twist is going?
+}
+
+void debounceInterrupt() {
+	QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
+	// XGpio_InterruptClear(&sw_Gpio, GPIO_CHANNEL1); // (Example, need to fill in your own parameters
+}
