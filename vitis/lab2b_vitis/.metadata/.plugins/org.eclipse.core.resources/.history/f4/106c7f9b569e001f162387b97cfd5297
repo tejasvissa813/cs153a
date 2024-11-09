@@ -160,20 +160,9 @@ void Lab2A_ctor(void)  {
 
 
 QState Lab2A_initial(Lab2A *me) {
-	xil_printf("\n\rInitialization\n");
+	xil_printf("\n\rInitialization");
 	lcd_setup();
-	switch(Q_SIG(me)){
-	case Q_ENTRY_SIG:{
-		return Q_HANDLED();
-	}
-	case Q_EXIT_SIG:{
-			return Q_HANDLED();
-		}
-	case Q_INIT_SIG:{
-			return Q_TRAN(&Lab2A_on);
-		}
-	}
-    return Q_SUPER(&QHsm_top);
+    return Q_TRAN(&Lab2A_on);
 }
 
 QState Lab2A_on(Lab2A *me) {
@@ -183,9 +172,6 @@ QState Lab2A_on(Lab2A *me) {
 			xil_printf("\n\rOn");
 			return Q_HANDLED();
 		}
-		case Q_EXIT_SIG:{
-				return Q_HANDLED();
-			}
 			
 		case Q_INIT_SIG: {
 			return Q_HANDLED();

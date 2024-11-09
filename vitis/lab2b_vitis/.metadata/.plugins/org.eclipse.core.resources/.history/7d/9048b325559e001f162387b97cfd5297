@@ -218,7 +218,6 @@ void drawHLine(int x, int y, int l) {
 	clrXY();
 }
 
-
 // Fill a rectangular 
 void fillRect(int x1, int y1, int x2, int y2) {
 	int i;
@@ -277,64 +276,6 @@ void lcdPrint(char *st, int x, int y) {
 	int i = 0;
 	while (*st != '\0')
 		printChar(*st++, x + cfont.x_size * i++, y);
-}
-
-void draw(void){
-		setColor(100, 0, 0);
-		fillRect(20, 50, 220, 70);
-		setColor(255, 0, 0);
-		float percent = (float) volume / 63;
-		int xVal = 200 * percent;
-		fillRect(20, 50, 20+xVal, 70);
-		char text[5] = {'M','O','D','E',' '};
-		setColor(0, 0, 100);
-		fillRect(56, 75, 184, 101);
-		setColor(0, 0, 255);
-		for(int i = 0; i < 5; i ++){
-			printChar(text[i], cfont.x_size * i + 80, 80);
-		}
-		printChar(button, cfont.x_size * 5 + 80, 80);
-}
-
-void clear_up(void){
-	setColor(0, 100, 0);
-	fillRect(20, 50, 220, 70);
-	fillRect(80, 80, 200, 95); // depends on font size we use
-	setColor(0, 255, 0);
-	draw_triangle(0, 40);
-	draw_triangle(40, 40);
-	draw_triangle(80, 40);
-	draw_triangle(80, 80); // also depends on font size/text location
-	draw_triangle(120, 80);
-	draw_triangle(160, 80);
-	draw_triangle(120, 40);
-	draw_triangle(160, 40);
-	draw_triangle(200, 40);
-}
-
-void update_volume(int new_vol){
-	int vol_diff = new_vol - volume;
-	int left, right;
-	float p_o = (float) volume / 63;
-	float p_n = (float) new_vol / 63;
-	if(vol_diff > 0){
-		setColor(255, 0 ,0);
-		left = 20 + p_o * 200;
-		right = 20 + p_n *200;
-	}
-	else{
-		setColor(100, 0 ,0);
-		left = 20 + p_n * 200;
-		right = 20 + p_o *200;
-	}
-	fillRect(left, 20, right, 70);
-	volume = new_vol;
-}
-void update_button(){
-	setColor(0, 0, 100);
-	fillRect(152, 75, 173, 101);
-	setColor(0, 0, 255);
-	printChar(button, cfont.x_size * 5 + 80, 80);
 }
 
 

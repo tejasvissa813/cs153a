@@ -1,4 +1,4 @@
-19:01:34 **** Incremental Build of configuration Debug for project lab2b_application ****
+20:55:43 **** Incremental Build of configuration Debug for project lab2b_application ****
 make all 
 'Building file: ../src/lab2a.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -18,11 +18,11 @@ In file included from C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis
 C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:44:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    44 | #define XST_DEVICE_NOT_FOUND            2L
       |                                         ^~
-../src/lab2a.c:68:24: note: in expansion of macro 'XST_DEVICE_NOT_FOUND'
-   68 |                 return XST_DEVICE_NOT_FOUND;
+../src/lab2a.c:66:24: note: in expansion of macro 'XST_DEVICE_NOT_FOUND'
+   66 |                 return XST_DEVICE_NOT_FOUND;
       |                        ^~~~~~~~~~~~~~~~~~~~
-../src/lab2a.c:58:6: note: declared here
-   58 | void lcd_setup(){
+../src/lab2a.c:56:6: note: declared here
+   56 | void lcd_setup(){
       |      ^~~~~~~~~
 In file included from C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xgpio.h:116,
                  from ../src/qpn_port.h:34,
@@ -30,17 +30,24 @@ In file included from C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis
 C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/sw/lab2b_platform/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
    43 | #define XST_FAILURE                     1L
       |                                         ^~
-../src/lab2a.c:74:24: note: in expansion of macro 'XST_FAILURE'
-   74 |                 return XST_FAILURE;
+../src/lab2a.c:72:24: note: in expansion of macro 'XST_FAILURE'
+   72 |                 return XST_FAILURE;
       |                        ^~~~~~~~~~~
-../src/lab2a.c:58:6: note: declared here
-   58 | void lcd_setup(){
+../src/lab2a.c:56:6: note: declared here
+   56 | void lcd_setup(){
       |      ^~~~~~~~~
-../src/lab2a.c:59:22: warning: unused variable 'dc' [-Wunused-variable]
-   59 |         static XGpio dc;
+../src/lab2a.c:57:22: warning: unused variable 'dc' [-Wunused-variable]
+   57 |         static XGpio dc;
       |                      ^~
+../src/lab2a.c: In function 'Lab2A_on':
+../src/lab2a.c:198:41: warning: implicit declaration of function 'clear_up'; did you mean 'clean_up'? [-Wimplicit-function-declaration]
+  198 |                                         clear_up();
+      |                                         ^~~~~~~~
+      |                                         clean_up
 At top level:
-../src/lab2a.c:59:22: warning: 'dc' defined but not used [-Wunused-variable]
+../src/lab2a.c:57:22: warning: 'dc' defined but not used [-Wunused-variable]
+   57 |         static XGpio dc;
+      |                      ^~
 'Finished building: ../src/lab2a.c'
 ' '
 'Building target: lab2b_application.elf'
@@ -51,9 +58,9 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/v
 'Invoking: MicroBlaze Print Size'
 mb-size lab2b_application.elf  |tee "lab2b_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  25288	   3536	   8664	  37488	   9270	lab2b_application.elf
+  26312	   3536	   8664	  38512	   9670	lab2b_application.elf
 'Finished building: lab2b_application.elf.size'
 ' '
 
-19:01:34 Build Finished (took 778ms)
+20:55:44 Build Finished (took 790ms)
 

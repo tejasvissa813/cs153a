@@ -183,9 +183,6 @@ QState Lab2A_on(Lab2A *me) {
 			xil_printf("\n\rOn");
 			return Q_HANDLED();
 		}
-		case Q_EXIT_SIG:{
-				return Q_HANDLED();
-			}
 			
 		case Q_INIT_SIG: {
 			return Q_HANDLED();

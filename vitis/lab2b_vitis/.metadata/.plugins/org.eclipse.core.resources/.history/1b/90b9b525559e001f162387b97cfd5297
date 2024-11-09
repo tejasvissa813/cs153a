@@ -76,10 +76,7 @@ struct _current_font
     u8 offset;
     u8 numchars;
 };
-extern int volume;
-extern int time;
-extern int display;
-extern char button;
+extern int real_time;
 extern int fch; // Foreground color upper byte
 extern int fcl; // Foreground color lower byte
 extern int bch; // Background color upper byte
@@ -109,13 +106,5 @@ void fillRect(int x1, int y1, int x2, int y2);
 void setFont(u8* font);
 void printChar(u8 c, int x, int y);
 void lcdPrint(char *st, int x, int y);
-
-void lcd_setup();
-void draw_triangle(int x, int y);
-
-void update_volume(int new_vol);
-void update_button();
-void clean_up(void);
-void draw(void);
 
 #endif /* LCD_H_ */
