@@ -21,3 +21,4 @@ platform active {lab_2a_hardware}
 platform config -updatehw {C:/Users/ranchen/Downloads/lab2a_vivado/lab2a_vivado/lab_2a_debug.xsa}
 platform generate -domains 
 platform active {lab_2a_hardware}
+platform generate -domains 

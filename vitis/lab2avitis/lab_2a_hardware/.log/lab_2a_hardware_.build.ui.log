@@ -1,2 +1,7 @@
-2024-11-08T15:00:24.0945896000-Nothing to build in platform 'lab_2a_hardware'
+2024-11-08T16:25:40.410721600255-16:25:40 **** Incremental Build of project lab_2a_hardware ****
+000-buildplatform.bat 55485 lab_2a_hardware no_domain_build 
+000-XSDB Server Channel: tcfchan#1
+000-Reading the platform  : "lab_2a_hardware"
+00255-
+16:25:44 Build Finished (took 4s.440ms)
 

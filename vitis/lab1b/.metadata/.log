@@ -8760,3 +8760,13 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.]. Thread: Worker-1: Launch
 
 !ENTRY com.xilinx.sdk.utils 0 0 2024-11-08 15:06:02.508
 !MESSAGE XSCT command with result: [jtag targets -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A (error DR shift through all ones)" && level==1}], Result: [null, ]. Thread: Worker-1: Launching SystemDebugger_lab1b_system
+
+!ENTRY org.eclipse.tcf 4 0 2024-11-08 15:14:06.770
+!MESSAGE Invalid peerAdded event
+!STACK 0
+java.lang.Error
+	at org.eclipse.tcf.internal.services.remote.LocatorProxy$1.event(LocatorProxy.java:64)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1191)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:371)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:98)
+	at java.base/java.lang.Thread.run(Thread.java:829)

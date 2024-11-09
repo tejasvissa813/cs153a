@@ -212,19 +212,24 @@ void GpioHandler(void *CallbackRef) {
 	XGpio *GpioPtr = (XGpio *)CallbackRef;
 	unsigned int buttonVal = XGpio_DiscreteRead(&ButtonGpio, 1);
 	if(buttonVal == 1){
-		xil_printf("BTN 1");
+		QActive_postISR((QActive *)&AO_Lab2A, BTN_1);
+//		xil_printf("BTN 1");
 	}
 	else if(buttonVal == 2){
-		xil_printf("BTN 2");
+		QActive_postISR((QActive *)&AO_Lab2A, BTN_2);
+//		xil_printf("BTN 2");
 	}
 	else if(buttonVal == 4){
-		xil_printf("BTN 3");
+		QActive_postISR((QActive *)&AO_Lab2A, BTN_3);
+//		xil_printf("BTN 3");
 	}
 	else if(buttonVal == 8){
-		xil_printf("BTN 4");
+		QActive_postISR((QActive *)&AO_Lab2A, BTN_4);
+//		xil_printf("BTN 4");
 	}
 	else if(buttonVal == 16){
-		xil_printf("BTN 5");
+		QActive_postISR((QActive *)&AO_Lab2A, BTN_5);
+//		xil_printf("BTN 5");
 	}
 	XGpio_InterruptClear(GpioPtr, 1);
 }
@@ -238,12 +243,13 @@ void TwistHandler(void *CallbackRef) {
 	if(encoderVal > 3){
 		enable = 1 - enable;
 		QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
+		//return;
 	}
 
 	int bit0 = 1 & encoderVal;
 	int bit1 = (2 & encoderVal) >> 1;
 
-	if(enable){
+	if(1 == 1){
 		switch(fsm){
 		case R:
 			if(bit0 == 0) fsm = CW1;
@@ -307,5 +313,5 @@ void debounceTwistInterrupt(){
 
 void debounceInterrupt() {
 	QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
-	// XGpio_InterruptClear(&sw_Gpio, GPIO_CHANNEL1); // (Example, need to fill in your own parameters
+	// XGpio_InterruptClear(&sw_Gpio,  GPIO_CHANNEL1); // (Example, need to fill in your own parameters
 }

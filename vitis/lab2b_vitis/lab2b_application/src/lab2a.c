@@ -21,7 +21,9 @@ int cleared = 0;
 typedef struct Lab2ATag  {               //Lab2A State machine
 	QActive super;
 	unsigned int volume;
-	unsigned int seconds;
+	unsigned int seconds; //1/100 seconds
+	unsigned int isButton;
+	unsigned int isVolume;
 	char text[6];
 }  Lab2A;
 
@@ -104,31 +106,46 @@ void lcd_setup(){
 void drawVolume(){
 	//initLCD();
 	if(AO_Lab2A.seconds <= 3){
-		setColor(100, 0, 0);
-		fillRect(20, 50, 220, 70);
-		setColor(255, 0, 0);
-		float percent = (float) AO_Lab2A.volume / 63;
-		int xVal = 200 * percent;
-		fillRect(20, 50, 20+xVal, 70);
+		if(AO_Lab2A.isVolume){
+			setColor(100, 0, 0);
+			fillRect(20, 50, 220, 70);
+			setColor(255, 0, 0);
+			float percent = (float) AO_Lab2A.volume / 63;
+			int xVal = 200 * percent;
+			fillRect(20, 50, 20+xVal, 70);
+			AO_Lab2A.isVolume = 0;
+		}
 
-		if(AO_Lab2A.text[4] != "6") lcdPrint(AO_Lab2A.text, 80, 80);
+//		if(AO_Lab2A.text[4] != '6') lcdPrint(AO_Lab2A.text, 80, 80);
+		if(AO_Lab2A.isButton){
+			if(AO_Lab2A.text[4] != '6'){
+				for(int i = 0; i < 5; i ++){
+					printChar(AO_Lab2A.text[i], cfont.x_size * i + 80, 80);
+				}
+			}
+			AO_Lab2A.isButton = 0;
+		}
+
 
 		cleared = 0;
-	} else if(cleared == 0) {
+	}
+	else if(cleared == 0) {
 		//setXY(20, 50, 220, 70);
 		setColor(0, 100, 0);
 		fillRect(20, 50, 220, 70);
-		fillRect(80, 80, 120, 92); // depends on font size we use
+		fillRect(80, 80, 200, 95); // depends on font size we use
 		setColor(0, 255, 0);
 		draw_triangle(0, 40);
 		draw_triangle(40, 40);
 		draw_triangle(80, 40);
 		draw_triangle(80, 80); // also depends on font size/text location
+		draw_triangle(120, 80);
+		draw_triangle(160, 80);
 		draw_triangle(120, 40);
 		draw_triangle(160, 40);
 		draw_triangle(200, 40);
 		//clrXY();
-		AO_Lab2A.text[4] = "6";
+		AO_Lab2A.text[4] = '6';
 		cleared = 1;
 	}
 }
@@ -139,7 +156,14 @@ void Lab2A_ctor(void)  {
 	QActive_ctor(&me->super, (QStateHandler)&Lab2A_initial);
 	AO_Lab2A.volume = 0;
 	AO_Lab2A.seconds = 0;
-//	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
+	AO_Lab2A.text[0] = 'B';
+	AO_Lab2A.text[1] = 'T';
+	AO_Lab2A.text[2] = 'N';
+	AO_Lab2A.text[3] = '_';
+	AO_Lab2A.text[4] = '6';
+	AO_Lab2A.text[5] = '\0';
+	AO_Lab2A.isButton = 0;
+	AO_Lab2A.isVolume = 1;
 }
 
 
@@ -164,6 +188,7 @@ QState Lab2A_on(Lab2A *me) {
 				//increment time
 				//make interrupt happen more often to improve responsiveness
 			AO_Lab2A.seconds++;
+//			while(AO_Lab2A.seconds % 10 == 0)
 			drawVolume();
 			//xil_printf("%d\n",AO_Lab2A.seconds);
 			return Q_HANDLED();
@@ -171,28 +196,34 @@ QState Lab2A_on(Lab2A *me) {
 		//add cases for each of the Button Signals
 		//mAKE SURE TO RESET THE SECONDS VALUE WHEN ANY INPUT IS TRIGGERED
 		case BTN_1: {
-			AO_Lab2A.text[4] = "1";
+			xil_printf("BTN1");
+			AO_Lab2A.text[4] = '1';
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isButton = 1;
 			return Q_HANDLED();
 		}
 		case BTN_2: {
-			AO_Lab2A.text[4] = "2";
+			AO_Lab2A.text[4] = '2';
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isButton = 1;
 			return Q_HANDLED();
 		}
 		case BTN_3: {
-			AO_Lab2A.text[4] = "3";
+			AO_Lab2A.text[4] = '3';
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isButton = 1;
 			return Q_HANDLED();
 		}
 		case BTN_4: {
-			AO_Lab2A.text[4] = "4";
+			AO_Lab2A.text[4] = '4';
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isButton = 1;
 			return Q_HANDLED();
 		}
 		case BTN_5: {
-			AO_Lab2A.text[4] = "5";
+			AO_Lab2A.text[4] = '5';
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isButton = 1;
 			return Q_HANDLED();
 		}
 	}
@@ -207,27 +238,30 @@ QState Lab2A_on(Lab2A *me) {
 QState Lab2A_stateA(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
-			xil_printf("Startup State A\n");
+//			xil_printf("Startup State A\n");
 			return Q_HANDLED();
 		}
 		
-		case ENCODER_UP: {
+		case ENCODER_DOWN: {
 			if(AO_Lab2A.volume < 63) AO_Lab2A.volume++;
-			xil_printf("%d\n", AO_Lab2A.volume);
+//			xil_printf("%d\n", AO_Lab2A.volume);
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isVolume = 1;
 			return Q_HANDLED();
 		}
 
-		case ENCODER_DOWN: {
+		case ENCODER_UP: {
 			if(AO_Lab2A.volume > 0) AO_Lab2A.volume--;
-			xil_printf("%d\n", AO_Lab2A.volume);
+//			xil_printf("%d\n", AO_Lab2A.volume);
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isVolume = 1;
 			return Q_HANDLED();
 		}
 
 		case ENCODER_CLICK:  {
-			xil_printf("Changing State\n");
+//			xil_printf("Changing State\n");
 			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isVolume = 1;
 			return Q_TRAN(&Lab2A_stateB);
 		}
 
@@ -240,23 +274,29 @@ QState Lab2A_stateA(Lab2A *me) {
 QState Lab2A_stateB(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
-			xil_printf("Startup State B\n");
+//			xil_printf("Startup State B\n");
 			AO_Lab2A.volume = 0;
 			return Q_HANDLED();
 		}
 		
-//		case ENCODER_UP: {
-//			xil_printf("Encoder Up from State B\n");
-//			return Q_HANDLED();
-//		}
-//
-//		case ENCODER_DOWN: {
-//			xil_printf("Encoder Down from State B\n");
-//			return Q_HANDLED();
-//		}
+		case ENCODER_DOWN: {
+			AO_Lab2A.volume = 0;
+			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isVolume = 1;
+			return Q_TRAN(&Lab2A_stateA);
+		}
+
+		case ENCODER_UP: {
+//			AO_Lab2A.volume = 1;
+//						AO_Lab2A.seconds = 0;
+			AO_Lab2A.seconds = 0;
+			AO_Lab2A.isVolume = 1;
+			return Q_HANDLED();
+		}
 
 		case ENCODER_CLICK:  {
-			xil_printf("Changing State\n");
+//			xil_printf("Changing State\n");
+			AO_Lab2A.seconds = 0;
 			AO_Lab2A.seconds = 0;
 			return Q_TRAN(&Lab2A_stateA);
 		}

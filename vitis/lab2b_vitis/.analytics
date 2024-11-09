@@ -147,3 +147,58 @@ timestamp=[2024-11-08 14:23:41], mode=PLATFORM_GENERATION, duration=0:00:12.011,
 timestamp=[2024-11-08 14:23:44], mode=BUILD, duration=0:00:02.068, duration_ms=2068, data={name=lab2b_application, configuration=Debug, clean_build=false}
 timestamp=[2024-11-08 14:46:02], mode=BUILD, duration=0:00:00.434, duration_ms=434, data={name=lab2b_application, configuration=Debug, clean_build=false}
 timestamp=[2024-11-08 14:47:09], mode=BUILD, duration=0:00:02.337, duration_ms=2337, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 16:17:34], mode=WORKBENCH_START, duration=0:00:13.634, duration_ms=13634, data={}
+timestamp=[2024-11-08 16:17:35], mode=WORKBENCH_UI_INIT, duration=0:00:00.967, duration_ms=967, data={editors_count=5, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,lab2b_application,lab2b_application_system,lab2b_platform}
+timestamp=[2024-11-08 16:17:39], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.316, duration_ms=1316, data={}
+timestamp=[2024-11-08 16:22:23], mode=BUILD, duration=0:00:00.304, duration_ms=304, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 16:26:54], mode=WORKBENCH_START, duration=0:00:13.558, duration_ms=13558, data={}
+timestamp=[2024-11-08 16:26:55], mode=WORKBENCH_UI_INIT, duration=0:00:00.786, duration_ms=786, data={editors_count=5, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,lab2b_application,lab2b_application_system,lab2b_platform}
+timestamp=[2024-11-08 16:26:58], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.614, duration_ms=1614, data={}
+timestamp=[2024-11-08 16:26:59], mode=BUILD, duration=0:00:00.228, duration_ms=228, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 16:27:00], mode=BUILD, duration=0:00:00.400, duration_ms=400, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:05:50], mode=BUILD, duration=0:00:01.252, duration_ms=1252, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:07:24], mode=BUILD, duration=0:00:00.329, duration_ms=329, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:07:36], mode=BUILD, duration=0:00:00.827, duration_ms=827, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:07:37], mode=BUILD, duration=0:00:00.181, duration_ms=181, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:11:42], mode=BUILD, duration=0:00:00.893, duration_ms=893, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:11:42], mode=BUILD, duration=0:00:00.140, duration_ms=140, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:26:42], mode=BUILD, duration=0:00:01.204, duration_ms=1204, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:26:43], mode=BUILD, duration=0:00:00.124, duration_ms=124, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:30:41], mode=BUILD, duration=0:00:00.791, duration_ms=791, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:30:42], mode=BUILD, duration=0:00:00.133, duration_ms=133, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:40:11], mode=BUILD, duration=0:00:00.373, duration_ms=373, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:40:42], mode=BUILD, duration=0:00:01.005, duration_ms=1005, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:40:42], mode=BUILD, duration=0:00:00.140, duration_ms=140, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:42:22], mode=BUILD, duration=0:00:00.780, duration_ms=780, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:42:23], mode=BUILD, duration=0:00:00.199, duration_ms=199, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:57:41], mode=BUILD, duration=0:00:01.077, duration_ms=1077, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 17:57:42], mode=BUILD, duration=0:00:00.140, duration_ms=140, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:11:07], mode=BUILD, duration=0:00:01.984, duration_ms=1984, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:11:07], mode=BUILD, duration=0:00:00.149, duration_ms=149, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:15:09], mode=BUILD, duration=0:00:01.089, duration_ms=1089, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:15:09], mode=BUILD, duration=0:00:00.128, duration_ms=128, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:19:29], mode=BUILD, duration=0:00:00.806, duration_ms=806, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:19:29], mode=BUILD, duration=0:00:00.114, duration_ms=114, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:24:02], mode=BUILD, duration=0:00:00.766, duration_ms=766, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:24:02], mode=BUILD, duration=0:00:00.125, duration_ms=125, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:28:20], mode=BUILD, duration=0:00:01.025, duration_ms=1025, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:28:20], mode=BUILD, duration=0:00:00.129, duration_ms=129, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:30:31], mode=BUILD, duration=0:00:00.806, duration_ms=806, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:30:31], mode=BUILD, duration=0:00:00.155, duration_ms=155, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:34:35], mode=BUILD, duration=0:00:00.792, duration_ms=792, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:34:35], mode=BUILD, duration=0:00:00.130, duration_ms=130, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:36:49], mode=BUILD, duration=0:00:01.074, duration_ms=1074, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:36:50], mode=BUILD, duration=0:00:00.186, duration_ms=186, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:40:08], mode=BUILD, duration=0:00:01.052, duration_ms=1052, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:40:09], mode=BUILD, duration=0:00:00.187, duration_ms=187, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:46:07], mode=BUILD, duration=0:00:01.085, duration_ms=1085, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:46:08], mode=BUILD, duration=0:00:00.129, duration_ms=129, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:46:54], mode=BUILD, duration=0:00:00.807, duration_ms=807, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:46:54], mode=BUILD, duration=0:00:00.182, duration_ms=182, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:48:58], mode=BUILD, duration=0:00:00.318, duration_ms=318, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:49:18], mode=BUILD, duration=0:00:00.788, duration_ms=788, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:49:18], mode=BUILD, duration=0:00:00.140, duration_ms=140, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:56:41], mode=BUILD, duration=0:00:00.782, duration_ms=782, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 18:56:41], mode=BUILD, duration=0:00:00.158, duration_ms=158, data={name=lab2b_application_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 19:01:34], mode=BUILD, duration=0:00:00.778, duration_ms=778, data={name=lab2b_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-08 19:01:35], mode=BUILD, duration=0:00:00.178, duration_ms=178, data={name=lab2b_application_system, configuration=Debug, clean_build=false}

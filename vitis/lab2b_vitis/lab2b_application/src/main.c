@@ -10,6 +10,7 @@
 
 
 static QEvent l_lab2aQueue[30];  
+int real_time;
 
 QActiveCB const Q_ROM Q_ROM_VAR QF_active[] = {
 	{ (QActive *)0,            (QEvent *)0,          0                    },
@@ -28,6 +29,7 @@ int main(void) {
 	Xil_DCacheEnable();
 
 	Lab2A_ctor(); // inside of lab2a.c
+	real_time = 0;
 	BSP_init(); // inside of bsp.c, starts out empty!
 	QF_run(); // inside of qfn.c
 	return 0;
@@ -56,3 +58,20 @@ void printDebugLog() {
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

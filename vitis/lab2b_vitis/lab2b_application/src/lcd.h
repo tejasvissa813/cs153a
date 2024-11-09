@@ -76,7 +76,7 @@ struct _current_font
     u8 offset;
     u8 numchars;
 };
-
+extern int real_time;
 extern int fch; // Foreground color upper byte
 extern int fcl; // Foreground color lower byte
 extern int bch; // Background color upper byte

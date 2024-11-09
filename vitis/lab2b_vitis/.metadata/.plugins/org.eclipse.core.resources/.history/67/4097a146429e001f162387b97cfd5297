@@ -1,0 +1,283 @@
+/*****************************************************************************
+* lab2a.c for Lab2A of ECE 153a at UCSB
+* Date of the Last Update:  October 23,2014
+*****************************************************************************/
+
+#define AO_LAB2A
+
+#include "qpn_port.h"
+#include "bsp.h"
+#include "lab2a.h"
+#include "lcd.h"
+#include "xgpio.h" 		// LED driver, used for General purpose I/i
+#include "xspi.h"
+#include "xspi_l.h"
+
+
+int cleared = 0;
+
+
+
+typedef struct Lab2ATag  {               //Lab2A State machine
+	QActive super;
+	unsigned int volume;
+	unsigned int seconds; //1/100 seconds
+	char text[6];
+}  Lab2A;
+
+/* Setup state machines */
+/**********************************************************************/
+static QState Lab2A_initial (Lab2A *me);
+static QState Lab2A_on      (Lab2A *me);
+static QState Lab2A_stateA  (Lab2A *me);
+static QState Lab2A_stateB  (Lab2A *me);
+
+
+/**********************************************************************/
+
+
+Lab2A AO_Lab2A;
+void lcd_setup();
+void draw_triangle(int x, int y);
+
+
+
+void draw_triangle(int x, int y){
+	fillRect(x, y+35, x+40, y+40);
+	fillRect(x+2, y+30, x+38, y+35);
+	fillRect(x+5, y+25, x+35, y+30);
+	fillRect(x+7, y+20, x+33, y+25);
+	fillRect(x+10, y+15, x+30, y+20);
+	fillRect(x+12, y+10, x+28, y+15);
+	fillRect(x+15, y+5, x+25, y+10);
+	fillRect(x+17, y+0, x+23, y+5);
+}
+
+void lcd_setup(){
+	static XGpio dc;
+	static XSpi spi;
+	XSpi_Config *spiConfig;	/* Pointer to Configuration data */
+	u32 status;
+	u32 controlReg;
+
+	spiConfig = XSpi_LookupConfig(XPAR_SPI_DEVICE_ID);
+	if (spiConfig == NULL) {
+		xil_printf("Can't find spi device!\n");
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+	status = XSpi_CfgInitialize(&spi, spiConfig, spiConfig->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("Initialize spi fail!\n");
+		return XST_FAILURE;
+	}
+
+	XSpi_Reset(&spi);
+
+		/*
+		 * Setup the control register to enable master mode
+		 */
+	controlReg = XSpi_GetControlReg(&spi);
+	XSpi_SetControlReg(&spi,
+			(controlReg | XSP_CR_ENABLE_MASK | XSP_CR_MASTER_MODE_MASK) &
+			(~XSP_CR_TRANS_INHIBIT_MASK));
+
+	// Select 1st slave device
+	XSpi_SetSlaveSelectReg(&spi, ~0x01);
+
+	initLCD();
+
+
+	clrScr();
+	setColor(0, 100, 0);
+	fillRect(0, 0, 240, 320);
+	setColor(0, 255, 0);
+	//setColorBg(0, 100, 0);
+
+	for(int x = 0; x < 240; x+=40){
+		for(int y = 0; y < 320; y+=40){
+			draw_triangle(x, y);
+		}
+	}
+}
+
+void drawVolume(){
+	//initLCD();
+	if(AO_Lab2A.seconds <= 3){
+		setColor(100, 0, 0);
+		fillRect(20, 50, 220, 70);
+		setColor(255, 0, 0);
+		float percent = (float) AO_Lab2A.volume / 63;
+		int xVal = 200 * percent;
+		fillRect(20, 50, 20+xVal, 70);
+
+//		if(AO_Lab2A.text[4] != '6') lcdPrint(AO_Lab2A.text, 80, 80);
+
+		if(AO_Lab2A.text[4] != '6'){
+			for(int i = 0; i < 5; i ++){
+				printChar(AO_Lab2A.text[i], cfont.x_size * i + 80, 80);
+			}
+		}
+
+		cleared = 0;
+	} else if(cleared == 0) {
+		//setXY(20, 50, 220, 70);
+		setColor(0, 100, 0);
+		fillRect(20, 50, 220, 70);
+		fillRect(80, 80, 120, 92); // depends on font size we use
+		setColor(0, 255, 0);
+		draw_triangle(0, 40);
+		draw_triangle(40, 40);
+		draw_triangle(80, 40);
+		draw_triangle(80, 80); // also depends on font size/text location
+		draw_triangle(80, 120);
+		draw_triangle(120, 40);
+		draw_triangle(160, 40);
+		draw_triangle(200, 40);
+		//clrXY();
+		AO_Lab2A.text[4] = '6';
+		cleared = 1;
+	}
+}
+
+
+void Lab2A_ctor(void)  {
+	Lab2A *me = &AO_Lab2A;
+	QActive_ctor(&me->super, (QStateHandler)&Lab2A_initial);
+	AO_Lab2A.volume = 0;
+	AO_Lab2A.seconds = 0;
+	AO_Lab2A.text[0] = 'B';
+	AO_Lab2A.text[1] = 'T';
+	AO_Lab2A.text[2] = 'N';
+	AO_Lab2A.text[3] = '_';
+	AO_Lab2A.text[4] = '6';
+	AO_Lab2A.text[5] = '\0';
+}
+
+
+QState Lab2A_initial(Lab2A *me) {
+	xil_printf("\n\rInitialization");
+	lcd_setup();
+    return Q_TRAN(&Lab2A_on);
+}
+
+QState Lab2A_on(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+			xil_printf("\n\rOn");
+		}
+			
+		case Q_INIT_SIG: {
+			return Q_TRAN(&Lab2A_stateA);
+		}
+
+		case TICK_SIG: {
+				//redraw
+				//increment time
+				//make interrupt happen more often to improve responsiveness
+			AO_Lab2A.seconds++;
+//			while(AO_Lab2A.seconds % 10 == 0)
+				drawVolume();
+			//xil_printf("%d\n",AO_Lab2A.seconds);
+			return Q_HANDLED();
+		}
+		//add cases for each of the Button Signals
+		//mAKE SURE TO RESET THE SECONDS VALUE WHEN ANY INPUT IS TRIGGERED
+		case BTN_1: {
+			xil_printf("BTN1");
+			AO_Lab2A.text[4] = '1';
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+		case BTN_2: {
+			AO_Lab2A.text[4] = '2';
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+		case BTN_3: {
+			AO_Lab2A.text[4] = '3';
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+		case BTN_4: {
+			AO_Lab2A.text[4] = '4';
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+		case BTN_5: {
+			AO_Lab2A.text[4] = '5';
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+	}
+	
+	return Q_SUPER(&QHsm_top);
+}
+
+
+/* Create Lab2A_on state and do any initialization code if needed */
+/******************************************************************/
+
+QState Lab2A_stateA(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+//			xil_printf("Startup State A\n");
+			return Q_HANDLED();
+		}
+		
+		case ENCODER_UP: {
+			if(AO_Lab2A.volume < 63) AO_Lab2A.volume++;
+//			xil_printf("%d\n", AO_Lab2A.volume);
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+
+		case ENCODER_DOWN: {
+			if(AO_Lab2A.volume > 0) AO_Lab2A.volume--;
+//			xil_printf("%d\n", AO_Lab2A.volume);
+			AO_Lab2A.seconds = 0;
+			return Q_HANDLED();
+		}
+
+		case ENCODER_CLICK:  {
+//			xil_printf("Changing State\n");
+			AO_Lab2A.seconds = 0;
+			return Q_TRAN(&Lab2A_stateB);
+		}
+
+	}
+
+	return Q_SUPER(&Lab2A_on);
+
+}
+
+QState Lab2A_stateB(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+//			xil_printf("Startup State B\n");
+			AO_Lab2A.volume = 0;
+			return Q_HANDLED();
+		}
+		
+//		case ENCODER_UP: {
+//			xil_printf("Encoder Up from State B\n");
+//			return Q_HANDLED();
+//		}
+//
+//		case ENCODER_DOWN: {
+//			xil_printf("Encoder Down from State B\n");
+//			return Q_HANDLED();
+//		}
+
+		case ENCODER_CLICK:  {
+//			xil_printf("Changing State\n");
+			AO_Lab2A.seconds = 0;
+			return Q_TRAN(&Lab2A_stateA);
+		}
+
+	}
+
+	return Q_SUPER(&Lab2A_on);
+
+}
+

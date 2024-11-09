@@ -1860,3 +1860,29 @@ Troubleshooting hints:
 1. Check whether board is connected to system properly.
 2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
 3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+16:25:23 DEBUG : Logs will be stored at 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/IDE.log'.
+16:25:24 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab2avitis\temp_xsdb_launch_script.tcl
+16:25:28 INFO  : XSCT server has started successfully.
+16:25:28 INFO  : Successfully done setting XSCT server connection channel  
+16:25:28 INFO  : plnx-install-location is set to ''
+16:25:28 INFO  : Successfully done setting workspace for the tool. 
+16:25:36 INFO  : Registering command handlers for Vitis TCF services
+16:25:36 INFO  : Successfully done query RDI_DATADIR 
+16:25:37 INFO  : Platform repository initialization has completed.
+16:25:43 INFO  : Result from executing command 'getProjects': lab2a_platform;lab_2a_hardware
+16:25:43 INFO  : Result from executing command 'getPlatforms': lab2a_platform|C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2avitis/lab2a_platform/export/lab2a_platform/lab2a_platform.xpfm;xilinx_vck190_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_202210_1/xilinx_vck190_base_202210_1.xpfm;xilinx_vck190_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_dfx_202210_1/xilinx_vck190_base_dfx_202210_1.xpfm;xilinx_vmk180_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vmk180_base_202210_1/xilinx_vmk180_base_202210_1.xpfm;xilinx_zcu102_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+16:25:45 INFO  : Checking for BSP changes to sync application flags for project 'lab_2a_application'...
+16:25:53 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+16:25:53 INFO  : 'fpga -state' command is executed.
+16:26:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:26:00 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+16:26:00 INFO  : 'jtag frequency' command is executed.
+16:26:05 ERROR : no targets found with "name =~ "*microblaze*#0" && bscan=="USER2" ". available targets:
+  1* xc7a100t
+16:26:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+----------------End of Script----------------
+
+16:26:05 ERROR : no targets found with "name =~ "*microblaze*#0" && bscan=="USER2" ". available targets:
+  1* xc7a100t
