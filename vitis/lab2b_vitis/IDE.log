@@ -4246,3 +4246,115 @@ con
 ----------------End of Script----------------
 
 20:55:57 INFO  : Launch script is exported to file 'C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab2b_vitis\lab2b_application_system\_ide\scripts\debugger_lab2b_application-default.tcl'
+20:58:45 INFO  : Checking for BSP changes to sync application flags for project 'lab2b_application'...
+20:58:49 INFO  : Disconnected from the channel tcfchan#34.
+20:58:50 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:58:50 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+20:58:50 INFO  : 'jtag frequency' command is executed.
+20:58:50 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+20:58:53 INFO  : Device configured successfully with "C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/_ide/bitstream/download.bit"
+20:58:53 INFO  : Context for processor 'microblaze_0' is selected.
+20:58:53 INFO  : Hardware design and registers information is loaded from 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/hw/design_1_wrapper.xsa'.
+20:58:53 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:58:53 INFO  : Context for processor 'microblaze_0' is selected.
+20:58:53 INFO  : System reset is completed.
+20:58:56 INFO  : 'after 3000' command is executed.
+20:58:56 INFO  : Context for processor 'microblaze_0' is selected.
+20:58:57 INFO  : The application 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/Debug/lab2b_application.elf' is downloaded to processor 'microblaze_0'.
+20:58:57 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/Debug/lab2b_application.elf
+----------------End of Script----------------
+
+20:58:57 INFO  : Context for processor 'microblaze_0' is selected.
+20:58:57 INFO  : 'con' command is executed.
+20:58:57 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:58:57 INFO  : Launch script is exported to file 'C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab2b_vitis\lab2b_application_system\_ide\scripts\debugger_lab2b_application-default.tcl'
+20:59:21 INFO  : Checking for BSP changes to sync application flags for project 'lab2b_application'...
+20:59:28 INFO  : Disconnected from the channel tcfchan#35.
+20:59:29 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+20:59:30 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+20:59:30 INFO  : 'jtag frequency' command is executed.
+20:59:30 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+20:59:32 INFO  : Device configured successfully with "C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/_ide/bitstream/download.bit"
+20:59:32 INFO  : Context for processor 'microblaze_0' is selected.
+20:59:33 INFO  : Hardware design and registers information is loaded from 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/hw/design_1_wrapper.xsa'.
+20:59:33 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+20:59:33 INFO  : Context for processor 'microblaze_0' is selected.
+20:59:33 INFO  : System reset is completed.
+20:59:36 INFO  : 'after 3000' command is executed.
+20:59:36 INFO  : Context for processor 'microblaze_0' is selected.
+20:59:36 INFO  : The application 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/Debug/lab2b_application.elf' is downloaded to processor 'microblaze_0'.
+20:59:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/Debug/lab2b_application.elf
+----------------End of Script----------------
+
+20:59:36 INFO  : Context for processor 'microblaze_0' is selected.
+20:59:36 INFO  : 'con' command is executed.
+20:59:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+20:59:36 INFO  : Launch script is exported to file 'C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab2b_vitis\lab2b_application_system\_ide\scripts\debugger_lab2b_application-default.tcl'
+21:01:02 INFO  : Checking for BSP changes to sync application flags for project 'lab2b_application'...
+21:01:05 INFO  : Disconnected from the channel tcfchan#36.
+21:01:06 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+21:01:06 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+21:01:06 INFO  : 'jtag frequency' command is executed.
+21:01:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+21:01:08 INFO  : Device configured successfully with "C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/_ide/bitstream/download.bit"
+21:01:09 INFO  : Context for processor 'microblaze_0' is selected.
+21:01:09 INFO  : Hardware design and registers information is loaded from 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/hw/design_1_wrapper.xsa'.
+21:01:09 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+21:01:09 INFO  : Context for processor 'microblaze_0' is selected.
+21:01:09 INFO  : System reset is completed.
+21:01:12 INFO  : 'after 3000' command is executed.
+21:01:12 INFO  : Context for processor 'microblaze_0' is selected.
+21:01:13 INFO  : The application 'C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/Debug/lab2b_application.elf' is downloaded to processor 'microblaze_0'.
+21:01:13 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/_ide/bitstream/download.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export/lab2b_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_application/Debug/lab2b_application.elf
+----------------End of Script----------------
+
+21:01:13 INFO  : Context for processor 'microblaze_0' is selected.
+21:01:13 INFO  : 'con' command is executed.
+21:01:13 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+21:01:13 INFO  : Launch script is exported to file 'C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab2b_vitis\lab2b_application_system\_ide\scripts\debugger_lab2b_application-default.tcl'
+21:02:09 INFO  : Disconnected from the channel tcfchan#37.

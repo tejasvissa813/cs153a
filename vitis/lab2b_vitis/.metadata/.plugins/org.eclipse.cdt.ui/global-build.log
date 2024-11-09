@@ -1,6 +1,6 @@
 Nothing to build in platform 'lab2b_platform'
 
-20:55:43 **** Incremental Build of configuration Debug for project lab2b_application ****
+21:01:02 **** Incremental Build of configuration Debug for project lab2b_application ****
 make all 
 'Building file: ../src/lab2a.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -42,8 +42,8 @@ C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab2b_vitis/lab2b_platform/export
    57 |         static XGpio dc;
       |                      ^~
 ../src/lab2a.c: In function 'Lab2A_on':
-../src/lab2a.c:198:41: warning: implicit declaration of function 'clear_up'; did you mean 'clean_up'? [-Wimplicit-function-declaration]
-  198 |                                         clear_up();
+../src/lab2a.c:195:41: warning: implicit declaration of function 'clear_up'; did you mean 'clean_up'? [-Wimplicit-function-declaration]
+  195 |                                         clear_up();
       |                                         ^~~~~~~~
       |                                         clean_up
 At top level:
@@ -60,9 +60,9 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/v
 'Invoking: MicroBlaze Print Size'
 mb-size lab2b_application.elf  |tee "lab2b_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  26312	   3536	   8664	  38512	   9670	lab2b_application.elf
+  26372	   3536	   8668	  38576	   96b0	lab2b_application.elf
 'Finished building: lab2b_application.elf.size'
 ' '
-20:55:44 **** Incremental Build of configuration Debug for project lab2b_application_system ****
+21:01:03 **** Incremental Build of configuration Debug for project lab2b_application_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

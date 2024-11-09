@@ -235,9 +235,6 @@ QState Lab2A_on(Lab2A *me) {
 			n_volume = (volume) ? 0: 1;
 			break;
 		}
-		default:{
-			return Q_SUPER(&Lab2A_on);
-		}
 	}
 	time = 0;
 	if(!display){
