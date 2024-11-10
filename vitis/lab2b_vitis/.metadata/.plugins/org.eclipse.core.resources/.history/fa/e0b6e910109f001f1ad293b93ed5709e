@@ -334,7 +334,7 @@ void update_volume(void){
 		right = 20 + p_o *200;
 	}
 	fillRect(left, 50, right, 70);
-	volume = n_volume;
+	volume = new_vol;
 }
 void update_button(){
 	setColor(0, 0, 100);

@@ -237,14 +237,12 @@ void GpioHandler(void *CallbackRef) {
 }
 
 void TwistHandler(void *CallbackRef) {
-
 	//XGpio_DiscreteRead( &twist_Gpio, 1);
 
 	XGpio *GpioPtr = (XGpio *)CallbackRef;
 	int change = -1;
 
 	unsigned int val = XGpio_DiscreteRead(&EncoderGpio, 1);
-//	xil_printf("%d",val);
 //	XGpio_InterruptClear(GpioPtr, 1);
 //	return;
 	time = 0;
@@ -252,42 +250,42 @@ void TwistHandler(void *CallbackRef) {
 		if (val == 7){
 			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
 			XGpio_InterruptClear(GpioPtr, 1);
-			encoder = 1;
 			return;
 		}
-
+		encoder = 1;
 	}
 	else{
 		XGpio_InterruptClear(GpioPtr, 1);
 		return;
 	}
-//	xil_printf("      xfsm%d     ", xfsm);
+	xil_printf("      xfsm%d     ", xfsm);
 	switch(xfsm){
 	case 0:{
 		if (val == 1){
-//			xil_printf("     0-2     ");
+//			xil_printf("      o_fire     ");
 			change = 2;
 			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
 		}
 		else if (val == 2){
-//			xil_printf("      0-4     ");
 			change = 4;
 			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
 		}
 		break;
 	}
 	case 1:{
+//		xil_printf("      shpuld_fire     ");
 		if (val == 1){
-//			xil_printf("      1-2     ");
+//			xil_printf("      c_fire     ");
 			change = 2;
 			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
+
 		}
 		break;
 	}
 	case 2:{
-
+//		xil_printf("      HERE!     ");
 		if (val == 2 || val == 3){
-//			xil_printf("      2-1     ");
+//			xil_printf("      HERE!     ");
 			change = 1;
 		}
 		break;
@@ -295,7 +293,7 @@ void TwistHandler(void *CallbackRef) {
 	case 3:{
 		if (val == 2){
 			change = 4;
-//			xil_printf("      3-4     ");
+//			xil_printf("      c_fire     ");
 			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
 
 		}
@@ -303,7 +301,6 @@ void TwistHandler(void *CallbackRef) {
 	}
 	case 4:{
 		if (val == 0 || val == 1){
-//			xil_printf("      4-3     ");
 			change = 3;
 		}
 		break;
@@ -319,7 +316,7 @@ void TwistHandler(void *CallbackRef) {
 void TimerHandler(){
 	Xuint32 ControlStatusReg;
 	ControlStatusReg = XTimerCtr_ReadReg(sys_tmrctr.BaseAddress, 0, XTC_TCSR_OFFSET);
-//	xil_printf("      clear up     ");
+	xil_printf("      clear up     ");
 
 	QActive_postISR((QActive *)&AO_Lab2A, TICK_SIG);
 
@@ -337,7 +334,7 @@ void TimerHandler_s(){
 			time = -1;
 		}else{
 			last ++;
-			if (last > 230){
+			if (last > 330){
 				QActive_postISR((QActive *)&AO_Lab2A, VOL_SIG);
 				last = 0;
 			}
@@ -355,7 +352,8 @@ void TimerHandler_s(){
 	if(last_input != -1){
 		last_input++;
 
-		if (last_input > 300){
+		if (last_input > 600){
+
 			xfsm = 0;
 			last_input = -1;
 		}

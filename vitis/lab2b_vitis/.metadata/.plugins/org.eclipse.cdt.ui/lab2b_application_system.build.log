@@ -1,6 +1,6 @@
-18:19:25 **** Incremental Build of configuration Debug for project lab2b_application_system ****
+19:21:19 **** Incremental Build of configuration Debug for project lab2b_application_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
 
-18:19:25 Build Finished (took 284ms)
+19:21:19 Build Finished (took 157ms)
 

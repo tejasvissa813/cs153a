@@ -85,9 +85,6 @@ extern int short_time;
 extern int test;
 extern int last_input;
 extern  int xfsm;
-extern int n_volume;
-extern int last;
-
 
 extern int fch; // Forground color upper byte
 extern int fcl; // Foreground color lower byte
@@ -122,7 +119,7 @@ void lcdPrint(char *st, int x, int y);
 void lcd_setup();
 void draw_triangle(int x, int y);
 
-void update_volume();
+void update_volume(int new_vol);
 void update_button();
 void clear_up(void);
 void draw(void);

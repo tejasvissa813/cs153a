@@ -150,6 +150,8 @@ QState Lab2A_oper  (Lab2A *me) {
 			return Q_HANDLED();
 		}
 		case VOL_SIG:{
+			xil_printf("      clear up     ");
+
 			update_volume();
 			return Q_HANDLED();
 		}
@@ -178,19 +180,19 @@ QState Lab2A_oper  (Lab2A *me) {
 
 		case ENCODER_UP: {
 //			xil_printf("      up     ");
-			if(n_volume < 63) n_volume = n_volume + 1;
-
+			if(volume < 63) n_volume = volume + 1;
+			else n_volume = -2;
 			break;
 		}
 		case ENCODER_DOWN: {
 //			xil_printf("      down     ");
-			if(n_volume > 0) n_volume = n_volume - 1;
-
+			if(volume > 0) n_volume = volume - 1;
+			else n_volume = -2;
 			break;
 		}
 
 		case ENCODER_CLICK:  {
-				n_volume = (n_volume > 0) ? 0: 1;
+				n_volume = (volume > 0) ? 0: 1;
 			break;
 		}
 		default:{

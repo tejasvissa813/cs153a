@@ -86,8 +86,6 @@ extern int test;
 extern int last_input;
 extern  int xfsm;
 extern int n_volume;
-extern int last;
-
 
 extern int fch; // Forground color upper byte
 extern int fcl; // Foreground color lower byte

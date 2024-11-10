@@ -252,10 +252,9 @@ void TwistHandler(void *CallbackRef) {
 		if (val == 7){
 			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
 			XGpio_InterruptClear(GpioPtr, 1);
-			encoder = 1;
 			return;
 		}
-
+		encoder = 1;
 	}
 	else{
 		XGpio_InterruptClear(GpioPtr, 1);
@@ -265,29 +264,29 @@ void TwistHandler(void *CallbackRef) {
 	switch(xfsm){
 	case 0:{
 		if (val == 1){
-//			xil_printf("     0-2     ");
+			xil_printf("     0-2     ");
 			change = 2;
-			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
+//			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
 		}
 		else if (val == 2){
-//			xil_printf("      0-4     ");
+			xil_printf("      0-4     ");
 			change = 4;
-			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
+//			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
 		}
 		break;
 	}
 	case 1:{
 		if (val == 1){
-//			xil_printf("      1-2     ");
+			xil_printf("      1-2     ");
 			change = 2;
-			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
+//			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
 		}
 		break;
 	}
 	case 2:{
 
 		if (val == 2 || val == 3){
-//			xil_printf("      2-1     ");
+			xil_printf("      2-1     ");
 			change = 1;
 		}
 		break;
@@ -295,15 +294,15 @@ void TwistHandler(void *CallbackRef) {
 	case 3:{
 		if (val == 2){
 			change = 4;
-//			xil_printf("      3-4     ");
-			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
+			xil_printf("      3-4     ");
+//			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
 
 		}
 		break;
 	}
 	case 4:{
 		if (val == 0 || val == 1){
-//			xil_printf("      4-3     ");
+			xil_printf("      4-3     ");
 			change = 3;
 		}
 		break;
@@ -337,7 +336,7 @@ void TimerHandler_s(){
 			time = -1;
 		}else{
 			last ++;
-			if (last > 230){
+			if (last > 330){
 				QActive_postISR((QActive *)&AO_Lab2A, VOL_SIG);
 				last = 0;
 			}
@@ -352,14 +351,15 @@ void TimerHandler_s(){
 		}
 	}
 
-	if(last_input != -1){
-		last_input++;
-
-		if (last_input > 300){
-			xfsm = 0;
-			last_input = -1;
-		}
-	}
+//	if(last_input != -1){
+//		last_input++;
+//
+//		if (last_input > 600){
+//
+//			xfsm = 0;
+//			last_input = -1;
+//		}
+//	}
 	XTmrCtr_WriteReg(sys_tmrctr_s.BaseAddress, 0, XTC_TCSR_OFFSET,
 				ControlStatusReg |XTC_CSR_INT_OCCURED_MASK);
 }

@@ -1,6 +1,6 @@
 Nothing to build in platform 'lab2b_platform'
 
-18:19:23 **** Incremental Build of configuration Debug for project lab2b_application ****
+19:20:00 **** Incremental Build of configuration Debug for project lab2b_application ****
 make all 
 'Building file: ../src/bsp.c'
 'Invoking: MicroBlaze gcc compiler'
@@ -23,9 +23,17 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/v
 'Invoking: MicroBlaze Print Size'
 mb-size lab2b_application.elf  |tee "lab2b_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  26908	   3532	   8712	  39152	   98f0	lab2b_application.elf
+  26892	   3532	   8720	  39144	   98e8	lab2b_application.elf
 'Finished building: lab2b_application.elf.size'
 ' '
-18:19:25 **** Incremental Build of configuration Debug for project lab2b_application_system ****
+19:20:01 **** Incremental Build of configuration Debug for project lab2b_application_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
+Nothing to build in platform 'lab2b_platform'
+
+19:21:19 **** Incremental Build of configuration Debug for project lab2b_application ****
+make all 
+make: Nothing to be done for 'all'.
+19:21:19 **** Incremental Build of configuration Debug for project lab2b_application_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

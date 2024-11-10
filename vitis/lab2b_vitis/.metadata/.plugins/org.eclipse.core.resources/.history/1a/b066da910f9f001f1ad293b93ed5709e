@@ -19,7 +19,6 @@ int encoder;
 int short_time;
 int test;
 int last_input;
-int last;
 int n_volume;
 unsigned int xfsm;
 

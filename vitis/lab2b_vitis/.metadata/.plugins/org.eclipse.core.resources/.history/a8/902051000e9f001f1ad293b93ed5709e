@@ -317,8 +317,7 @@ void clear_up(void){
 	draw_triangle(200, 80);
 }
 
-void update_volume(void){
-	int new_vol = n_volume;
+void update_volume(int new_vol){
 	int vol_diff = new_vol - volume;
 	int left, right;
 	float p_o = (float) volume / 63;
@@ -334,7 +333,7 @@ void update_volume(void){
 		right = 20 + p_o *200;
 	}
 	fillRect(left, 50, right, 70);
-	volume = n_volume;
+	volume = new_vol;
 }
 void update_button(){
 	setColor(0, 0, 100);

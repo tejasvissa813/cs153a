@@ -19,8 +19,6 @@ int encoder;
 int short_time;
 int test;
 int last_input;
-int last;
-int n_volume;
 unsigned int xfsm;
 
 QActiveCB const Q_ROM Q_ROM_VAR QF_active[] = {
