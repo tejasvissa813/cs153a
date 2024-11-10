@@ -298,18 +298,23 @@ void draw(void){
 
 void clear_up(void){
 	setColor(0, 100, 0);
-	fillRect(20, 50, 220, 70);
-	fillRect(80, 80, 200, 95); // depends on font size we use
+	fillRect(20, 50, 220, 101);
+ // depends on font size we use
 	setColor(0, 255, 0);
 	draw_triangle(0, 40);
+
 	draw_triangle(40, 40);
 	draw_triangle(80, 40);
-	draw_triangle(80, 80); // also depends on font size/text location
-	draw_triangle(120, 80);
-	draw_triangle(160, 80);
+
 	draw_triangle(120, 40);
 	draw_triangle(160, 40);
 	draw_triangle(200, 40);
+	draw_triangle(0, 80);
+	draw_triangle(40, 80);
+	draw_triangle(80, 80); // also depends on font size/text location
+	draw_triangle(120, 80);
+	draw_triangle(160, 80);
+	draw_triangle(200, 80);
 }
 
 void update_volume(int new_vol){
@@ -327,7 +332,7 @@ void update_volume(int new_vol){
 		left = 20 + p_n * 200;
 		right = 20 + p_o *200;
 	}
-	fillRect(left, 20, right, 70);
+	fillRect(left, 50, right, 70);
 	volume = new_vol;
 }
 void update_button(){

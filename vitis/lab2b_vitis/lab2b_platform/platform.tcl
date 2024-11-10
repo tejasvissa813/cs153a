@@ -20,3 +20,4 @@ bsp write
 platform generate
 platform generate
 platform generate
+platform generate -domains standalone_domain 

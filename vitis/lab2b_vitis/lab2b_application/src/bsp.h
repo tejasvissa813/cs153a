@@ -6,9 +6,6 @@
 #define bsp_h
 
 
-                                              
-
-
 /* bsp functions ..........................................................*/
 
 void BSP_init(void);

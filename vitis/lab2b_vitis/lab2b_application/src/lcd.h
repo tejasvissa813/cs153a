@@ -80,7 +80,13 @@ extern int volume;
 extern int time;
 extern int display;
 extern char button;
-extern int fch; // Foreground color upper byte
+extern int encoder;
+extern int short_time;
+extern int test;
+extern int last_input;
+extern  int xfsm;
+
+extern int fch; // Forground color upper byte
 extern int fcl; // Foreground color lower byte
 extern int bch; // Background color upper byte
 extern int bcl; // Background color lower byte
@@ -115,7 +121,7 @@ void draw_triangle(int x, int y);
 
 void update_volume(int new_vol);
 void update_button();
-void clean_up(void);
+void clear_up(void);
 void draw(void);
 
 #endif /* LCD_H_ */

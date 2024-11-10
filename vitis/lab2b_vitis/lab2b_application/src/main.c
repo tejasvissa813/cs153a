@@ -15,6 +15,11 @@ int volume;
 int time;
 int display;
 char button;
+int encoder;
+int short_time;
+int test;
+int last_input;
+unsigned int xfsm;
 
 QActiveCB const Q_ROM Q_ROM_VAR QF_active[] = {
 	{ (QActive *)0,            (QEvent *)0,          0                    },

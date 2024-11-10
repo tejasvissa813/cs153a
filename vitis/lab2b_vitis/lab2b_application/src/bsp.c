@@ -25,6 +25,7 @@
 
 void debounceInterrupt(); // Write This function
 void TimerHandler();
+void TimerHandler_s();
 
 // Create ONE interrupt controllers XIntc
 // Create two static XGpio variables
@@ -33,21 +34,13 @@ XIntc sys_intc;
 XGpio EncoderGpio;
 XGpio ButtonGpio;
 XTmrCtr sys_tmrctr;
+XTmrCtr sys_tmrctr_s;
 
-enum States {
-	R,
-	CW1,
-	CW0,
-	CW2,
-	CCW2,
-	CCW0,
-	CCW1
-};
-volatile int enable = 1;
-enum States fsm = R;
+
 
 /*..........................................................................*/
-
+#define SOME 1U
+#define SOME2 0U
 
 void BSP_init(void) {
 /* Setup LED's, etc */
@@ -69,6 +62,8 @@ void BSP_init(void) {
 					(XInterruptHandler) GpioHandler, &ButtonGpio);
 	XIntc_Connect(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_0_INTERRUPT_INTR,
 						(XInterruptHandler) TimerHandler, &sys_tmrctr);
+	XIntc_Connect(&sys_intc, SOME,
+						(XInterruptHandler) TimerHandler_s, &sys_tmrctr_s);
 
 
 	XIntc_Start(&sys_intc, XIN_REAL_MODE);
@@ -76,6 +71,8 @@ void BSP_init(void) {
 	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_ENCODER_IP2INTC_IRPT_INTR);
 	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_GPIO_BTN_IP2INTC_IRPT_INTR);
 	XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_0_INTERRUPT_INTR);
+	XIntc_Enable(&sys_intc, SOME);
+
 
 	XGpio_Initialize(&EncoderGpio, XPAR_GPIO_2_DEVICE_ID);
 	XGpio_InterruptEnable(&EncoderGpio, 1);
@@ -89,6 +86,11 @@ void BSP_init(void) {
 	XTmrCtr_SetOptions(&sys_tmrctr, 0, XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
 	XTmrCtr_SetResetValue(&sys_tmrctr, 0, 0xFFFFFFFF - 100000000);
 	XTmrCtr_Start(&sys_tmrctr, 0);
+
+	XTmrCtr_Initialize(&sys_tmrctr_s, SOME2);
+	XTmrCtr_SetOptions(&sys_tmrctr_s, 0, XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
+	XTmrCtr_SetResetValue(&sys_tmrctr_s, 0, 0xFFFFFFFF - 100000);
+	XTmrCtr_Start(&sys_tmrctr_s, 0);
 
 
 
@@ -238,73 +240,122 @@ void TwistHandler(void *CallbackRef) {
 	//XGpio_DiscreteRead( &twist_Gpio, 1);
 
 	XGpio *GpioPtr = (XGpio *)CallbackRef;
+	int change = -1;
 
-	unsigned int encoderVal = XGpio_DiscreteRead(&EncoderGpio, 1);
-	if(encoderVal > 3){
-		enable = 1 - enable;
-		QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
-		//return;
-	}
-
-	int bit0 = 1 & encoderVal;
-	int bit1 = (2 & encoderVal) >> 1;
-
-	if(1 == 1){
-		switch(fsm){
-		case R:
-			if(bit0 == 0) fsm = CW1;
-			else if(bit1 == 0) fsm = CCW2;
-			//else xil_printf("ERROR");
-			break;
-		case CW1:
-			if(bit0 == 1) fsm = R;
-			else if(bit1 == 0) fsm = CW0;
-			//else xil_printf("ERROR");
-			break;
-		case CW0:
-			if(bit0 == 1) fsm = CW2;
-			else if(bit1 == 1) fsm = CW1;
-			//else xil_printf("ERROR");
-			break;
-		case CW2:
-			if(bit0 == 0) fsm = CW0;
-			else if(bit1 == 1) {
-				QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
-			}
-			//else xil_printf("ERROR");
-			break;
-		case CCW2:
-			if(bit0 == 0) fsm = CCW0;
-			else if(bit1 == 1) fsm = R;
-			//else xil_printf("ERROR");
-			break;
-		case CCW0:
-			if(bit0 == 1) fsm = CCW2;
-			else if(bit1 == 1) fsm = CCW1;
-			//else xil_printf("ERROR");
-			break;
-		case CCW1:
-			if(bit0 == 1){
-				QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
-			}
-			else if(bit1 == 0) fsm = CCW0;
-			//else xil_printf("ERROR");
-			break;
+	unsigned int val = XGpio_DiscreteRead(&EncoderGpio, 1);
+//	XGpio_InterruptClear(GpioPtr, 1);
+//	return;
+	if(!encoder){
+		if (val == 7){
+			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
+			XGpio_InterruptClear(GpioPtr, 1);
+			return;
 		}
+		encoder = 1;
 	}
-	XGpio_InterruptClear(GpioPtr, 1);
+	else{
+		XGpio_InterruptClear(GpioPtr, 1);
+		return;
+	}
+//	xil_printf("      xfsm%d     ", xfsm);
+	switch(xfsm){
+	case 0:{
+		if (val == 1){
+//			xil_printf("      o_fire     ");
+			change = 2;
+			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
+		}
+		else if (val == 2){
+			change = 4;
+			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
+		}
+		break;
+	}
+	case 1:{
+//		xil_printf("      shpuld_fire     ");
+		if (val == 1){
+//			xil_printf("      c_fire     ");
+			change = 2;
+			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_UP);
 
+		}
+		break;
+	}
+	case 2:{
+//		xil_printf("      HERE!     ");
+		if (val == 2 || val == 3){
+//			xil_printf("      HERE!     ");
+			change = 1;
+		}
+		break;
+	}
+	case 3:{
+		if (val == 2){
+			change = 4;
+//			xil_printf("      c_fire     ");
+			QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN);
+
+		}
+		break;
+	}
+	case 4:{
+		if (val == 0 || val == 1){
+			change = 3;
+		}
+		break;
+	}
+	}
+	if(change != -1)xfsm = change;
+
+//	xil_printf("      xfsm AFT%d \n    ", xfsm);
+	last_input = 0;
+	XGpio_InterruptClear(GpioPtr, 1);
+	return;
 }
 
 void TimerHandler(){
 	Xuint32 ControlStatusReg;
 	ControlStatusReg = XTimerCtr_ReadReg(sys_tmrctr.BaseAddress, 0, XTC_TCSR_OFFSET);
+	xil_printf("      clear up     ");
 
 	QActive_postISR((QActive *)&AO_Lab2A, TICK_SIG);
 
 	XTmrCtr_WriteReg(sys_tmrctr.BaseAddress, 0, XTC_TCSR_OFFSET,
 				ControlStatusReg |XTC_CSR_INT_OCCURED_MASK);
 }
+
+void TimerHandler_s(){
+	Xuint32 ControlStatusReg;
+	ControlStatusReg = XTimerCtr_ReadReg(sys_tmrctr_s.BaseAddress, 0, XTC_TCSR_OFFSET);
+	if(time != -1){
+		time ++;
+		if (time > 3000){
+			QActive_postISR((QActive *)&AO_Lab2A, TICK_SIG);
+			time = -1;
+		}
+	}
+
+	if(encoder){
+		short_time ++;
+		if (short_time >=400){
+			short_time = 0;
+			encoder = 0;
+		}
+	}
+
+	if(last_input != -1){
+		last_input++;
+
+		if (last_input > 1300){
+			xil_printf("      HAPPEN xfsm%d     ", xfsm);
+			xfsm = 0;
+			last_input = -1;
+		}
+	}
+	XTmrCtr_WriteReg(sys_tmrctr_s.BaseAddress, 0, XTC_TCSR_OFFSET,
+				ControlStatusReg |XTC_CSR_INT_OCCURED_MASK);
+}
+
 
 void debounceTwistInterrupt(){
 	// Read both lines here? What is twist[0] and twist[1]?

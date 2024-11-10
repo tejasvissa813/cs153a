@@ -20,17 +20,14 @@ int cleared = 0;
 
 typedef struct Lab2ATag  {               //Lab2A State machine
 	QActive super;
-	unsigned int volume;
-	unsigned int seconds; //1/100 seconds
-	unsigned int isButton;
-	unsigned int isVolume;
-	char text[6];
+
 }  Lab2A;
 
 /* Setup state machines */
 /**********************************************************************/
 static QState Lab2A_initial (Lab2A *me);
 static QState Lab2A_on      (Lab2A *me);
+static QState Lab2A_oper 	(Lab2A *me);
 
 
 
@@ -101,52 +98,6 @@ void lcd_setup(){
 	}
 }
 
-void drawVolume(){
-	//initLCD();
-	if(AO_Lab2A.seconds <= 3){
-		if(AO_Lab2A.isVolume){
-			setColor(100, 0, 0);
-			fillRect(20, 50, 220, 70);
-			setColor(255, 0, 0);
-			float percent = (float) AO_Lab2A.volume / 63;
-			int xVal = 200 * percent;
-			fillRect(20, 50, 20+xVal, 70);
-			AO_Lab2A.isVolume = 0;
-		}
-
-//		if(AO_Lab2A.text[4] != '6') lcdPrint(AO_Lab2A.text, 80, 80);
-		if(AO_Lab2A.isButton){
-			if(AO_Lab2A.text[4] != '6'){
-				for(int i = 0; i < 5; i ++){
-					printChar(AO_Lab2A.text[i], cfont.x_size * i + 80, 80);
-				}
-			}
-			AO_Lab2A.isButton = 0;
-		}
-
-
-		cleared = 0;
-	}
-	else if(cleared == 0) {
-		//setXY(20, 50, 220, 70);
-		setColor(0, 100, 0);
-		fillRect(20, 50, 220, 70);
-		fillRect(80, 80, 200, 95); // depends on font size we use
-		setColor(0, 255, 0);
-		draw_triangle(0, 40);
-		draw_triangle(40, 40);
-		draw_triangle(80, 40);
-		draw_triangle(80, 80); // also depends on font size/text location
-		draw_triangle(120, 80);
-		draw_triangle(160, 80);
-		draw_triangle(120, 40);
-		draw_triangle(160, 40);
-		draw_triangle(200, 40);
-		//clrXY();
-		AO_Lab2A.text[4] = '6';
-		cleared = 1;
-	}
-}
 
 
 void Lab2A_ctor(void)  {
@@ -154,6 +105,11 @@ void Lab2A_ctor(void)  {
 	time = -1;
 	display = 0;
 	button = '0';
+	encoder = 0;
+	short_time = 0;
+	test = 0;
+	last_input = -1;
+	xfsm = 0;
 	Lab2A *me = &AO_Lab2A;
 	QActive_ctor(&me->super, (QStateHandler)&Lab2A_initial);
 }
@@ -162,41 +118,33 @@ void Lab2A_ctor(void)  {
 QState Lab2A_initial(Lab2A *me) {
 	xil_printf("\n\rInitialization\n");
 	lcd_setup();
-	switch(Q_SIG(me)){
-	case Q_ENTRY_SIG:{
-		return Q_HANDLED();
-	}
-	case Q_EXIT_SIG:{
-			return Q_HANDLED();
-		}
-	case Q_INIT_SIG:{
-			return Q_TRAN(&Lab2A_on);
-		}
-	}
-    return Q_SUPER(&QHsm_top);
+	return Q_TRAN(&Lab2A_on);
 }
 
-QState Lab2A_on(Lab2A *me) {
-	xil_printf("\n222222Initialization\n");
+QState Lab2A_on 	(Lab2A *me){
+	switch (Q_SIG(me)) {
+			case Q_ENTRY_SIG: {
+				return Q_HANDLED();
+			}
+			case Q_INIT_SIG:{
+					return Q_TRAN(&Lab2A_oper);
+				}
+	}
+	return Q_SUPER(&QHsm_top);
+}
+
+QState Lab2A_oper  (Lab2A *me) {
+//	xil_printf("\nInit OPER %d\n", Q_SIG(me));
+
 	int n_volume = -1;
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
-			xil_printf("\n\rOn");
 			return Q_HANDLED();
 		}
-		case Q_EXIT_SIG:{
-				return Q_HANDLED();
-			}
 
 		case TICK_SIG: {
-			if(time != -1) {
-				time++;
-				if(time > 2){
-					clear_up();
-					display = 0;
-					time = -1;
-				}
-			}
+			clear_up();
+			display = 0;
 			return Q_HANDLED();
 		}
 		//add cases for each of the Button Signals
@@ -222,17 +170,21 @@ QState Lab2A_on(Lab2A *me) {
 			break;
 		}
 
-		case ENCODER_DOWN: {
+		case ENCODER_UP: {
+//			xil_printf("      up     ");
 			if(volume < 63) n_volume = volume + 1;
+			else n_volume = -2;
 			break;
 		}
-		case ENCODER_UP: {
+		case ENCODER_DOWN: {
+//			xil_printf("      down     ");
 			if(volume > 0) n_volume = volume - 1;
+			else n_volume = -2;
 			break;
 		}
 
 		case ENCODER_CLICK:  {
-			n_volume = (volume) ? 0: 1;
+				n_volume = (volume > 0) ? 0: 1;
 			break;
 		}
 		default:{
@@ -240,15 +192,19 @@ QState Lab2A_on(Lab2A *me) {
 		}
 	}
 	time = 0;
+//	xil_printf("      draw     ");
 	if(!display){
+//		xil_printf("      1     ");
 		draw();
 		display =1;
 	}
+	if(n_volume != -2){
 	if(n_volume != -1) update_volume(n_volume);
 	else(update_button());
-
+	}
 	return Q_HANDLED();
 }
+
 
 
 /* Create Lab2A_on state and do any initialization code if needed */
