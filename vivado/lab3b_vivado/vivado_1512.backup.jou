@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Nov  7 10:04:45 2024
+# Process ID: 1512
+# Current directory: C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11260 C:\Users\tejasvissapragada\Documents\cs153a\vivado\lab2b_vivado\project_1.xpr
+# Log file: C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado/vivado.log
+# Journal file: C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado\vivado.jou
+# Running On: 556eci20, OS: Windows, CPU Frequency: 3312 MHz, CPU Physical cores: 4, Host memory: 17108 MB
+#----------------------------------------------------------ststart_guooopen_project C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado/project_1.xpupupdate_compile_order -fileset sources_1

@@ -1,0 +1,29 @@
+timestamp=[2024-11-14 19:21:39], mode=WORKBENCH_START, duration=0:00:07.755, duration_ms=7755, data={}
+timestamp=[2024-11-14 19:21:39], mode=WORKBENCH_UI_INIT, duration=0:00:00.549, duration_ms=549, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2024-11-14 19:21:42], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.653, duration_ms=1653, data={}
+timestamp=[2024-11-14 19:23:36], mode=PLATFORM_CREATION, duration=0:00:05.048, duration_ms=5048, data={platform_source=dsa, os=standalone, processor=microblaze, platform=null}
+timestamp=[2024-11-14 19:24:44], mode=APP_CREATION, duration=0:00:01.994, duration_ms=1994, data={name=lab3a_application, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=lab3a_project, application_type=application}
+timestamp=[2024-11-14 19:27:42], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.392, duration_ms=1392, data={}
+timestamp=[2024-11-14 19:27:43], mode=WORKBENCH_START, duration=0:00:09.374, duration_ms=9374, data={}
+timestamp=[2024-11-14 19:27:43], mode=WORKBENCH_UI_INIT, duration=0:00:00.371, duration_ms=371, data={editors_count=3, platform_editors_count=1, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,lab3a_application,lab3a_project,lab3a_system}
+timestamp=[2024-11-14 19:28:48], mode=PLATFORM_CREATION, duration=0:00:05.026, duration_ms=5026, data={platform_source=dsa, os=standalone, processor=microblaze, platform=null}
+timestamp=[2024-11-14 19:28:59], mode=BUILD, duration=0:00:01.254, duration_ms=1254, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:29:10], mode=PLATFORM_GENERATION, duration=0:00:10.875, duration_ms=10875, data={name=lab3a_platform}
+timestamp=[2024-11-14 19:29:10], mode=BUILD, duration=0:00:00.229, duration_ms=229, data={name=lab3a_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:31:23], mode=BUILD, duration=0:00:00.266, duration_ms=266, data={name=lab3a_application, configuration=Debug, clean_build=true}
+timestamp=[2024-11-14 19:31:24], mode=BUILD, duration=0:00:00.645, duration_ms=645, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:31:26], mode=BUILD, duration=0:00:02.461, duration_ms=2461, data={name=lab3a_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:32:39], mode=BUILD, duration=0:00:00.353, duration_ms=353, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:32:42], mode=BUILD, duration=0:00:02.501, duration_ms=2501, data={name=lab3a_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:34:44], mode=APP_CREATION, duration=0:00:01.352, duration_ms=1352, data={name=lab3a_application, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=lab3a_platform, application_type=application}
+timestamp=[2024-11-14 19:34:58], mode=BUILD, duration=0:00:01.296, duration_ms=1296, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:34:59], mode=BUILD, duration=0:00:00.173, duration_ms=173, data={name=lab3a_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:36:56], mode=BUILD, duration=0:00:00.206, duration_ms=206, data={name=lab3a_application, configuration=Debug, clean_build=true}
+timestamp=[2024-11-14 19:36:58], mode=BUILD, duration=0:00:01.083, duration_ms=1083, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:38:26], mode=BUILD, duration=0:00:00.349, duration_ms=349, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:39:00], mode=BUILD, duration=0:00:00.277, duration_ms=277, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:39:02], mode=BUILD, duration=0:00:00.317, duration_ms=317, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:39:14], mode=BUILD, duration=0:00:00.889, duration_ms=889, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:39:14], mode=BUILD, duration=0:00:00.125, duration_ms=125, data={name=lab3a_system, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:40:03], mode=BUILD, duration=0:00:00.196, duration_ms=196, data={name=lab3a_application, configuration=Debug, clean_build=false}
+timestamp=[2024-11-14 19:40:04], mode=BUILD, duration=0:00:00.124, duration_ms=124, data={name=lab3a_system, configuration=Debug, clean_build=false}

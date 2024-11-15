@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Nov  7 10:04:45 2024
+# Process ID: 1512
+# Current directory: C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11260 C:\Users\tejasvissapragada\Documents\cs153a\vivado\lab2b_vivado\project_1.xpr
+# Log file: C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado/vivado.log
+# Journal file: C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado\vivado.jou
+# Running On: 556eci20, OS: Windows, CPU Frequency: 3312 MHz, CPU Physical cores: 4, Host memory: 17108 MB
+#----------------------------------------------------------ststart_guWWWARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.1/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not availablooopen_project C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2b_vivado/project_1.xprINFO: [Project 1-313] Project file moved from 'C:/Users/tejasvissapragada/Documents/cs153a/vivado/lab2a_vivado' since last save.
+WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'C:/Users/tejasvissapragada/Documents/cs153a/vivado/Downloads/lab_files_2024/lab_files_2024/vivado/seven/ip_repo'.
+Scanning sources...
+Finished scanning sourcesINFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/tejasvissapragada/Documents/cs153a/vivado/Downloads/lab_files_2024/lab_files_2024/vivado/seven/ip_repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.1/data/ip'.
+opopen_project: Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1863.762 ; gain = 314.35upupdate_compile_order -fileset sources_exexit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  7 10:08:25 2024...
+nd failed: ERROR: [Common 17-685] Unable to load Tcl app aldec::riviera
+
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  7 10:08:32 2024...

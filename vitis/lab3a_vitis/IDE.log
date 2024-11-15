@@ -1,0 +1,220 @@
+19:21:36 DEBUG : Logs will be stored at 'C:/Users/tejasvissapragada/workspace/IDE.log'.
+19:21:40 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tejasvissapragada\workspace\temp_xsdb_launch_script.tcl
+19:21:41 INFO  : Registering command handlers for Vitis TCF services
+19:21:42 INFO  : Platform repository initialization has completed.
+19:21:46 INFO  : XSCT server has started successfully.
+19:21:48 INFO  : Successfully done setting XSCT server connection channel  
+19:21:48 INFO  : plnx-install-location is set to ''
+19:21:48 INFO  : Successfully done query RDI_DATADIR 
+19:21:48 INFO  : Successfully done setting workspace for the tool. 
+19:23:35 INFO  : Result from executing command 'getProjects': lab3a_project
+19:23:35 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_202210_1/xilinx_vck190_base_202210_1.xpfm;xilinx_vck190_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_dfx_202210_1/xilinx_vck190_base_dfx_202210_1.xpfm;xilinx_vmk180_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vmk180_base_202210_1/xilinx_vmk180_base_202210_1.xpfm;xilinx_zcu102_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+19:27:38 DEBUG : Logs will be stored at 'C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/IDE.log'.
+19:27:39 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tejasvissapragada\Documents\cs153a\vitis\lab3a_vitis\temp_xsdb_launch_script.tcl
+19:27:42 INFO  : Platform repository initialization has completed.
+19:27:43 INFO  : Registering command handlers for Vitis TCF services
+19:27:44 INFO  : XSCT server has started successfully.
+19:27:44 INFO  : plnx-install-location is set to ''
+19:27:44 INFO  : Successfully done setting XSCT server connection channel  
+19:27:44 INFO  : Successfully done query RDI_DATADIR 
+19:27:44 INFO  : Successfully done setting workspace for the tool. 
+19:28:46 INFO  : Result from executing command 'getProjects': lab3a_platform
+19:28:46 INFO  : Result from executing command 'getPlatforms': lab3a_project|C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/lab3a_project.xpfm;xilinx_vck190_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_202210_1/xilinx_vck190_base_202210_1.xpfm;xilinx_vck190_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_dfx_202210_1/xilinx_vck190_base_dfx_202210_1.xpfm;xilinx_vmk180_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vmk180_base_202210_1/xilinx_vmk180_base_202210_1.xpfm;xilinx_zcu102_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+19:28:57 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:29:09 INFO  : Result from executing command 'getProjects': lab3a_platform
+19:29:09 INFO  : Result from executing command 'getPlatforms': lab3a_platform|C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/lab3a_platform.xpfm;lab3a_project|C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/lab3a_project.xpfm;xilinx_vck190_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_202210_1/xilinx_vck190_base_202210_1.xpfm;xilinx_vck190_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vck190_base_dfx_202210_1/xilinx_vck190_base_dfx_202210_1.xpfm;xilinx_vmk180_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_vmk180_base_202210_1/xilinx_vmk180_base_202210_1.xpfm;xilinx_zcu102_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_202210_1/xilinx_zcu102_base_202210_1.xpfm;xilinx_zcu102_base_dfx_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu102_base_dfx_202210_1/xilinx_zcu102_base_dfx_202210_1.xpfm;xilinx_zcu104_base_202210_1|C:/Xilinx/Vitis/2022.1/base_platforms/xilinx_zcu104_base_202210_1/xilinx_zcu104_base_202210_1.xpfm
+19:31:23 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:31:23 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:31:23 ERROR : Failed to call write_mss 
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:31:23 ERROR : Failed to update application flags from BSP for 'lab3a_application'. Reason: Failed to call write_mss 
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+java.lang.RuntimeException: Failed to call write_mss 
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+	at com.xilinx.sdk.xsdb.XsdbCommandUtils.handleResult(XsdbCommandUtils.java:389) ~[com.xilinx.sdk.xsdb_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.xsdb.XsdbCommandUtils.executeAndRespond(XsdbCommandUtils.java:327) ~[com.xilinx.sdk.xsdb_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.sw.SwPlatformUtils.createDefaultMss(SwPlatformUtils.java:72) ~[com.xilinx.sdk.sw_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.util.BspCreationHelper.generateMssFile(BspCreationHelper.java:46) ~[com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.util.BspCreationHelper.create(BspCreationHelper.java:38) ~[com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.createSwPlatform(SdkMakefileGenerationListener.java:150) ~[com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.syncAppFlags(SdkMakefileGenerationListener.java:82) [com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.preMakefileGeneration(SdkMakefileGenerationListener.java:48) [com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.managedbuilder.XilinxGnuMakefileGenerator.notifyPreMakefileGenerationListeners(XilinxGnuMakefileGenerator.java:91) [com.xilinx.sdk.managedbuilder_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.managedbuilder.XilinxGnuMakefileGenerator.regenerateMakefiles(XilinxGnuMakefileGenerator.java:75) [com.xilinx.sdk.managedbuilder_1.0.0.202204140305.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1006) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:873) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:748) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:832) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:515) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:412) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.700.v20200106-1020.jar:?]
+19:31:24 ERROR : Failed to compute checksum of hardware specification file used by project 'lab3a_application'
+19:31:24 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:31:24 WARN  : Failed to closehw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:31:24 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:31:24 ERROR : Failed to openhw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:31:24 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:31:24 ERROR : Failed to openhw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:31:24 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:31:24 ERROR : Failed to openhw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:32:39 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:32:39 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:32:39 ERROR : Failed to call write_mss 
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:32:39 ERROR : Failed to update application flags from BSP for 'lab3a_application'. Reason: Failed to call write_mss 
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+java.lang.RuntimeException: Failed to call write_mss 
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+	at com.xilinx.sdk.xsdb.XsdbCommandUtils.handleResult(XsdbCommandUtils.java:389) ~[com.xilinx.sdk.xsdb_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.xsdb.XsdbCommandUtils.executeAndRespond(XsdbCommandUtils.java:327) ~[com.xilinx.sdk.xsdb_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.sw.SwPlatformUtils.createDefaultMss(SwPlatformUtils.java:72) ~[com.xilinx.sdk.sw_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.util.BspCreationHelper.generateMssFile(BspCreationHelper.java:46) ~[com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.util.BspCreationHelper.create(BspCreationHelper.java:38) ~[com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.createSwPlatform(SdkMakefileGenerationListener.java:150) ~[com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.syncAppFlags(SdkMakefileGenerationListener.java:82) [com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdx.sdk.core.build.SdkMakefileGenerationListener.preMakefileGeneration(SdkMakefileGenerationListener.java:48) [com.xilinx.sdx.sdk.core_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.managedbuilder.XilinxGnuMakefileGenerator.notifyPreMakefileGenerationListeners(XilinxGnuMakefileGenerator.java:91) [com.xilinx.sdk.managedbuilder_1.0.0.202204140305.jar:?]
+	at com.xilinx.sdk.managedbuilder.XilinxGnuMakefileGenerator.generateMakefiles(XilinxGnuMakefileGenerator.java:40) [com.xilinx.sdk.managedbuilder_1.0.0.202204140305.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performMakefileGeneration(CommonBuilder.java:1008) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.performPrebuildGeneration(CommonBuilder.java:873) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:748) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:510) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.cdt.managedbuilder.internal.core.CommonBuilder.build(CommonBuilder.java:459) [org.eclipse.cdt.managedbuilder.core_8.6.0.201802261533.jar:?]
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:832) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:220) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:263) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:316) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:319) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:371) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:392) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.buildInternal(Workspace.java:515) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.build(Workspace.java:412) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ui.actions.BuildAction$1.runInWorkspace(BuildAction.java:291) [org.eclipse.ui.ide_3.17.0.v20200217-1511.jar:?]
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63) [org.eclipse.core.jobs_3.10.700.v20200106-1020.jar:?]
+19:32:39 ERROR : Failed to compute checksum of hardware specification file used by project 'lab3a_application'
+19:32:39 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:32:39 ERROR : Failed to openhw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:32:39 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:32:39 ERROR : Failed to openhw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:32:39 INFO  : Result from executing command 'getProjects': RemoteSystemsTempFiles;lab3a_application;lab3a_platform;lab3a_system
+19:32:39 ERROR : Failed to openhw "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa"
+Reason: C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_project/export/lab3a_project/hw/design_1_wrapper.xsa is not available in the current workspace
+use 'getprojects' command to see list of available projects in current workspace
+19:34:07 ERROR : Unexpected error while reading linker script.
+org.eclipse.core.internal.resources.ResourceException: File not found: C:\Users\tejasvissapragada\Documents\cs153a\vitis\lab3a_vitis\lab3a_application\src\lscript.ld.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:835) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.File.getContents(File.java:275) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at com.xilinx.ide.tools.lscript.ui.LscriptEditor.initLscriptEditorPage(LscriptEditor.java:142) [com.xilinx.ide.tools_1.0.0.202204140305.jar:?]
+	at com.xilinx.ide.tools.lscript.ui.LscriptEditor$ResourceChangeListener.resourceChanged(LscriptEditor.java:186) [com.xilinx.ide.tools_1.0.0.202204140305.jar:?]
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:305) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45) [org.eclipse.equinox.common_3.11.0.v20200206-0817.jar:?]
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:295) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:158) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:380) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.checkpoint(Workspace.java:575) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation$1.run(PerformChangeOperation.java:265) [org.eclipse.ltk.core.refactoring_3.10.400.v20200215-1156.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.executeChange(PerformChangeOperation.java:298) [org.eclipse.ltk.core.refactoring_3.10.400.v20200215-1156.jar:?]
+	at org.eclipse.ltk.internal.ui.refactoring.UIPerformChangeOperation.executeChange(UIPerformChangeOperation.java:99) [org.eclipse.ltk.ui.refactoring_3.10.200.v20200221-2020.jar:?]
+	at org.eclipse.ltk.core.refactoring.PerformChangeOperation.run(PerformChangeOperation.java:219) [org.eclipse.ltk.core.refactoring_3.10.400.v20200215-1156.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2292) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2317) [org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:89) [org.eclipse.ltk.ui.refactoring_3.10.200.v20200221-2020.jar:?]
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122) [org.eclipse.jface_3.19.0.v20200218-1607.jar:?]
+Caused by: java.lang.Exception: File not found: C:\Users\tejasvissapragada\Documents\cs153a\vitis\lab3a_vitis\lab3a_application\src\lscript.ld.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38) ~[org.eclipse.core.resources_3.13.700.v20200209-1624.jar:?]
+	... 20 more
+19:34:57 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:36:56 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:38:25 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:38:59 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:39:01 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:39:13 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:40:03 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+19:40:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:40:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+19:40:52 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+19:41:14 INFO  : Bit file 'C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/_ide/bitstream/download.bit' is generated.
+19:41:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+19:41:17 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/_ide/bitstream/download.bit"
+19:41:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:41:21 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+19:41:21 INFO  : 'jtag frequency' command is executed.
+19:41:21 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+19:41:23 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+19:41:23 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+19:41:23 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+19:41:23 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:23 INFO  : System reset is completed.
+19:41:26 INFO  : 'after 3000' command is executed.
+19:41:26 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:26 INFO  : The application 'C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+19:41:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+19:41:27 INFO  : Context for processor 'microblaze_0' is selected.
+19:41:27 INFO  : 'con' command is executed.
+19:41:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+19:41:27 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\cs153a\vitis\lab3a_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+19:45:00 INFO  : Disconnected from the channel tcfchan#4.
