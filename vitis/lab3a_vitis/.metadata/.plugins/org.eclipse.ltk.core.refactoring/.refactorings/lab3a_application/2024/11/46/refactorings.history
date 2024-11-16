@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;lab3a_application/src/performance_handler.h&apos; to &apos;performance.h&apos;" description="Rename resource &apos;performance_handler.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/performance_handler.h" name="performance.h" stamp="1731707273552" updateReferences="true"/>
+</session>

@@ -68,7 +68,7 @@ float fft(float* q, float* w, int n, int m, float sample_f) {
 			q[i]=new_[i];
 			w[i]=new_im[i];
 		}
-	//END REORDER	
+	//END REORDER
 		b*=2;
 		k=0;		
 	}

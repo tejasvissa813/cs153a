@@ -2,23 +2,23 @@
 # In Vitis IDE create a Single Application Debug launch configuration,
 # change the debug type to 'Attach to running target' and provide this 
 # tcl script in 'Execute Script' option.
-# Path of this script: C:\Users\tejasvissapragada\Documents\cs153a\vitis\lab3a_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl
+# Path of this script: C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab3a_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl
 # 
 # 
 # Usage with xsct:
 # To debug using xsct, launch xsct and run below command
-# source C:\Users\tejasvissapragada\Documents\cs153a\vitis\lab3a_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl
+# source C:\Users\ranchen\Documents\GitHub\cs153a\vitis\lab3a_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl
 # 
 connect -url tcp:127.0.0.1:3121
 targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
-fpga -file C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+fpga -file C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
-loadhw -hw C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+loadhw -hw C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
 configparams mdm-detect-bscan-mask 2
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
 rst -system
 after 3000
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
-dow C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application/Debug/lab3a_application.elf
+dow C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_application/Debug/lab3a_application.elf
 targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
 con

@@ -43,6 +43,7 @@
 #include "xtmrctr.h"
 #include "fft.h"
 #include "note.h"
+#include "performance.h"
 #include "stream_grabber.h"
 
 #define SAMPLES 512 // AXI4 Streaming Data FIFO has size 512
@@ -52,7 +53,10 @@
 int int_buffer[SAMPLES];
 static float q[SAMPLES];
 static float w[SAMPLES];
-
+XTmrCtr per_timer;
+int test_time;
+int count;
+int time_spent;
 //void print(char *str);
 
 void read_fsl_values(float* q, int n) {
@@ -71,13 +75,18 @@ void read_fsl_values(float* q, int n) {
 }
 
 int main() {
+	xil_printf("checkpoint0\r\n");
    float sample_f;
    int l;
    int ticks; //used for timer
    uint32_t Control;
    float frequency; 
    float tot_time; //time to run program
-
+   XStatus Status;
+   XIntc sys_intc;
+   test_time = 0;
+   count = 0;
+   time_spent = 0;
    Xil_ICacheInvalidate();
    Xil_ICacheEnable();
    Xil_DCacheInvalidate();
@@ -90,10 +99,54 @@ int main() {
    XTmrCtr_SetOptions(&timer, 0, Control);
 
 
-   print("Hello World\n\r");
+   //performance timer
+   xil_printf("checkpoint1\r\n");
+
+   Status = XIntc_Initialize(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID);
+   if (Status != XST_SUCCESS) {
+      		xil_printf("Failed0\r\n");
+      		return XST_FAILURE;
+      	}
+   Status = XIntc_Connect(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_1_INTERRUPT_INTR,
+      			(XInterruptHandler) performance_handler, &per_timer);
+   if (Status != XST_SUCCESS) {
+      		xil_printf("Failed1\r\n");
+      		return XST_FAILURE;
+      	}
+   xil_printf("checkpoint2\r\n");
+   Status = XIntc_Start(&sys_intc, XIN_REAL_MODE);
+   if (Status != XST_SUCCESS) {
+      		xil_printf("Failed3\r\n");
+      		return XST_FAILURE;
+      	}
+   XIntc_Enable(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_1_INTERRUPT_INTR);
+   XTmrCtr_Initialize(&per_timer, XPAR_AXI_TIMER_1_DEVICE_ID);
+   XTmrCtr_SetOptions(&per_timer, 0, XTC_INT_MODE_OPTION | XTC_AUTO_RELOAD_OPTION);
+   XTmrCtr_SetResetValue(&per_timer, 0, 0xFFFFFFFF - 100000);
+   XTmrCtr_Start(&per_timer, 0);
+   if (Status != XST_SUCCESS) {
+   		xil_printf("Failed to connect the application handlers to the interrupt controller...\r\n");
+   		return XST_FAILURE;
+   	}
+   microblaze_enable_interrupts();
+	XTmrCtr_SetControlStatusReg(XPAR_TMRCTR_1_BASEADDR, 1, 0);
+	//Put a zero in the load register
+	XTmrCtr_SetLoadReg(XPAR_TMRCTR_1_BASEADDR, 1, 0);
+	//Copy the load register into the counter register
+	XTmrCtr_SetControlStatusReg(XPAR_TMRCTR_1_BASEADDR, 1, XTC_CSR_LOAD_MASK);
+	//Enable (start) the timer
+	XTmrCtr_SetControlStatusReg(XPAR_TMRCTR_1_BASEADDR, 1,
+			XTC_CSR_ENABLE_TMR_MASK);
+
+   xil_printf("checkpoint3\r\n");
+
+//   XIntc_Connect(&)
+
 
    while(1) { 
+	   count = 0;
       XTmrCtr_Start(&timer, 0);
+
 
       //Read Values from Microblaze buffer, which is continuously populated by AXI4 Streaming Data FIFO.
       read_fsl_values(q, SAMPLES);
@@ -105,12 +158,15 @@ int main() {
       //zero w array
       for(l=0;l<SAMPLES;l++)
          w[l]=0; 
-
+      for (int i = 0; i < 512; i ++){
+    	  return q[i];
+      }
       frequency=fft(q,w,SAMPLES,M,sample_f);
 
       //ignore noise below set frequency
       //if(frequency > 200.0) {
          xil_printf("frequency: %d Hz\r\n", (int)(frequency+.5));
+         xil_printf("spent_time: %d ms\r\n", count);
          findNote(frequency);
 
          //get time to run program

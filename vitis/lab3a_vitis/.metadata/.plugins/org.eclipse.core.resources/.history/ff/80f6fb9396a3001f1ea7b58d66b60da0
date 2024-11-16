@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<systemproject:SystemProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdsproject="http://www.xilinx.com/sdsproject" xmlns:systemproject="http://www.xilinx.com/systemproject" name="lab3a_system" platform="C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/lab3a_platform.xpfm" platformUID="xilinx:::0.0(custom)" sysConfig="lab3a_platform" runtime="C/C++" rootFSLocation="" linuxImage="" sysroot="">
+  <configuration name="Debug" id="com.xilinx.sdx.system.managedbuilder.debugConfiguration.1255719869">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="lab3a_application" domainName="standalone_domain" domainPrettyName="standalone on microblaze_0" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+    <lastBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="lab3a_application" domainName="standalone_domain" domainPrettyName="standalone on microblaze_0" appBuildConfig="Debug"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </lastBuildOptions>
+  </configuration>
+  <configuration name="Release" id="com.xilinx.sdx.system.managedbuilder.releaseConfiguration.118334776">
+    <configBuildOptions xsi:type="systemproject:SystemOptions">
+      <applications name="lab3a_application" domainName="standalone_domain" domainPrettyName="standalone on microblaze_0" appBuildConfig="Release"/>
+      <options xsi:type="sdsproject:Option" gensdcard="true" dmclkid="0"/>
+    </configBuildOptions>
+  </configuration>
+</systemproject:SystemProject>
