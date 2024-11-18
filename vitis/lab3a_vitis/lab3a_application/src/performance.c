@@ -3,19 +3,37 @@
 #include <stdlib.h>
 
 void performance_handler(){
+	//xil_printf("i\r\n");
 		Xuint32 ControlStatusReg;
 		ControlStatusReg =
 				XTimerCtr_ReadReg(per_timer.BaseAddress, 0, XTC_TCSR_OFFSET);
 
 		uint32_t a;
 		asm("add %0, r0, r14" : "=r"(a) );
-		uint32_t address_start = 0x80001df0;
-		uint32_t address_end = 0x800029ac;
 
+		uint32_t fft_start = 0x80004914;
+		uint32_t fft_end = 0x80005174;
 
-		if (a > address_start && a < address_end){
-			count++;
+		uint32_t fsl_start = 0x800051b4;
+		uint32_t fsl_end = 0x80005310;
+
+//		xil_printf("%d      %d\n\r", FFT_CODE_START, FFT_CODE_END);
+
+		count++;
+		if (a > fft_start && a < fft_end){
+			fft_count++;
+		} else if (a > fsl_start && a < fsl_end){
+			fsl_count++;
+		} else {
+			other_count++;
 		}
+
+//		if(count > 30000){
+//			xil_printf("FSL: %d   FFT: %d   OTHER: %d\r\n", fsl_count, fft_count, other_count);
+//			exit(0);
+//		}
+
+
 
 
 

@@ -12,4 +12,8 @@ extern XTmrCtr per_timer;
 extern int test_time;
 extern int count;
 extern int time_spent;
+
+extern int fft_count;
+extern int fsl_count;
+extern int other_count;
 void performance_handler();

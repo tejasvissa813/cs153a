@@ -1,35 +1,31 @@
 Nothing to build in platform 'lab3a_platform'
 
-17:58:22 **** Incremental Build of configuration Debug for project lab3a_application ****
+19:03:58 **** Incremental Build of configuration Debug for project lab3a_application ****
 make all 
-'Building file: ../src/main.c'
+'Building file: ../src/performance.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -IC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/performance.o" -IC:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/performance.d" -MT"src/performance.o" -o "src/performance.o" "../src/performance.c"
 In file included from ../src/performance.h:7,
-                 from ../src/main.c:46:
-C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+                 from ../src/performance.c:1:
+C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
   102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
       |  ^~~~~~~
-C:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
   103 | #warning  Please refer the Standalone BSP UG647 for further details
       |  ^~~~~~~
-../src/main.c: In function 'main':
-../src/main.c:84:10: warning: variable 'tot_time' set but not used [-Wunused-but-set-variable]
-   84 |    float tot_time; //time to run program
-      |          ^~~~~~~~
-'Finished building: ../src/main.c'
+'Finished building: ../src/performance.c'
 ' '
 'Building target: lab3a_application.elf'
 'Invoking: MicroBlaze gcc linker'
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/ranchen/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "lab3a_application.elf"  ./src/complex.o ./src/fft.o ./src/main.o ./src/note.o ./src/performance.o ./src/stream_grabber.o ./src/trig.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bsplib/lib -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "lab3a_application.elf"  ./src/complex.o ./src/fft.o ./src/main.o ./src/note.o ./src/performance.o ./src/stream_grabber.o ./src/trig.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 'Finished building target: lab3a_application.elf'
 ' '
 'Invoking: MicroBlaze Print Size'
 mb-size lab3a_application.elf  |tee "lab3a_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  22524	    380	  13544	  36448	   8e60	lab3a_application.elf
+  31600	    380	  55540	  87520	  155e0	lab3a_application.elf
 'Finished building: lab3a_application.elf.size'
 ' '
-17:58:23 **** Incremental Build of configuration Debug for project lab3a_system ****
+19:03:59 **** Incremental Build of configuration Debug for project lab3a_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

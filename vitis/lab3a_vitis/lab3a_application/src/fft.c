@@ -1,10 +1,26 @@
 #include "fft.h"
 #include "complex.h"
 #include "trig.h"
+#include "math.h"
+#include <stdio.h>
 
 static float new_[512];
 static float new_im[512];
 
+float cos_LUT[9][512];
+float sin_LUT[9][512];
+
+void init_LUT(){
+	for(int j = 0; j < 9; j++){
+		for(int k = 0; k < 512; k++){
+			float angle = (-PI*k)/(1 << j);
+			cos_LUT[j][k] = cos(angle);
+			sin_LUT[j][k] = sin(angle);
+		}
+	}
+}
+
+__attribute__((section(".text.fft_code")))
 float fft(float* q, float* w, int n, int m, float sample_f) {
 	int a,b,r,d,e,c;
 	int k,place;
@@ -15,25 +31,60 @@ float fft(float* q, float* w, int n, int m, float sample_f) {
 	float max,frequency;
 
 	// ORdering algorithm
-	for(i=0; i<(m-1); i++){
-		d=0;
-		for (j=0; j<b; j++){
-			for (c=0; c<a; c++){	
-				e=c+d;
-				new_[e]=q[(c*2)+d];
-				new_im[e]=w[(c*2)+d];
-				new_[e+a]=q[2*c+1+d];
-				new_im[e+a]=w[2*c+1+d];
-			}
-			d+=(n/b);
-		}		
-		for (r=0; r<n;r++){
-			q[r]=new_[r];
-			w[r]=new_im[r];
+//	for(i=0; i<(m-1); i++){
+//		d=0;
+//		for (j=0; j<b; j++){
+//			for (c=0; c<a; c++){
+//				e=c+d;
+//				new_[e]=q[(c*2)+d];
+//				new_im[e]=w[(c*2)+d];
+//				new_[e+a]=q[2*c+1+d];
+//				new_im[e+a]=w[2*c+1+d];
+//			}
+//			d+=(n/b);
+//		}
+//		for (r=0; r<n;r++){
+//			q[r]=new_[r];
+//			w[r]=new_im[r];
+//		}
+//		b*=2;
+//		a=n/(2*b);
+//	}
+
+//	for(int idx = 0; idx < n; idx++){
+//		int new_idx = idx;
+//		new_idx = ((new_idx & 0xAAAAAAAA) >> 1) | ((new_idx & 0x55555555) << 1);
+//		new_idx = ((new_idx & 0xCCCCCCCC) >> 2) | ((new_idx & 0x33333333) << 2);
+//		new_idx = ((new_idx & 0xF0F0F0F0) >> 4) | ((new_idx & 0x0F0F0F0F) << 4);
+//		new_idx = ((new_idx * 0xFF00FF00) >> 8) | ((new_idx & 0x00FF00FF) << 8);
+//		new_idx = ((new_idx * 0xFFFF0000) >> 16) | ((new_idx & 0x0000FFFF) << 16);
+//		new_idx = new_idx >> 23;
+//
+//		new_[idx] = q[new_idx];
+//		new_im[idx] = w[new_idx];
+//	}
+//	for(int i = 0; i < n; i++){
+//		q[i] = new_[i];
+//		w[i] = new_im[i];
+//	}
+
+	unsigned int target = 0;
+	  for(unsigned int position=0; position<n; position++)
+	  {
+		if(target>position) {
+		  const float temp_re = q[target];
+		  const float temp_im = w[target];
+		  q[target] = q[position];
+		  w[target] = w[position];
+		  q[position] = temp_re;
+		  w[position] = temp_im;
 		}
-		b*=2;
-		a=n/(2*b);
-	}
+		unsigned int mask = n;
+		while(target & (mask >>=1))
+		  target &= ~mask;
+		target |= mask;
+	  }
+
 	//end ordering algorithm
 
 	b=1;
@@ -43,8 +94,8 @@ float fft(float* q, float* w, int n, int m, float sample_f) {
 		for(i=0; i<n; i+=2){
 			if (i%(n/b)==0 && i!=0)
 				k++;
-			real=mult_real(q[i+1], w[i+1], cosine(-PI*k/b), sine(-PI*k/b));	
-			imagine=mult_im(q[i+1], w[i+1], cosine(-PI*k/b), sine(-PI*k/b));
+			real=mult_real(q[i+1], w[i+1], cos_LUT[j][k], sin_LUT[j][k]);
+			imagine=mult_im(q[i+1], w[i+1], cos_LUT[j][k], sin_LUT[j][k]);
 			new_[i]=q[i]+real;
 			new_im[i]=w[i]+imagine;
 			new_[i+1]=q[i]-real;

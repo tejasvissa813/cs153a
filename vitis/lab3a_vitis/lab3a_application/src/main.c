@@ -56,14 +56,18 @@ static float w[SAMPLES];
 XTmrCtr per_timer;
 int test_time;
 int count;
+int fft_count;
+int fsl_count;
+int other_count;
 int time_spent;
 //void print(char *str);
 
+__attribute__((section(".text.fsl_code")))
 void read_fsl_values(float* q, int n) {
    int i;
    unsigned int x;
    stream_grabber_start();
-   stream_grabber_wait_enough_samples(512);
+   stream_grabber_wait_enough_samples(1);
 
    for(i = 0; i < n; i++) {
       int_buffer[i] = stream_grabber_read_sample(i);
@@ -75,13 +79,15 @@ void read_fsl_values(float* q, int n) {
 }
 
 int main() {
-	xil_printf("checkpoint0\r\n");
+	//xil_printf("%d      %d\n\r", FFT_CODE_START, FFT_CODE_END);
    float sample_f;
    int l;
    int ticks; //used for timer
    uint32_t Control;
    float frequency; 
    float tot_time; //time to run program
+   float stat_time = 0;
+   int fft_counter = 0;
    XStatus Status;
    XIntc sys_intc;
    test_time = 0;
@@ -100,7 +106,6 @@ int main() {
 
 
    //performance timer
-   xil_printf("checkpoint1\r\n");
 
    Status = XIntc_Initialize(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID);
    if (Status != XST_SUCCESS) {
@@ -113,7 +118,6 @@ int main() {
       		xil_printf("Failed1\r\n");
       		return XST_FAILURE;
       	}
-   xil_printf("checkpoint2\r\n");
    Status = XIntc_Start(&sys_intc, XIN_REAL_MODE);
    if (Status != XST_SUCCESS) {
       		xil_printf("Failed3\r\n");
@@ -137,14 +141,12 @@ int main() {
 	//Enable (start) the timer
 	XTmrCtr_SetControlStatusReg(XPAR_TMRCTR_1_BASEADDR, 1,
 			XTC_CSR_ENABLE_TMR_MASK);
-
-   xil_printf("checkpoint3\r\n");
+	//microblaze_disable_interrupts();
 
 //   XIntc_Connect(&)
 
-
-   while(1) { 
-	   count = 0;
+   init_LUT();
+   while(1) {
       XTmrCtr_Start(&timer, 0);
 
 
@@ -158,24 +160,31 @@ int main() {
       //zero w array
       for(l=0;l<SAMPLES;l++)
          w[l]=0; 
-      for (int i = 0; i < 512; i ++){
-    	  return q[i];
-      }
+//      for (int i = 0; i < 512; i ++){
+//    	  return q[i];
+//      }
       frequency=fft(q,w,SAMPLES,M,sample_f);
 
       //ignore noise below set frequency
       //if(frequency > 200.0) {
-         xil_printf("frequency: %d Hz\r\n", (int)(frequency+.5));
-         xil_printf("spent_time: %d ms\r\n", count);
-         findNote(frequency);
+         //xil_printf("spent_time: %d ms\r\n", count);
+         //findNote(frequency);
 
          //get time to run program
          ticks=XTmrCtr_GetValue(&timer, 0);
          XTmrCtr_Stop(&timer, 0);
          tot_time=ticks/CLOCK;
-        //xil_printf("program time: %dms \r\n",(int)(1000*tot_time));
+         //stat_time+=(tot_time*1000);
+
+         //if(stat_time > 30000) break;
+         //fft_counter++;
+
+         xil_printf("frequency: %d Hz\r\n", (int)(frequency+.5));
+         xil_printf("program time: %d.%dms \r\n",(int)(1000*tot_time),(int)(1000000*tot_time) % 1000);
 
    }
+   //float avg_time = stat_time / (fft_counter);
+   //xil_printf("program time: %d.%dms \r\n",(int)(avg_time),(int)(avg_time) % 1000);
 
 
    return 0;
