@@ -1,0 +1,24 @@
+#include "performance.h"
+#include "xparameters.h"
+#include <stdlib.h>
+
+void performance_handler(){
+		Xuint32 ControlStatusReg;
+		ControlStatusReg =
+				XTimerCtr_ReadReg(per_timer.BaseAddress, 0, XTC_TCSR_OFFSET);
+
+		uint32_t a;
+		asm("add %0, r0, r14" : "=r"(a) );
+		uint32_t* address_start = &FFT_CODE_START;
+		uint32_t* address_end = &FFT_CODE_END;
+
+
+		if (a > address_start && a < address_end){
+			count++;
+		}
+
+
+
+		XTmrCtr_WriteReg(per_timer.BaseAddress, 0, XTC_TCSR_OFFSET,
+				ControlStatusReg |XTC_CSR_INT_OCCURED_MASK);
+}

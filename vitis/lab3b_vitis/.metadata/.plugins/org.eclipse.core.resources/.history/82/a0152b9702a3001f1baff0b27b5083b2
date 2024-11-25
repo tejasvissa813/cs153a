@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="lab3a_application" location="C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_application" platform="C:/Users/tejasvissapragada/Documents/cs153a/vitis/lab3a_vitis/lab3a_platform/export/lab3a_platform/lab3a_platform.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="lab3a_system" sysConfig="lab3a_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" mssSignature="1f75f9d48bc5a660e346a3adc1244180">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1868278328" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.335019716" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

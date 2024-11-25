@@ -1,0 +1,43 @@
+#include "performance.h"
+#include "xparameters.h"
+#include <stdlib.h>
+
+extern uintptr_t FFT_CODE_START;
+extern uintptr_t FFT_CODE_END;
+
+extern uintptr_t FSL_CODE_START;
+extern uintptr_t FSL_CODE_END;
+
+void performance_handler(){
+		Xuint32 ControlStatusReg;
+		ControlStatusReg =
+				XTimerCtr_ReadReg(per_timer.BaseAddress, 0, XTC_TCSR_OFFSET);
+
+		uint32_t a;
+		asm("add %0, r0, r14" : "=r"(a) );
+		uint32_t fft_start = FFT_CODE_START;
+		uint32_t fft_end = FFT_CODE_END;
+
+		uint32_t fsl_start = FSL_CODE_START;
+		uint32_t fsl_end = FSL_CODE_END;
+
+		count++;
+		if (a > fft_start && a < fft_end){
+			fft_count++;
+		} else if (a > fsl_start && a < fsl_end){
+			fsl_count++;
+		} else {
+			other_count++;
+		}
+
+		if(count > 60000){
+			xil_printf("FSL: %d   FFT: %d   OTHER: %d\r\n", fft_count, fsl_count, other_count);
+		}
+		count = 0;
+
+
+
+
+		XTmrCtr_WriteReg(per_timer.BaseAddress, 0, XTC_TCSR_OFFSET,
+				ControlStatusReg |XTC_CSR_INT_OCCURED_MASK);
+}
