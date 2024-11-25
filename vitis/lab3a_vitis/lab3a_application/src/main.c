@@ -146,6 +146,7 @@ int main() {
 //   XIntc_Connect(&)
 
    init_LUT();
+   int x = 10;
    while(1) {
       XTmrCtr_Start(&timer, 0);
 
@@ -155,15 +156,13 @@ int main() {
 
 
       sample_f = 100*1000*1000/2048.0;
-      //xil_printf("sample frequency: %d \r\n",(int)sample_f);
 
       //zero w array
-      for(l=0;l<SAMPLES;l++)
+      for(l=0;l<SAMPLES;l++){
          w[l]=0; 
-//      for (int i = 0; i < 512; i ++){
-//    	  return q[i];
-//      }
-      frequency=fft(q,w,SAMPLES,M,sample_f);
+      }
+//      printf("%f\r\n", q[100]);
+      frequency=fft(q,w,SAMPLES,sample_f);
 
       //ignore noise below set frequency
       //if(frequency > 200.0) {

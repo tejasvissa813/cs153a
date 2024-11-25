@@ -21,3 +21,4 @@ platform active {lab3a_platform}
 platform generate -domains 
 platform generate
 platform generate
+platform generate -domains standalone_domain 

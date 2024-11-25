@@ -20,141 +20,94 @@ void init_LUT(){
 	}
 }
 
-__attribute__((section(".text.fft_code")))
-float fft(float* q, float* w, int n, int m, float sample_f) {
-	int a,b,r,d,e,c;
-	int k,place;
-	a=n/2;
-	b=1;
-	int i,j;
-	float real=0,imagine=0;
-	float max,frequency;
 
-	// ORdering algorithm
-//	for(i=0; i<(m-1); i++){
-//		d=0;
-//		for (j=0; j<b; j++){
-//			for (c=0; c<a; c++){
-//				e=c+d;
-//				new_[e]=q[(c*2)+d];
-//				new_im[e]=w[(c*2)+d];
-//				new_[e+a]=q[2*c+1+d];
-//				new_im[e+a]=w[2*c+1+d];
-//			}
-//			d+=(n/b);
-//		}
-//		for (r=0; r<n;r++){
-//			q[r]=new_[r];
-//			w[r]=new_im[r];
-//		}
-//		b*=2;
-//		a=n/(2*b);
-//	}
 
-//	for(int idx = 0; idx < n; idx++){
-//		int new_idx = idx;
-//		new_idx = ((new_idx & 0xAAAAAAAA) >> 1) | ((new_idx & 0x55555555) << 1);
-//		new_idx = ((new_idx & 0xCCCCCCCC) >> 2) | ((new_idx & 0x33333333) << 2);
-//		new_idx = ((new_idx & 0xF0F0F0F0) >> 4) | ((new_idx & 0x0F0F0F0F) << 4);
-//		new_idx = ((new_idx * 0xFF00FF00) >> 8) | ((new_idx & 0x00FF00FF) << 8);
-//		new_idx = ((new_idx * 0xFFFF0000) >> 16) | ((new_idx & 0x0000FFFF) << 16);
-//		new_idx = new_idx >> 23;
-//
-//		new_[idx] = q[new_idx];
-//		new_im[idx] = w[new_idx];
-//	}
-//	for(int i = 0; i < n; i++){
-//		q[i] = new_[i];
-//		w[i] = new_im[i];
-//	}
+float fft(float* re, float* im, const int N, float sample_f)
+{
 
-	unsigned int target = 0;
-	  for(unsigned int position=0; position<n; position++)
-	  {
-		if(target>position) {
-		  const float temp_re = q[target];
-		  const float temp_im = w[target];
-		  q[target] = q[position];
-		  w[target] = w[position];
-		  q[position] = temp_re;
-		  w[position] = temp_im;
-		}
-		unsigned int mask = n;
-		while(target & (mask >>=1))
-		  target &= ~mask;
-		target |= mask;
-	  }
-
-	//end ordering algorithm
-
-	b=1;
-	k=0;
-	for (j=0; j<m; j++){	
-	//MATH
-		for(i=0; i<n; i+=2){
-			if (i%(n/b)==0 && i!=0)
-				k++;
-			real=mult_real(q[i+1], w[i+1], cos_LUT[j][k], sin_LUT[j][k]);
-			imagine=mult_im(q[i+1], w[i+1], cos_LUT[j][k], sin_LUT[j][k]);
-			new_[i]=q[i]+real;
-			new_im[i]=w[i]+imagine;
-			new_[i+1]=q[i]-real;
-			new_im[i+1]=w[i]-imagine;
-
-		}
-		for (i=0; i<n; i++){
-			q[i]=new_[i];
-			w[i]=new_im[i];
-		}
-	//END MATH
-
-	//REORDER
-		for (i=0; i<n/2; i++){
-			new_[i]=q[2*i];
-			new_[i+(n/2)]=q[2*i+1];
-			new_im[i]=w[2*i];
-			new_im[i+(n/2)]=w[2*i+1];
-		}
-		for (i=0; i<n; i++){
-			q[i]=new_[i];
-			w[i]=new_im[i];
-		}
-	//END REORDER
-		b*=2;
-		k=0;		
+//	printf("%f\r\n", re[100]);
+	for ( int i = 0; i < N; i ++){
+//		printf("%d %f\r\n",i, re[i]);
+		new_[i] = re[i];
+		new_im[i] = 0;
 	}
 
-	//find magnitudes
-	max=0;
-	place=1;
-	for(i=1;i<(n/2);i++) { 
-		new_[i]=q[i]*q[i]+w[i]*w[i];
-		if(max < new_[i]) {
-			max=new_[i];
-			place=i;
-		}
-	}
-	
-	float s=sample_f/n; //spacing of bins
-	
-	frequency = (sample_f/n)*place;
-
-	//curve fitting for more accuarcy
-	//assumes parabolic shape and uses three point to find the shift in the parabola
-	//using the equation y=A(x-x0)^2+C
-	float y1=new_[place-1],y2=new_[place],y3=new_[place+1];
-	float x0=s+(2*s*(y2-y1))/(2*y2-y1-y3);
-	x0=x0/s-1;
-	
-	if(x0 <0 || x0 > 2) { //error
-		return 0;
-	}
-	if(x0 <= 1)  {
-		frequency=frequency-(1-x0)*s;
-	}
-	else {
-		frequency=frequency+(x0-1)*s;
-	}
-	
-	return frequency;
+    rearrange(new_, new_im, N);
+    compute(new_, new_im, N);
+    float max = 0;
+    int place = -1;
+    int size = N / 2;
+    for (int i = 6; i < size; i ++){
+        float val = new_[i]*new_[i] - new_im[i]*new_im[i];
+//        printf("%d %f\r\n",i, val);
+        if (val < 0)val = -val;
+        if (val > max){
+            max = val;
+            place = i;
+        }
+    }
+    return (sample_f/N) * place;
 }
+
+void rearrange(float* data_re, float* data_im, const  int N)
+{
+  unsigned int target = 0;
+  for(unsigned int position=0; position<N; position++)
+  {
+    if(target>position) {
+      const float temp_re = data_re[target];
+      const float temp_im = data_im[target];
+      data_re[target] = data_re[position];
+      data_im[target] = data_im[position];
+      data_re[position] = temp_re;
+      data_im[position] = temp_im;
+    }
+    unsigned int mask = N;
+    while(target & (mask >>=1))
+      target &= ~mask;
+    target |= mask;
+  }
+}
+
+void compute(float* data_re, float* data_im, const int N)
+{
+  const float pi = -3.1415926;
+
+//  for(unsigned int step=1; step<N; step <<=1)
+	  for(unsigned int level = 0; level < 9; level++)
+  {
+		int step = 1 << level;
+    const unsigned int jump = step << 1;
+
+    float twiddle_re = 1.0;
+    float twiddle_im = 0.0;
+    for(unsigned int group=0; group<step; group++)
+    {
+      for(unsigned int pair=group; pair<N; pair+=jump)
+      {
+        const unsigned int match = pair + step;
+        const float product_re = twiddle_re*data_re[match]-twiddle_im*data_im[match];
+        const float product_im = twiddle_im*data_re[match]+twiddle_re*data_im[match];
+        data_re[match] = data_re[pair]-product_re;
+        data_im[match] = data_im[pair]-product_im;
+        data_re[pair] += product_re;
+        data_im[pair] += product_im;
+      }
+
+      if(group+1 == step)
+      {
+        continue;
+      }
+
+//      float angle = pi*((float) group+1)/(float)step;
+//      twiddle_re = cos(angle);
+//      twiddle_im = sin(angle);
+      twiddle_re = cos_LUT[level][group+1];
+//      printf("diff: %f\r\n", cos(angle)-twiddle_re);
+	  twiddle_im = sin_LUT[level][group+1];
+    }
+  }
+}
+
+
+const double pi = 3.1415926;

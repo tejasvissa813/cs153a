@@ -29,6 +29,11 @@ Returns
 
 
 void init_LUT();
-float fft(float* q, float* w, int n, int m, float sample_f);
+float fft(float* re, float* im,const int N, float sample_f);
+
+void rearrange(float* data_re,float* data_im,const int N);
+
+// the heavy lifting of computation
+void compute(float* data_re,float* data_im,const int N);
 
 #endif
