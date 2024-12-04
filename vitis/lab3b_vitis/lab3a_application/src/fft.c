@@ -16,6 +16,9 @@ static float new_im[512];
 float cos_LUT[9][512];
 float sin_LUT[9][512];
 
+int bins[10];
+int bin_count[10];
+
 void init_LUT(){
 	for(int j = 0; j < 9; j++){
 		for(int k = 0; k < 512; k++){
@@ -29,7 +32,10 @@ void init_LUT(){
 __attribute__((section(".text.fft_code")))
 float fft(float* re, float* im, const int N, float sample_f)
 {
-
+	for(int i = 0; i < 10; i++){
+		bins[i] = 0;
+		bin_count[i] = 0;
+	}
 //	printf("%f\r\n", re[100]);
 	for ( int i = 0; i < N; i ++){
 //		printf("%d %f\r\n",i, re[i]);
@@ -45,6 +51,9 @@ float fft(float* re, float* im, const int N, float sample_f)
     for (int i = 6; i < size; i ++){
         float val = new_[i]*new_[i] - new_im[i]*new_im[i];
 //        printf("%d %f\r\n",i, val);
+        int idx = i / (size/10);
+        bins[idx] += (int) val;
+        bin_count[idx]++;
         if (val < 0)val = -val;
         if (val > max){
             max = val;

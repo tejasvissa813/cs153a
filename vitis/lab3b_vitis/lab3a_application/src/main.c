@@ -65,6 +65,7 @@ int main() {
    Xil_ICacheEnable();
    Xil_DCacheInvalidate();
    Xil_DCacheEnable();
+
    init_LUT();
 
    Lab2A_ctor();

@@ -12,7 +12,10 @@
 #include "lcd.h"
 #include "xgpio.h" 		// LED driver, used for General purpose I/i
 #include "xspi.h"
-#include "xspi_l.h"
+#include "xspi_l.h"\
+
+#define TEXTX 10
+#define TEXTY 10
 
 
 int cleared = 0;
@@ -54,53 +57,58 @@ Lab2A AO_Lab2A;
 //	fillRect(x+17, y+0, x+23, y+5);
 //}
 //
-//void lcd_setup(){
-//	static XGpio dc;
-//	static XSpi spi;
-//	XSpi_Config *spiConfig;	/* Pointer to Configuration data */
-//	u32 status;
-//	u32 controlReg;
-//
-//	spiConfig = XSpi_LookupConfig(XPAR_SPI_DEVICE_ID);
-//	if (spiConfig == NULL) {
-//		xil_printf("Can't find spi device!\n");
-//		return XST_DEVICE_NOT_FOUND;
-//	}
-//
-//	status = XSpi_CfgInitialize(&spi, spiConfig, spiConfig->BaseAddress);
-//	if (status != XST_SUCCESS) {
-//		xil_printf("Initialize spi fail!\n");
-//		return XST_FAILURE;
-//	}
-//
-//	XSpi_Reset(&spi);
-//
-//		/*
-//		 * Setup the control register to enable master mode
-//		 */
-//	controlReg = XSpi_GetControlReg(&spi);
-//	XSpi_SetControlReg(&spi,
-//			(controlReg | XSP_CR_ENABLE_MASK | XSP_CR_MASTER_MODE_MASK) &
-//			(~XSP_CR_TRANS_INHIBIT_MASK));
-//
-//	// Select 1st slave device
-//	XSpi_SetSlaveSelectReg(&spi, ~0x01);
-//
-//	initLCD();
-//
-//
-//	clrScr();
-//	setColor(0, 100, 0);
-//	fillRect(0, 0, 240, 320);
-//	setColor(0, 255, 0);
-//	//setColorBg(0, 100, 0);
-//
+void lcd_reset(){
+	setColor(0, 100, 0);
+	fillRect(TEXTX, TEXTY, 240, TEXTY+15);
+}
+
+void lcd_setup(){
+	static XGpio dc;
+	static XSpi spi;
+	XSpi_Config *spiConfig;	/* Pointer to Configuration data */
+	u32 status;
+	u32 controlReg;
+
+	spiConfig = XSpi_LookupConfig(XPAR_SPI_DEVICE_ID);
+	if (spiConfig == NULL) {
+		xil_printf("Can't find spi device!\n");
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+	status = XSpi_CfgInitialize(&spi, spiConfig, spiConfig->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("Initialize spi fail!\n");
+		return XST_FAILURE;
+	}
+
+	XSpi_Reset(&spi);
+
+		/*
+		 * Setup the control register to enable master mode
+		 */
+	controlReg = XSpi_GetControlReg(&spi);
+	XSpi_SetControlReg(&spi,
+			(controlReg | XSP_CR_ENABLE_MASK | XSP_CR_MASTER_MODE_MASK) &
+			(~XSP_CR_TRANS_INHIBIT_MASK));
+
+	// Select 1st slave device
+	XSpi_SetSlaveSelectReg(&spi, ~0x01);
+
+	initLCD();
+	clrScr();
+	setColor(0, 100, 0);
+	fillRect(0, 0, 240, 320);
+	setColor(0, 255, 0);
+
+
+	//setColorBg(0, 100, 0);
+
 //	for(int x = 0; x < 240; x+=40){
 //		for(int y = 0; y < 320; y+=40){
 //			draw_triangle(x, y);
 //		}
 //	}
-//}
+}
 //
 //void drawVolume(){
 //	//initLCD();
@@ -146,7 +154,7 @@ void Lab2A_ctor(void)  {
 
 QState Lab2A_initial(Lab2A *me) {
 	xil_printf("\n\rInitialization");
-	//lcd_setup();
+	lcd_setup();
     return Q_TRAN(&Lab2A_on);
 }
 
@@ -158,17 +166,6 @@ QState Lab2A_on(Lab2A *me) {
 			
 		case Q_INIT_SIG: {
 			return Q_TRAN(&Lab2A_stateMain);
-		}
-
-		case TICK_SIG: {
-				//redraw
-				//increment time
-				//make interrupt happen more often to improve responsiveness
-			float freq = mainLoop();
-			xil_printf("frequency: %d Hz\r\n", (int)(freq+.5));
-
-			//xil_printf("%d\n",AO_Lab2A.seconds);
-			return Q_HANDLED();
 		}
 
 		case ENCODER_DOWN: {
@@ -204,9 +201,22 @@ QState Lab2A_stateMain(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
 			xil_printf("Main State \n");
+			lcd_reset();
+			lcdPrint("Main Screen", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
 		
+		case TICK_SIG: {
+				//redraw
+				//increment time
+				//make interrupt happen more often to improve responsiveness
+			float freq = mainLoop();
+			xil_printf("frequency: %d Hz\r\n", (int)(freq+.5));
+
+			//xil_printf("%d\n",AO_Lab2A.seconds);
+			return Q_HANDLED();
+		}
+
 		case NEXT: {
 			return Q_TRAN(&Lab2A_stateDebug1);
 		}
@@ -220,7 +230,22 @@ QState Lab2A_stateMain(Lab2A *me) {
 QState Lab2A_stateDebug1(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
-			xil_printf("Startup Debug 1\n");
+			for(int i = 0; i < 10; i++){
+				xil_printf("bin# %d: %d\r\n", i, bins[i]/bin_count[i]);
+			}
+			lcd_reset();
+			lcdPrint("FFT Histogram", TEXTX, TEXTY);
+			return Q_HANDLED();
+		}
+
+		case TICK_SIG: {
+				//redraw
+				//increment time
+				//make interrupt happen more often to improve responsiveness
+
+
+
+			//xil_printf("%d\n",AO_Lab2A.seconds);
 			return Q_HANDLED();
 		}
 
@@ -242,6 +267,8 @@ QState Lab2A_stateDebug2(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
 			xil_printf("Startup Debug 2\n");
+			lcd_reset();
+			lcdPrint("FFT Settings", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
 
@@ -263,6 +290,8 @@ QState Lab2A_stateDebug3(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
 			xil_printf("Startup Debug 3\n");
+			lcd_reset();
+			lcdPrint("HFSM History", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
 		
