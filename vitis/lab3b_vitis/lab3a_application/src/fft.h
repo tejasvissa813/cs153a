@@ -38,8 +38,4 @@ void rearrange(float* data_re,float* data_im,const int N);
 // the heavy lifting of computation
 void compute(float* data_re,float* data_im,const int N);
 
-extern int bins[10];
-extern int bin_count[10];
-
-
 #endif

@@ -23,3 +23,4 @@ platform generate
 platform generate
 platform generate -domains standalone_domain 
 platform generate
+platform generate

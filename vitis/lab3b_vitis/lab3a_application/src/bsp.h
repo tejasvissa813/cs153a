@@ -10,6 +10,8 @@ void GpioHandler(void *CallbackRef);
 void TwistHandler(void *CallbackRef);
 void TimerHandler();
 
+extern float freq;
+
 
 
 /* bsp functions ..........................................................*/

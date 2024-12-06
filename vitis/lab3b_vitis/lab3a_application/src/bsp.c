@@ -28,6 +28,7 @@ enum States {
 };
 volatile int enable = 1;
 enum States fsm = R;
+float freq = 0;
 
 void BSP_init(void){
 	XIntc_Initialize(&sys_intc, XPAR_MICROBLAZE_0_AXI_INTC_DEVICE_ID);
@@ -98,7 +99,9 @@ void TwistHandler(void *CallbackRef) {
 	unsigned int encoderVal = XGpio_DiscreteRead(&EncoderGpio, 1);
 	if(encoderVal > 3){
 		enable = 1 - enable;
-		QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
+		//QActive_postISR((QActive *)&AO_Lab2A, ENCODER_CLICK);
+		XGpio_InterruptClear(GpioPtr, 1);
+		return;
 	}
 
 	int bit0 = 1 & encoderVal;
@@ -209,10 +212,11 @@ void QF_onStartup(void) {                 /* entered with interrupts locked */
 void QF_onIdle(void) {        /* entered with interrupts locked */
 
     QF_INT_UNLOCK();                       /* unlock interrupts */
-
+    freq = mainLoop();
     {
     	// Write code to increment your interrupt counter here.
     	// QActive_postISR((QActive *)&AO_Lab2A, ENCODER_DOWN); is used to post an event to your FSM
+
 
 
 

@@ -12,7 +12,7 @@
 #include "lcd.h"
 #include "xgpio.h" 		// LED driver, used for General purpose I/i
 #include "xspi.h"
-#include "xspi_l.h"\
+#include "xspi_l.h"
 
 #define TEXTX 10
 #define TEXTY 10
@@ -27,12 +27,14 @@ typedef struct Lab2ATag  {               //Lab2A State machine
 	unsigned int A4;
 	unsigned char note;
 	char text[6];
+	int encode;
 }  Lab2A;
 
 /* Setup state machines */
 /**********************************************************************/
 static QState Lab2A_initial (Lab2A *me);
 static QState Lab2A_on      (Lab2A *me);
+//static QState Lab2a_onNoEncode (Lab2A *m2);
 static QState Lab2A_stateMain  (Lab2A *me);
 static QState Lab2A_stateDebug1  (Lab2A *me);
 static QState Lab2A_stateDebug2  (Lab2A *me);
@@ -148,6 +150,7 @@ void Lab2A_ctor(void)  {
 	QActive_ctor(&me->super, (QStateHandler)&Lab2A_initial);
 	AO_Lab2A.A4 = 440;
 	AO_Lab2A.note = 'A';
+	AO_Lab2A.encode = 1;
 //	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
 }
 
@@ -168,24 +171,31 @@ QState Lab2A_on(Lab2A *me) {
 			return Q_TRAN(&Lab2A_stateMain);
 		}
 
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+			return Q_HANDLED();
+		}
+
 		case ENCODER_DOWN: {
-			if(AO_Lab2A.A4 > 420){
+			if(AO_Lab2A.encode && AO_Lab2A.A4 > 420){
+				AO_Lab2A.encode = 0;
 				AO_Lab2A.A4--;
 			}
 			return Q_HANDLED();
 		}
 
 		case ENCODER_UP: {
-			if(AO_Lab2A.A4 < 460){
+			if(AO_Lab2A.encode && AO_Lab2A.A4 < 460){
+				AO_Lab2A.encode = 0;
 				AO_Lab2A.A4++;
 			}
 			return Q_HANDLED();
 		}
 
-		case ENCODER_CLICK: {
-			xil_printf("%d\n\r", AO_Lab2A.A4);
-			return Q_HANDLED();
-		}
+//		case ENCODER_CLICK: {
+//			xil_printf("%d\n\r", AO_Lab2A.A4);
+//			return Q_HANDLED();
+//		}
 		//add cases for each of the Button Signals
 		//mAKE SURE TO RESET THE SECONDS VALUE WHEN ANY INPUT IS TRIGGERED
 	}
@@ -205,15 +215,11 @@ QState Lab2A_stateMain(Lab2A *me) {
 			lcdPrint("Main Screen", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
-		
-		case TICK_SIG: {
-				//redraw
-				//increment time
-				//make interrupt happen more often to improve responsiveness
-			float freq = mainLoop();
-			xil_printf("frequency: %d Hz\r\n", (int)(freq+.5));
 
-			//xil_printf("%d\n",AO_Lab2A.seconds);
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+			xil_printf("frequency: %d Hz\r\n", (int)(freq+.5));
+			xil_printf("Base: %d Hz\r\n", (int)(AO_Lab2A.A4));
 			return Q_HANDLED();
 		}
 
@@ -230,22 +236,8 @@ QState Lab2A_stateMain(Lab2A *me) {
 QState Lab2A_stateDebug1(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
-			for(int i = 0; i < 10; i++){
-				xil_printf("bin# %d: %d\r\n", i, bins[i]/bin_count[i]);
-			}
 			lcd_reset();
 			lcdPrint("FFT Histogram", TEXTX, TEXTY);
-			return Q_HANDLED();
-		}
-
-		case TICK_SIG: {
-				//redraw
-				//increment time
-				//make interrupt happen more often to improve responsiveness
-
-
-
-			//xil_printf("%d\n",AO_Lab2A.seconds);
 			return Q_HANDLED();
 		}
 

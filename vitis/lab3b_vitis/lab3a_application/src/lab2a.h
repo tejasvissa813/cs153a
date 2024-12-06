@@ -6,10 +6,11 @@
 #ifndef lab2a_h
 #define lab2a_h
 
+#include "qepn.h"
+
 enum Lab2ASignals {
-	ENCODER_UP = 5,
+	ENCODER_UP = Q_USER_SIG,
 	ENCODER_DOWN,
-	ENCODER_CLICK,
 	TICK_SIG,
 	NEXT,
 	PREV,
