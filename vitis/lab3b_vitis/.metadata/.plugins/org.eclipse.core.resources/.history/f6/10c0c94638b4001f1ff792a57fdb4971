@@ -1,0 +1,167 @@
+#include "fft.h"
+#include "complex.h"
+#include "trig.h"
+#include "math.h"
+#include <stdio.h>
+#include "xparameters.h"
+#include <xil_types.h>
+#include <xil_assert.h>
+#include "stream_grabber.h"
+#include <xio.h>
+
+
+static float new_[512];
+static float new_im[512];
+
+float cos_LUT[9][512];
+float sin_LUT[9][512];
+
+void init_LUT(){
+	for(int j = 0; j < 9; j++){
+		for(int k = 0; k < 512; k++){
+			float angle = (-PI*k)/(1 << j);
+			cos_LUT[j][k] = cos(angle);
+			sin_LUT[j][k] = sin(angle);
+		}
+	}
+}
+
+__attribute__((section(".text.fft_code")))
+float fft(float* re, float* im, const int N, float sample_f)
+{
+//	printf("%f\r\n", re[100]);
+	for ( int i = 0; i < N; i ++){
+//		printf("%d %f\r\n",i, re[i]);
+		new_[i] = re[i];
+		new_im[i] = 0;
+	}
+
+    rearrange(new_, new_im, N);
+    compute(new_, new_im, N);
+    float max = 0;
+    int place = -1;
+    int size = N / 2;
+    for (int i = 1; i < size; i ++){
+        float val = new_[i]*new_[i] - new_im[i]*new_im[i];
+//        printf("%d %f\r\n",i, val);
+//        int idx = i / (size/10);
+//        bins[idx] += (int) val;
+//        bin_count[idx]++;
+        if (val < 0)val = -val;
+        if (val > max){
+            max = val;
+            place = i;
+        }
+    }
+    return (sample_f/N) * place;
+}
+
+void rearrange(float* data_re, float* data_im, const  int N)
+{
+  unsigned int target = 0;
+  for(unsigned int position=0; position<N; position++)
+  {
+    if(target>position) {
+      const float temp_re = data_re[target];
+      const float temp_im = data_im[target];
+      data_re[target] = data_re[position];
+      data_im[target] = data_im[position];
+      data_re[position] = temp_re;
+      data_im[position] = temp_im;
+    }
+    unsigned int mask = N;
+    while(target & (mask >>=1))
+      target &= ~mask;
+    target |= mask;
+  }
+}
+
+void compute(float* data_re, float* data_im, const int N)
+{
+  const float pi = -3.1415926;
+
+//  for(unsigned int step=1; step<N; step <<=1)
+	  for(unsigned int level = 0; level < 9; level++)
+  {
+		int step = 1 << level;
+    const unsigned int jump = step << 1;
+
+    float twiddle_re = 1.0;
+    float twiddle_im = 0.0;
+    for(unsigned int group=0; group<step; group++)
+    {
+      for(unsigned int pair=group; pair<N; pair+=jump)
+      {
+        const unsigned int match = pair + step;
+        const float product_re = twiddle_re*data_re[match]-twiddle_im*data_im[match];
+        const float product_im = twiddle_im*data_re[match]+twiddle_re*data_im[match];
+        data_re[match] = data_re[pair]-product_re;
+        data_im[match] = data_im[pair]-product_im;
+        data_re[pair] += product_re;
+        data_im[pair] += product_im;
+      }
+
+      if(group+1 == step)
+      {
+        continue;
+      }
+
+//      float angle = pi*((float) group+1)/(float)step;
+//      twiddle_re = cos(angle);
+//      twiddle_im = sin(angle);
+      twiddle_re = cos_LUT[level][group+1];
+//      printf("diff: %f\r\n", cos(angle)-twiddle_re);
+	  twiddle_im = sin_LUT[level][group+1];
+    }
+  }
+}
+
+
+const double pi = 3.1415926;
+
+#define SAMPLES 512 // AXI4 Streaming Data FIFO has size 512
+#define M 9 //2^m=samples
+#define CLOCK 100000000.0 //clock speed
+int int_buffer[SAMPLES];
+static float q[SAMPLES];
+static float w[SAMPLES];
+int decimation = 1;
+
+
+
+__attribute__((section(".text.fsl_code")))
+void read_fsl_values(float* q, int n) {
+   int i;
+   unsigned int x;
+   stream_grabber_start();
+   stream_grabber_wait_enough_samples(1);
+
+   for(i = 0; i < n; i+=decimation) {
+      int_buffer[i/decimation] = stream_grabber_read_sample(i);
+      // xil_printf("%d\n",int_buffer[i]);
+      x = int_buffer[i/decimation];
+      q[i/decimation] = 3.3*x/67108864.0; // 3.3V and 2^26 bit precision.
+
+   }
+}
+
+float mainLoop(){
+	decimation = 1;
+	for(int l=0;l<SAMPLES;l++) q[l] = 0;
+	read_fsl_values(q, SAMPLES);
+	float sample_f = 100*1000*1000/2048.0;
+	for(int l=0;l<SAMPLES;l++) w[l] = 0;
+	float frequency=fft(q,w,SAMPLES,sample_f);
+
+	decimation = 2*(int)sample_f/(int)frequency;
+
+	for(int l=0;l<SAMPLES;l++) q[l] = 0;
+	read_fsl_values(q, SAMPLES*decimation);
+	sample_f /= decimation;
+	for(int l=0;l<SAMPLES;l++) w[l] = 0;
+	frequency=fft(q,w,SAMPLES,sample_f/decimation);
+
+	return frequency;
+	//xil_printf("frequency: %d Hz\r\n", (int)(frequency+.5));
+}
+

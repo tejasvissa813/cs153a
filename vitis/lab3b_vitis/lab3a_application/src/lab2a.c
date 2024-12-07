@@ -45,7 +45,7 @@ static QState Lab2A_stateDebug3  (Lab2A *me);
 
 
 Lab2A AO_Lab2A;
-
+char notes[12][3]={"C","C#","D","D#","E","F","F#","G","G#","A","A#","B"};
 
 
 //void draw_triangle(int x, int y){
@@ -218,8 +218,40 @@ QState Lab2A_stateMain(Lab2A *me) {
 
 		case TICK_SIG: {
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
-			xil_printf("frequency: %d Hz\r\n", (int)(freq+.5));
-			xil_printf("Base: %d Hz\r\n", (int)(AO_Lab2A.A4));
+
+			float base = 261.63 + (AO_Lab2A.A4 - 440);
+
+			int octave = 4;
+			int temp = 0;
+			if(freq == 0) {}
+			else if(freq > base){
+				temp = (int)(freq/base);
+				while(temp >>= 1){
+					octave++;
+					base *= 2;
+				}
+			} else {
+				temp = (int)(base/freq);
+				while(temp >>= 1){
+					octave--;
+					base /= 2;
+				}
+				octave -= 1;
+				base /= 2;
+			}
+
+
+			temp = (int)(freq-base);
+			int noteIdx = 0;
+			if(temp > 0){
+				while(temp >>= 1){
+					noteIdx++;
+				}
+			}
+
+
+			xil_printf("Octave: %d Hz\r\n", octave);
+			xil_printf("Note: %d Hz\r\n", noteIdx);
 			return Q_HANDLED();
 		}
 

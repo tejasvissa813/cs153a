@@ -212,6 +212,8 @@ void QF_onStartup(void) {                 /* entered with interrupts locked */
 void QF_onIdle(void) {        /* entered with interrupts locked */
 
     QF_INT_UNLOCK();                       /* unlock interrupts */
+//    xil_printf("before");
+//    xil_printf("after");
     freq = mainLoop();
     {
     	// Write code to increment your interrupt counter here.
