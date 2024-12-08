@@ -38,11 +38,16 @@ float fft(float* re, float* im, const int N, float sample_f)
 
     rearrange(new_, new_im, N);
     compute(new_, new_im, N);
+    for(int i = 0; i < 512; i++){
+    	new_[i] = 2*new_[i];
+    	new_im[i] = 2*new_im[i];
+    }
     float max = 0;
     int place = -1;
     int size = N / 2;
+    //xil_printf("%d\n\r", start);
     for (int i = 1; i < size; i ++){
-        float val = new_[i]*new_[i] - new_im[i]*new_im[i];
+        float val = (new_[i]*new_[i] - new_im[i]*new_im[i]);
 //        printf("%d %f\r\n",i, val);
 //        int idx = i / (size/10);
 //        bins[idx] += (int) val;
@@ -53,6 +58,8 @@ float fft(float* re, float* im, const int N, float sample_f)
             place = i;
         }
     }
+    int start = (15 * N) / sample_f;
+    if(place < start) return 0;
     return (sample_f/N) * place;
 }
 
@@ -140,6 +147,7 @@ void read_fsl_values(float* q, int n) {
       int_buffer[i/decimation] = stream_grabber_read_sample(i);
       // xil_printf("%d\n",int_buffer[i]);
       x = int_buffer[i/decimation];
+      x *= 0.5 * (1 - cos(2 * pi * i / n-1)); //hann window
       q[i/decimation] = 3.3*x/67108864.0; // 3.3V and 2^26 bit precision.
 
    }
@@ -155,6 +163,7 @@ float mainLoop(){
 	decimation = 0;
 	int convertFreq = (int)(sample_f/(2 * frequency));
 	while(convertFreq >>= 1) decimation++;
+	//xil_printf("decimation: %d\r\n", decimation);
 
 	for(int l=0;l<SAMPLES;l++) q[l] = 0;
 	read_fsl_values(q, SAMPLES*decimation);

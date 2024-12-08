@@ -13,6 +13,7 @@
 #include "xgpio.h" 		// LED driver, used for General purpose I/i
 #include "xspi.h"
 #include "xspi_l.h"
+#include "math.h"
 
 #define TEXTX 10
 #define TEXTY 10
@@ -221,37 +222,38 @@ QState Lab2A_stateMain(Lab2A *me) {
 
 			float base = 261.63 + (AO_Lab2A.A4 - 440);
 
-			int octave = 4;
-			int temp = 0;
-			if(freq == 0) {}
-			else if(freq > base){
-				temp = (int)(freq/base);
-				while(temp >>= 1){
-					octave++;
-					base *= 2;
-				}
-			} else {
-				temp = (int)(base/freq);
-				while(temp >>= 1){
-					octave--;
-					base /= 2;
-				}
-				octave -= 1;
-				base /= 2;
-			}
-
-
-			temp = (int)(freq-base);
-			int noteIdx = 0;
-			if(temp > 0){
-				while(temp >>= 1){
-					noteIdx++;
-				}
-			}
-
-
-			xil_printf("Octave: %d Hz\r\n", octave);
-			xil_printf("Note: %d Hz\r\n", noteIdx);
+//			int octave = 4;
+//			int temp = 0;
+//			if(freq == 0) { return Q_HANDLED(); }
+//			else if(freq > base){
+//				temp = (int)(freq/base);
+//				while(temp >>= 1){
+//					octave++;
+//					base *= 2;
+//				}
+//			} else {
+//				temp = (int)(base/freq);
+//				while(temp >>= 1){
+//					octave--;
+//					base /= 2;
+//				}
+//				octave -= 1;
+//				base /= 2;
+//			}
+//
+//
+//			float note_temp = (freq/base);
+//			int noteIdx = (log2(note_temp) * 12) + 0.5;
+//
+//			for(int i = 0; i < noteIdx; i++){ base *= 1.0595; }
+//			note_temp = (freq/base);
+//			int error = (log2(note_temp) * 1200) + 0.5;
+//
+//			xil_printf("Octave: %d Hz\r\n", octave);
+			xil_printf("Freq: %d Hz\r\n", (int)freq);
+//			xil_printf("Base: %d Hz\r\n", (int)base);
+//			xil_printf("Note: %d Hz\r\n", noteIdx);
+//			xil_printf("Error: %d Cents\r\n", error);
 			return Q_HANDLED();
 		}
 
