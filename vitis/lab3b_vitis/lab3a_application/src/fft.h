@@ -33,6 +33,8 @@ float fft(float* q, float* w, int n, float sample_f);
 void read_fsl_values(float* q, int n);
 float mainLoop();
 
+extern int output[512];
+
 void rearrange(float* data_re,float* data_im,const int N);
 
 // the heavy lifting of computation

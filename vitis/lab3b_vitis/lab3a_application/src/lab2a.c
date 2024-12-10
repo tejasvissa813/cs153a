@@ -46,7 +46,7 @@ static QState Lab2A_stateDebug3  (Lab2A *me);
 
 
 Lab2A AO_Lab2A;
-char notes[12][3]={"C","C#","D","D#","E","F","F#","G","G#","A","A#","B"};
+char notes[12][3]={"C ","C#","D ","D#","E ","F ","F#","G ","G#","A ","A#","B "};
 
 
 //void draw_triangle(int x, int y){
@@ -145,6 +145,24 @@ void lcd_setup(){
 //	}
 //}
 
+void drawError(int err){
+	setColor(0,100,0);
+	fillRect(40, 240, 200, 260);
+	float errx = 80 * ((float) err/50);
+	xil_printf("ERRX: %d\r\n", (int) errx);
+	if(err == 0){
+		setColor(0,100,0);
+	}
+	else if(err > 0){
+		//float errx = 80 * (err/50);
+		setColor(0,0,100);
+		fillRect(120, 240, 120 + (int)errx, 260);
+	} else {
+		setColor(100,0,0);
+		fillRect(120 + (int)errx, 240, 120, 260);
+	}
+}
+
 
 void Lab2A_ctor(void)  {
 	Lab2A *me = &AO_Lab2A;
@@ -154,6 +172,9 @@ void Lab2A_ctor(void)  {
 	AO_Lab2A.encode = 1;
 //	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
 }
+
+int prevNote = -1;
+int prevErr = 60;
 
 
 QState Lab2A_initial(Lab2A *me) {
@@ -170,11 +191,6 @@ QState Lab2A_on(Lab2A *me) {
 			
 		case Q_INIT_SIG: {
 			return Q_TRAN(&Lab2A_stateMain);
-		}
-
-		case TICK_SIG: {
-			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
-			return Q_HANDLED();
 		}
 
 		case ENCODER_DOWN: {
@@ -217,33 +233,65 @@ QState Lab2A_stateMain(Lab2A *me) {
 			return Q_HANDLED();
 		}
 
+		case Q_EXIT_SIG: {
+			setColor(0,100,0);
+			fillRect(80, 120, 140, 140);
+			fillRect(40, 240, 200, 260);
+			return Q_HANDLED();
+		}
+
 		case TICK_SIG: {
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
 
 			float base = 261.63 + (AO_Lab2A.A4 - 440);
 
-//			int octave = 4;
-//			int temp = 0;
-//			if(freq == 0) { return Q_HANDLED(); }
-//			else if(freq > base){
-//				temp = (int)(freq/base);
-//				while(temp >>= 1){
-//					octave++;
-//					base *= 2;
-//				}
-//			} else {
-//				temp = (int)(base/freq);
-//				while(temp >>= 1){
-//					octave--;
-//					base /= 2;
-//				}
-//				octave -= 1;
-//				base /= 2;
-//			}
-//
-//
-//			float note_temp = (freq/base);
-//			int noteIdx = (log2(note_temp) * 12) + 0.5;
+			int octave = 4;
+			int temp = 0;
+			if(freq == 0) { return Q_HANDLED(); }
+			else if(freq > base){
+				temp = (int)(freq/base);
+				while(temp >>= 1){
+					octave++;
+					base *= 2;
+				}
+			} else {
+				temp = (int)(base/freq);
+				while(temp >>= 1){
+					octave--;
+					base /= 2;
+				}
+				octave -= 1;
+				base /= 2;
+			}
+
+
+			float note_temp = (freq/base);
+			int noteIdx = (log2(note_temp) * 12) + 0.5;
+
+			for(int i = 0; i<noteIdx; i++){
+				base *= 1.05946;
+			}
+
+			float error = (freq/base);
+			int cents = (log2(error) * 1200) + 0.5;
+
+			if(cents != prevErr){
+				prevErr = cents;
+				drawError(cents);
+			}
+
+			char oct_c = octave + '0';
+
+			if(noteIdx != prevNote){
+				prevNote = noteIdx;
+				fillRect(80, 120, 100, 140);
+				setFont(BigFont);
+				printChar(notes[noteIdx][0], 80, 120);
+				printChar(notes[noteIdx][1], 95, 120);
+				printChar(oct_c, 110, 120);
+				setFont(SmallFont);
+			}
+
 //
 //			for(int i = 0; i < noteIdx; i++){ base *= 1.0595; }
 //			note_temp = (freq/base);
@@ -252,8 +300,8 @@ QState Lab2A_stateMain(Lab2A *me) {
 //			xil_printf("Octave: %d Hz\r\n", octave);
 			xil_printf("Freq: %d Hz\r\n", (int)freq);
 //			xil_printf("Base: %d Hz\r\n", (int)base);
-//			xil_printf("Note: %d Hz\r\n", noteIdx);
-//			xil_printf("Error: %d Cents\r\n", error);
+			xil_printf("Note: %d Hz\r\n", noteIdx);
+			xil_printf("Error: %d Cents\r\n", cents);
 			return Q_HANDLED();
 		}
 
@@ -272,6 +320,11 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 		case Q_ENTRY_SIG: {
 			lcd_reset();
 			lcdPrint("FFT Histogram", TEXTX, TEXTY);
+			return Q_HANDLED();
+		}
+
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
 			return Q_HANDLED();
 		}
 
@@ -295,6 +348,11 @@ QState Lab2A_stateDebug2(Lab2A *me) {
 			xil_printf("Startup Debug 2\n");
 			lcd_reset();
 			lcdPrint("FFT Settings", TEXTX, TEXTY);
+			return Q_HANDLED();
+		}
+
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
 			return Q_HANDLED();
 		}
 
