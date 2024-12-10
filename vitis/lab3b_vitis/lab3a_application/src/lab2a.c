@@ -10,6 +10,7 @@
 #include "lab2a.h"
 #include "fft.h"
 #include "lcd.h"
+#include "font_TimesNewRomanBold.h"
 #include "xgpio.h" 		// LED driver, used for General purpose I/i
 #include "xspi.h"
 #include "xspi_l.h"
@@ -62,7 +63,7 @@ char notes[12][3]={"C ","C#","D ","D#","E ","F ","F#","G ","G#","A ","A#","B "};
 //
 void lcd_reset(){
 	setColor(0, 100, 0);
-	fillRect(TEXTX, TEXTY, 240, TEXTY+15);
+	fillRect(TEXTX, TEXTY, 240, TEXTY+25);
 }
 
 void lcd_setup(){
@@ -235,7 +236,7 @@ QState Lab2A_stateMain(Lab2A *me) {
 
 		case Q_EXIT_SIG: {
 			setColor(0,100,0);
-			fillRect(80, 120, 140, 140);
+			fillRect(64, 115, 185, 170);
 			fillRect(40, 240, 200, 260);
 			return Q_HANDLED();
 		}
@@ -244,7 +245,8 @@ QState Lab2A_stateMain(Lab2A *me) {
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
 
 			float base = 261.63 + (AO_Lab2A.A4 - 440);
-
+			setColor(0,100,0);
+			fillRect(64, 115, 185, 170);
 			int octave = 4;
 			int temp = 0;
 			if(freq == 0) { return Q_HANDLED(); }
@@ -284,12 +286,12 @@ QState Lab2A_stateMain(Lab2A *me) {
 
 			if(noteIdx != prevNote){
 				prevNote = noteIdx;
-				fillRect(80, 120, 100, 140);
-				setFont(BigFont);
-				printChar(notes[noteIdx][0], 80, 120);
-				printChar(notes[noteIdx][1], 95, 120);
-				printChar(oct_c, 110, 120);
-				setFont(SmallFont);
+
+//				setFont(BigFont);
+				setFont(&TimesNewRoman_48_Bold);
+				printChar(notes[noteIdx][0], 65, 120);
+				printChar(notes[noteIdx][1], 112, 120);
+				printChar(oct_c, 145, 120);
 			}
 
 //
@@ -298,10 +300,10 @@ QState Lab2A_stateMain(Lab2A *me) {
 //			int error = (log2(note_temp) * 1200) + 0.5;
 //
 //			xil_printf("Octave: %d Hz\r\n", octave);
-			xil_printf("Freq: %d Hz\r\n", (int)freq);
+//			xil_printf("Freq: %d Hz\r\n", (int)freq);
 //			xil_printf("Base: %d Hz\r\n", (int)base);
-			xil_printf("Note: %d Hz\r\n", noteIdx);
-			xil_printf("Error: %d Cents\r\n", cents);
+//			xil_printf("Note: %d Hz\r\n", noteIdx);
+//			xil_printf("Error: %d Cents\r\n", cents);
 			return Q_HANDLED();
 		}
 

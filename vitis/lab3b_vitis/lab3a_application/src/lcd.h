@@ -53,44 +53,57 @@
 #include "xspi_l.h"
 #include "xil_printf.h"
 
+
 #define SPI_DC          XPAR_SPI_DC_BASEADDR
 #define B_RS            0x00000001
 
 #define SPI_DTR         XPAR_SPI_BASEADDR + XSP_DTR_OFFSET
+#define SPI_TFO         XPAR_SPI_BASEADDR + XSP_TFO_OFFSET
 #define SPI_DRR         XPAR_SPI_BASEADDR + XSP_DRR_OFFSET
 #define SPI_IISR        XPAR_SPI_BASEADDR + XSP_IISR_OFFSET
 #define SPI_SR          XPAR_SPI_BASEADDR + XSP_SR_OFFSET
+#define SPI_SS			XPAR_SPI_BASEADDR + XSP_SSR_OFFSET
 
 #define cbi(reg, bitmask)       Xil_Out32(reg, Xil_In32(reg) & ~(u32)bitmask)
 #define sbi(reg, bitmask)       Xil_Out32(reg, Xil_In32(reg) |= (u32)bitmask)
 #define swap(type, i, j)        {type t = i; i = j; j = t;}
 
-#define DISP_X_SIZE     239
-#define DISP_Y_SIZE     319
+#define DISP_X_SIZE     240
+#define DISP_Y_SIZE     320
 
-struct _current_font
-{
-    u8* font;
-    u8 x_size;
-    u8 y_size;
-    u8 offset;
-    u8 numchars;
-};
+
+typedef struct _current_font {
+	const unsigned char *index;
+	const unsigned char *unicode;
+	const unsigned char *data;
+	unsigned char version;
+	unsigned char reserved;
+	unsigned char index1_first;
+	unsigned char index1_last;
+	unsigned char index2_first;
+	unsigned char index2_last;
+	unsigned char bits_index;
+	unsigned char bits_width;
+	unsigned char bits_height;
+	unsigned char bits_xoffset;
+	unsigned char bits_yoffset;
+	unsigned char bits_delta;
+	unsigned char line_space;
+	unsigned char cap_height;
+} ILI9341_t3_font_t;
 
 extern int fch; // Foreground color upper byte
 extern int fcl; // Foreground color lower byte
 extern int bch; // Background color upper byte
 extern int bcl; // Background color lower byte
 
-extern struct _current_font cfont;
-extern u8 SmallFont[];
-extern u8 BigFont[];
-extern u8 SevenSegNumFont[];
+extern const struct _current_font *cfont;
+
 
 u32 LCD_Read(char VL);
 void LCD_Write_COM(char VL);  
 void LCD_Write_DATA(char VL);
-void LCD_Write_DATA16(char VH, char VL);
+void LCD_Write_DATA16(uint16_t V);
 //void LCD_Write_DATA_(char VH, char VL);
 
 void initLCD(void);
@@ -103,8 +116,13 @@ void clrScr(void);
 void drawHLine(int x, int y, int l);
 void fillRect(int x1, int y1, int x2, int y2);
 
-void setFont(u8* font);
+void setFont(const ILI9341_t3_font_t *f);
+
 void printChar(u8 c, int x, int y);
-void lcdPrint(char *st, int x, int y);
+void lcdPrint(char *str, int x, int y);
+
+// get dimensions of a text string under the current font in pixels
+uint16_t measureTextWidth(const char* text);
+uint16_t measureTextHeight(const char* text);
 
 #endif /* LCD_H_ */

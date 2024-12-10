@@ -45,13 +45,25 @@
  */
 
 #include "lcd.h"
+#include "font_TimesNewRomanBold.h"
+
+#define ILI9341_RAMWR   (0x2C) 	/* RAM write command */
 
 // Global variables
 int fch;
 int fcl;
 int bch;
 int bcl;
-struct _current_font cfont;
+const struct _current_font *cfont;
+
+/* added by Ryan for fancy font support, Fall '24 */
+static uint16_t textcolor; // set by setColor(), matches fch & fcl
+static int cursor_x = 0;
+static int cursor_y = 0;
+
+static int _height = DISP_Y_SIZE;
+static int _width = DISP_X_SIZE;
+static _Bool wrap = 1;
 
 // Write command to LCD controller
 void LCD_Write_COM(char VL) {
@@ -71,6 +83,12 @@ void LCD_Write_DATA(char VL) {
 	while (0 == (Xil_In32(SPI_IISR) & XSP_INTR_TX_EMPTY_MASK))
 		;
 	Xil_Out32(SPI_IISR, Xil_In32(SPI_IISR) | XSP_INTR_TX_EMPTY_MASK);
+}
+
+// Write 16-bit data to LCD controller
+void LCD_Write_DATA16(uint16_t V) {
+	LCD_Write_DATA(V >> 8U);
+	LCD_Write_DATA(V);
 }
 
 // Initialize LCD controller
@@ -149,30 +167,23 @@ void initLCD(void) {
 
 	//for (i = 0; i < 100000; i++);
 
-	// Default color and fonts
-	fch = 0xFF;
-	fcl = 0xFF;
-	bch = 0x00;
-	bcl = 0x00;
-	setFont(SmallFont);
+	// Default color
+	setColor(255, 255, 255);
+	setColorBg(0, 0, 0);
 }
 
 // Set boundary for drawing
 void setXY(int x1, int y1, int x2, int y2) {
 	LCD_Write_COM(0x2A);
-	LCD_Write_DATA(x1 >> 8);
-	LCD_Write_DATA(x1);
-	LCD_Write_DATA(x2 >> 8);
-	LCD_Write_DATA(x2);
+	LCD_Write_DATA16(x1);
+	LCD_Write_DATA16(x2);
 	LCD_Write_COM(0x2B);
-	LCD_Write_DATA(y1 >> 8);
-	LCD_Write_DATA(y1);
-	LCD_Write_DATA(y2 >> 8);
-	LCD_Write_DATA(y2);
+	LCD_Write_DATA16(y1);
+	LCD_Write_DATA16(y2);
 	LCD_Write_COM(0x2C);
 }
 
-// Remove boundry
+// Remove boundary
 void clrXY(void) {
 	setXY(0, 0, DISP_X_SIZE, DISP_Y_SIZE);
 }
@@ -182,6 +193,7 @@ void setColor(u8 r, u8 g, u8 b) {
 	// 5-bit r, 6-bit g, 5-bit b
 	fch = (r & 0x0F8) | g >> 5;
 	fcl = (g & 0x1C) << 3 | b >> 3;
+	textcolor = (fch << 8U) | (fcl & 8U);
 }
 
 // Set background RGB color for next drawing
@@ -236,43 +248,300 @@ void fillRect(int x1, int y1, int x2, int y2) {
 	clrXY();
 }
 
-// Select the font used by print() and printChar()
-void setFont(u8* font) {
-	cfont.font = font;
-	cfont.x_size = font[0];
-	cfont.y_size = font[1];
-	cfont.offset = font[2];
-	cfont.numchars = font[3];
+void setFont(const ILI9341_t3_font_t *f)
+{
+	cfont = f;
 }
 
-// Print a character
-void printChar(u8 c, int x, int y) {
-	u8 ch;
-	int i, j, pixelIndex;
 
-	setXY(x, y, x + cfont.x_size - 1, y + cfont.y_size - 1);
+/* Font subsystem ported from Paul Stoffregen's driver for ILI9341
+ *
+ * Download fonts from https://github.com/PaulStoffregen/ILI9341_fonts
+ */
 
-	pixelIndex = (c - cfont.offset) * (cfont.x_size >> 3) * cfont.y_size + 4;
-	for (j = 0; j < (cfont.x_size >> 3) * cfont.y_size; j++) {
-		ch = cfont.font[pixelIndex];
-		for (i = 0; i < 8; i++) {
-			if ((ch & (1 << (7 - i))) != 0) {
-				LCD_Write_DATA(fch);
-				LCD_Write_DATA(fcl);
-			} else {
-				LCD_Write_DATA(bch);
-				LCD_Write_DATA(bcl);
+static inline uint32_t fetchbit(const uint8_t *p, uint32_t index)
+{
+	return (p[index >> 3] & (0x80 >> (index & 7)));
+}
+
+static uint32_t fetchbits_unsigned(const uint8_t *p, uint32_t index, uint32_t required)
+{
+	uint32_t val;
+	uint8_t *s = (uint8_t *)&p[index>>3];
+
+	val = s[0] << 24;
+	val |= (s[1] << 16);
+	val |= (s[2] << 8);
+	val |= s[3];
+	val <<= (index & 7); // shift out used bits
+	if (32 - (index & 7) < required) { // need to get more bits
+		val |= (s[4] >> (8 - (index & 7)));
+	}
+	val >>= (32-required); // right align the bits
+	return val;
+}
+
+static uint32_t fetchbits_signed(const uint8_t *p, uint32_t index, uint32_t required)
+{
+	uint32_t val = fetchbits_unsigned(p, index, required);
+	if (val & (1 << (required - 1))) {
+		return (int32_t)val - (1 << required);
+	}
+	return (int32_t)val;
+}
+
+static void drawFontBits(uint32_t bits, uint32_t numbits, uint32_t x, uint32_t y, uint32_t repeat)
+{
+	if (bits == 0) return;
+	uint32_t w;
+	bits <<= (32-numbits); // left align bits
+	do {
+		w = __builtin_clz(bits); // skip over zeros
+		if (w > numbits) w = numbits;
+		numbits -= w;
+		x += w;
+		bits <<= w;
+		bits = ~bits; // invert to count 1s as 0s
+		w = __builtin_clz(bits);
+		if (w > numbits) w = numbits;
+		numbits -= w;
+		bits <<= w;
+		bits = ~bits; // invert back to original polarity
+		if (w > 0) {
+			x += w;
+			setXY(x-w, y, x-1, y+repeat-1); // write a block of pixels w x repeat sized
+			LCD_Write_COM(ILI9341_RAMWR); // write to RAM
+			w *= repeat;
+			while (w-- > 1) { // draw line
+				LCD_Write_DATA16(textcolor);
 			}
+			LCD_Write_DATA16(textcolor);
 		}
-		pixelIndex++;
+	} while (numbits > 0);
+}
+
+void drawFontChar(unsigned int c)
+{
+	uint32_t bitoffset;
+	const uint8_t *data;
+
+//	xil_printf("drawFontChar %c\n\r", c);
+
+	if (c >= cfont->index1_first && c <= cfont->index1_last) {
+		bitoffset = c - cfont->index1_first;
+		bitoffset *= cfont->bits_index;
+	} else if (c >= cfont->index2_first && c <= cfont->index2_last) {
+		bitoffset = c - cfont->index2_first + cfont->index1_last - cfont->index1_first + 1;
+		bitoffset *= cfont->bits_index;
+	} else if (cfont->unicode) {
+		return; // TODO: implement sparse unicode
+	} else {
+		return;
+	}
+	data = cfont->data + fetchbits_unsigned(cfont->index, bitoffset, cfont->bits_index);
+
+	uint32_t encoding = fetchbits_unsigned(data, 0, 3);
+	if (encoding != 0) return;
+	uint32_t width = fetchbits_unsigned(data, 3, cfont->bits_width);
+	bitoffset = cfont->bits_width + 3;
+	uint32_t height = fetchbits_unsigned(data, bitoffset, cfont->bits_height);
+	bitoffset += cfont->bits_height;
+
+	int32_t xoffset = fetchbits_signed(data, bitoffset, cfont->bits_xoffset);
+	bitoffset += cfont->bits_xoffset;
+	int32_t yoffset = fetchbits_signed(data, bitoffset, cfont->bits_yoffset);
+	bitoffset += cfont->bits_yoffset;
+
+	uint32_t delta = fetchbits_unsigned(data, bitoffset, cfont->bits_delta);
+	bitoffset += cfont->bits_delta;
+
+	// horizontally, we draw every pixel, or none at all
+	if (cursor_x < 0) cursor_x = 0;
+	int32_t origin_x = cursor_x + xoffset;
+	if (origin_x < 0) {
+		cursor_x -= xoffset;
+		origin_x = 0;
+	}
+	if (origin_x + (int)width > _width) {
+		if (!wrap) return;
+		origin_x = 0;
+		if (xoffset >= 0) {
+			cursor_x = 0;
+		} else {
+			cursor_x = -xoffset;
+		}
+		cursor_y += cfont->line_space;
+	}
+	if (cursor_y >= _height) return;
+	cursor_x += delta;
+
+	// vertically, the top and/or bottom can be clipped
+	int32_t origin_y = cursor_y + cfont->cap_height - height - yoffset;
+
+	// TODO: compute top skip and number of lines
+	int32_t linecount = height;
+	//uint32_t loopcount = 0;
+	uint32_t y = origin_y;
+	while (linecount) {
+		uint32_t b = fetchbit(data, bitoffset++);
+		if (b == 0) {
+			uint32_t x = 0;
+			do {
+				uint32_t xsize = width - x;
+				if (xsize > 32) xsize = 32;
+				uint32_t bits = fetchbits_unsigned(data, bitoffset, xsize);
+				drawFontBits(bits, xsize, origin_x + x, y, 1);
+				bitoffset += xsize;
+				x += xsize;
+			} while (x < width);
+			y++;
+			linecount--;
+		} else {
+			uint32_t n = fetchbits_unsigned(data, bitoffset, 3) + 2;
+			bitoffset += 3;
+			uint32_t x = 0;
+			do {
+				uint32_t xsize = width - x;
+				if (xsize > 32) xsize = 32;
+				uint32_t bits = fetchbits_unsigned(data, bitoffset, xsize);
+				drawFontBits(bits, xsize, origin_x + x, y, n);
+				bitoffset += xsize;
+				x += xsize;
+			} while (x < width);
+			y += n;
+			linecount -= n;
+		}
+	}
+}
+
+static size_t write(u8 c)
+{
+	// make sure you have called setFont before using this function!
+
+	if (c == '\n') {
+		cursor_y += cfont->line_space; // Fix linefeed.
+		cursor_x = 0;
+	} else {
+		drawFontChar(c);
+	}
+	return 1;
+}
+
+void printChar(u8 c, int x, int y)
+{
+	cursor_x = x;
+	cursor_y = y;
+	write(c);
+}
+
+void lcdPrint(char *str, int x, int y)
+{
+	setColor(0, 0, 100);
+	setFont(&TimesNewRoman_20_Bold);
+	cursor_x = x;
+	cursor_y = y;
+
+	while (*str) {
+		if (!write(*str++))
+			return;
+	}
+}
+
+
+// measure the height & width of a specific character
+static void measureChar(u8 c, u16 *w, u16 *h)
+{
+	// Treat non-breaking space as normal space
+	if (c == 0xa0) {
+		c = ' ';
 	}
 
-	clrXY();
+	// ILI9341_T3 font
+
+	*h = cfont->cap_height;
+	*w = 0;
+
+	uint32_t bitoffset;
+	const uint8_t *data;
+
+	if (c >= cfont->index1_first && c <= cfont->index1_last) {
+		bitoffset = c - cfont->index1_first;
+		bitoffset *= cfont->bits_index;
+	}
+	else if (c >= cfont->index2_first && c <= cfont->index2_last) {
+		bitoffset = c - cfont->index2_first + cfont->index1_last - cfont->index1_first + 1;
+		bitoffset *= cfont->bits_index;
+	}
+	else if (cfont->unicode) {
+		return; // TODO: implement sparse unicode
+	}
+	else {
+		return;
+	}
+
+	data = cfont->data + fetchbits_unsigned(cfont->index, bitoffset, cfont->bits_index);
+
+	uint32_t encoding = fetchbits_unsigned(data, 0, 3);
+
+	if (encoding != 0) return;
+
+	//uint32_t width =
+	fetchbits_unsigned(data, 3, cfont->bits_width);
+	bitoffset = cfont->bits_width + 3;
+
+	//uint32_t height =
+	fetchbits_unsigned(data, bitoffset, cfont->bits_height);
+	bitoffset += cfont->bits_height;
+
+	//int32_t xoffset =
+	fetchbits_signed(data, bitoffset, cfont->bits_xoffset);
+	bitoffset += cfont->bits_xoffset;
+
+	//int32_t yoffset =
+	fetchbits_signed(data, bitoffset, cfont->bits_yoffset);
+	bitoffset += cfont->bits_yoffset;
+
+	uint32_t delta = fetchbits_unsigned(data, bitoffset, cfont->bits_delta);
+	*w = delta;
 }
 
-// Print string
-void lcdPrint(char *st, int x, int y) {
-	int i = 0;
-	while (*st != '\0')
-		printChar(*st++, x + cfont.x_size * i++, y);
+
+/// get width of a given text string
+uint16_t measureTextWidth(const char* text) {
+	uint16_t maxH = 0;
+	uint16_t currH = 0;
+
+	uint16_t n = strlen(text);
+
+	for (int i = 0; i < n; i++) {
+		if (text[i] == '\n') {
+			// For multi-line strings, retain max width
+			if (currH > maxH)
+				maxH = currH;
+			currH = 0;
+		}
+		else {
+			uint16_t h, w;
+			measureChar(text[i], &w, &h);
+			currH += w;
+		}
+	}
+	uint16_t h = maxH > currH ? maxH : currH;
+	return h;
 }
+
+
+/// get height of a given text string
+uint16_t measureTextHeight(const char* text) {
+	int lines = 1;
+	uint16_t n = strlen(text);
+
+	for (int i = 0; i < n; i++) {
+		if (text[i] == '\n') {
+			lines++;
+		}
+	}
+	return ((lines - 1) * cfont->line_space + cfont->cap_height);
+}
+
+
