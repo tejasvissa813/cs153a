@@ -9,9 +9,15 @@
 void GpioHandler(void *CallbackRef);
 void TwistHandler(void *CallbackRef);
 void TimerHandler();
+void LatencyHandler();
 
 extern float freq;
-
+extern int fft_timer;
+extern int encoder;
+extern int short_time;
+extern int time;
+extern int hfsm;
+extern int draw_timer;
 
 
 /* bsp functions ..........................................................*/

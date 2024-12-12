@@ -1,0 +1,408 @@
+/*****************************************************************************
+* lab2a.c for Lab2A of ECE 153a at UCSB
+* Date of the Last Update:  October 23,2014
+*****************************************************************************/
+
+#define AO_LAB2A
+
+#include "qpn_port.h"
+#include "bsp.h"
+#include "lab2a.h"
+#include "fft.h"
+#include "lcd.h"
+#include "font_TimesNewRomanBold.h"
+#include "xgpio.h" 		// LED driver, used for General purpose I/i
+#include "xspi.h"
+#include "xspi_l.h"
+#include "math.h"
+
+#define TEXTX 10
+#define TEXTY 10
+
+
+int cleared = 0;
+
+
+
+typedef struct Lab2ATag  {               //Lab2A State machine
+	QActive super;
+	unsigned int A4;
+	unsigned char note;
+	char text[6];
+	int encode;
+	int time;
+}  Lab2A;
+
+/* Setup state machines */
+/**********************************************************************/
+static QState Lab2A_initial (Lab2A *me);
+static QState Lab2A_on      (Lab2A *me);
+//static QState Lab2a_onNoEncode (Lab2A *m2);
+static QState Lab2A_stateMain  (Lab2A *me);
+static QState Lab2A_stateDebug1  (Lab2A *me);
+static QState Lab2A_stateDebug2  (Lab2A *me);
+static QState Lab2A_stateDebug3  (Lab2A *me);
+
+
+/**********************************************************************/
+
+
+Lab2A AO_Lab2A;
+char notes[12][3]={"C ","C#","D ","D#","E ","F ","F#","G ","G#","A ","A#","B "};
+
+typedef struct {
+    unsigned int r, g, b;
+} RGBColor;
+
+RGBColor background = {10,10,10};
+RGBColor menu = {100,100,100};
+RGBColor high = {0,0,100};
+RGBColor low = {100,0,0};
+
+RGBColor floatToJetColor(float value, float minVal, float maxVal) {
+    RGBColor color = {0, 0, 0};
+
+    if (value < minVal || value > maxVal) {
+        return color; // Return black for out-of-range values
+    }
+
+    float scaledValue = (value - minVal) / (maxVal - minVal);
+
+    if (scaledValue < 0.50) {
+        color.r = 100;
+    } else if (scaledValue < 0.90) {
+        color.b = 100;
+    } else {
+        color.g = 100;
+    }
+
+    return color;
+}
+
+
+//void draw_triangle(int x, int y){
+//	fillRect(x, y+35, x+40, y+40);
+//	fillRect(x+2, y+30, x+38, y+35);
+//	fillRect(x+5, y+25, x+35, y+30);
+//	fillRect(x+7, y+20, x+33, y+25);
+//	fillRect(x+10, y+15, x+30, y+20);
+//	fillRect(x+12, y+10, x+28, y+15);
+//	fillRect(x+15, y+5, x+25, y+10);
+//	fillRect(x+17, y+0, x+23, y+5);
+//}
+//
+void lcd_reset(){
+	setColor(background.r, background.g, background.b);
+//	fillRect(TEXTX, TEXTY, 240, TEXTY+25);
+	fillRect(0, 0, 240, 320);
+	//setColor(0,100,0);
+}
+
+void lcd_setup(){
+	static XGpio dc;
+	static XSpi spi;
+	XSpi_Config *spiConfig;	/* Pointer to Configuration data */
+	u32 status;
+	u32 controlReg;
+
+	spiConfig = XSpi_LookupConfig(XPAR_SPI_DEVICE_ID);
+	if (spiConfig == NULL) {
+		xil_printf("Can't find spi device!\n");
+		return XST_DEVICE_NOT_FOUND;
+	}
+
+	status = XSpi_CfgInitialize(&spi, spiConfig, spiConfig->BaseAddress);
+	if (status != XST_SUCCESS) {
+		xil_printf("Initialize spi fail!\n");
+		return XST_FAILURE;
+	}
+
+	XSpi_Reset(&spi);
+
+		/*
+		 * Setup the control register to enable master mode
+		 */
+	controlReg = XSpi_GetControlReg(&spi);
+	XSpi_SetControlReg(&spi,
+			(controlReg | XSP_CR_ENABLE_MASK | XSP_CR_MASTER_MODE_MASK) &
+			(~XSP_CR_TRANS_INHIBIT_MASK));
+
+	// Select 1st slave device
+	XSpi_SetSlaveSelectReg(&spi, ~0x01);
+
+	initLCD();
+	clrScr();
+	setColor(background.r, background.g, background.b);
+	fillRect(0, 0, 240, 320);
+}
+
+void drawError(int err){
+	setColor(background.r, background.g , background.b);
+	fillRect(40, 240, 200, 260);
+	float errx = 80 * ((float) err/50);
+	//xil_printf("ERRX: %d\r\n", (int) errx);
+	if(err == 0){
+		setColor(0,100,0);
+	}
+	else if(err > 0){
+		//float errx = 80 * (err/50);
+		setColor(high.r,high.g,high.b);
+		fillRect(120, 240, 120 + (int)errx, 260);
+	} else {
+		setColor(low.r,low.g,low.b);
+		fillRect(120 + (int)errx, 240, 120, 260);
+	}
+}
+
+
+void Lab2A_ctor(void)  {
+	Lab2A *me = &AO_Lab2A;
+	QActive_ctor(&me->super, (QStateHandler)&Lab2A_initial);
+	AO_Lab2A.A4 = 440;
+	AO_Lab2A.note = 'A';
+	AO_Lab2A.encode = 1;
+	AO_Lab2A.time = 0;
+//	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
+}
+
+int prevNote = -1;
+int prevErr = 60;
+
+
+QState Lab2A_initial(Lab2A *me) {
+	xil_printf("\n\rInitialization");
+	lcd_setup();
+    return Q_TRAN(&Lab2A_on);
+}
+
+QState Lab2A_on(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+			xil_printf("\n\rOn");
+		}
+			
+		case Q_INIT_SIG: {
+			return Q_TRAN(&Lab2A_stateMain);
+		}
+
+		case ENCODER_DOWN: {
+			if(AO_Lab2A.encode && AO_Lab2A.A4 > 420){
+				AO_Lab2A.encode = 0;
+				AO_Lab2A.A4--;
+			}
+			return Q_HANDLED();
+		}
+
+		case ENCODER_UP: {
+			if(AO_Lab2A.encode && AO_Lab2A.A4 < 460){
+				AO_Lab2A.encode = 0;
+				AO_Lab2A.A4++;
+			}
+			return Q_HANDLED();
+		}
+
+//		case ENCODER_CLICK: {
+//			xil_printf("%d\n\r", AO_Lab2A.A4);
+//			return Q_HANDLED();
+//		}
+		//add cases for each of the Button Signals
+		//mAKE SURE TO RESET THE SECONDS VALUE WHEN ANY INPUT IS TRIGGERED
+	}
+	
+	return Q_SUPER(&QHsm_top);
+}
+
+
+/* Create Lab2A_on state and do any initialization code if needed */
+/******************************************************************/
+
+QState Lab2A_stateMain(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+			prevNote = -1;
+			prevErr = 60;
+			xil_printf("Main State \n");
+			lcd_reset();
+			lcdPrint("Main Screen", TEXTX, TEXTY);
+			return Q_HANDLED();
+		}
+
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+
+			float base = 261.63 + (AO_Lab2A.A4 - 440);
+			int octave = 4;
+			int temp = 0;
+			if(freq == 0) { return Q_HANDLED(); }
+			else if(freq > base){
+				temp = (int)(freq/base);
+				while(temp >>= 1){
+					octave++;
+					base *= 2;
+				}
+			} else {
+				temp = (int)(base/freq);
+				while(temp >>= 1){
+					octave--;
+					base /= 2;
+				}
+				octave -= 1;
+				base /= 2;
+			}
+
+
+			float note_temp = (freq/base);
+			int noteIdx = (log2(note_temp) * 12) + 0.5;
+
+			for(int i = 0; i<noteIdx; i++){
+				base *= 1.05946;
+			}
+
+			float error = (freq/base);
+			int cents = (log2(error) * 1200) + 0.5;
+
+			if(cents != prevErr){
+				prevErr = cents;
+				drawError(cents);
+			}
+
+			char oct_c = octave + '0';
+
+			if(noteIdx != prevNote){
+				prevNote = noteIdx;
+
+//				setFont(BigFont);
+				setColor(background.r,background.g,background.b);
+				fillRect(64, 115, 185, 170);
+
+				setColor(0,100,0);
+				setFont(&TimesNewRoman_48_Bold);
+				printChar(notes[noteIdx][0], 65, 120);
+				printChar(notes[noteIdx][1], 112, 120);
+				printChar(oct_c, 145, 120);
+			}
+
+//
+//			for(int i = 0; i < noteIdx; i++){ base *= 1.0595; }
+//			note_temp = (freq/base);
+//			int error = (log2(note_temp) * 1200) + 0.5;
+//
+//			xil_printf("Octave: %d Hz\r\n", octave);
+//			xil_printf("Freq: %d Hz\r\n", (int)freq);
+//			xil_printf("Base: %d Hz\r\n", (int)base);
+//			xil_printf("Note: %d Hz\r\n", noteIdx);
+//			xil_printf("Error: %d Cents\r\n", cents);
+			return Q_HANDLED();
+		}
+
+		case NEXT: {
+			return Q_TRAN(&Lab2A_stateDebug1);
+		}
+
+	}
+
+	return Q_SUPER(&Lab2A_on);
+
+}
+
+QState Lab2A_stateDebug1(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+			lcd_reset();
+			lcdPrint("FFT Spectrogram", TEXTX, TEXTY);
+			AO_Lab2A.time = 0;
+			return Q_HANDLED();
+		}
+
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+
+			if(AO_Lab2A.time > 239){
+				AO_Lab2A.time = 0;
+				return Q_HANDLED();
+			}
+
+//			for(int i = 6; i < 256; i++){
+//				output[i] = log2(output[i]);
+//			}
+
+			float max = output[6];
+			float min = output[6];
+			for(int i = 7; i < 256; i++){
+				if(output[i] > max) max = output[i];
+				if(output[i] < min) min = output[i];
+			}
+			xil_printf("MAX: %d", (int) max);
+			xil_printf("MIN: %d", (int) min);
+			for(int i = 6; i < 256; i++){
+				RGBColor c = floatToJetColor(output[i], min, max);
+				setColor(c.r, c.g, c.b);
+				fillRect(AO_Lab2A.time, 256-i+63, AO_Lab2A.time+1, 255-i+63);
+			}
+			AO_Lab2A.time++;
+
+
+			return Q_HANDLED();
+		}
+
+		case PREV: {
+			return Q_TRAN(&Lab2A_stateMain);
+		}
+
+		case NEXT: {
+			return Q_TRAN(&Lab2A_stateDebug2);
+		}
+
+	}
+
+	return Q_SUPER(&Lab2A_on);
+
+}
+
+QState Lab2A_stateDebug2(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+			xil_printf("Startup Debug 2\n");
+			lcd_reset();
+			lcdPrint("FFT Settings", TEXTX, TEXTY);
+			return Q_HANDLED();
+		}
+
+		case TICK_SIG: {
+			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+			return Q_HANDLED();
+		}
+
+		case PREV: {
+			return Q_TRAN(&Lab2A_stateDebug1);
+		}
+
+		case NEXT: {
+			return Q_TRAN(&Lab2A_stateDebug3);
+		}
+
+	}
+
+	return Q_SUPER(&Lab2A_on);
+
+}
+
+QState Lab2A_stateDebug3(Lab2A *me) {
+	switch (Q_SIG(me)) {
+		case Q_ENTRY_SIG: {
+			xil_printf("Startup Debug 3\n");
+			lcd_reset();
+			lcdPrint("HFSM History", TEXTX, TEXTY);
+			return Q_HANDLED();
+		}
+		
+		case PREV: {
+			return Q_TRAN(&Lab2A_stateDebug2);
+		}
+
+	}
+
+	return Q_SUPER(&Lab2A_on);
+
+}
+

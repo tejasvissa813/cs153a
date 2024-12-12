@@ -29,11 +29,13 @@ Returns
 
 
 void init_LUT();
-float fft(float* q, float* w, int n, float sample_f);
+float fft(float* q, float* w, int n, float s_f, int de);
 void read_fsl_values(float* q, int n);
 float mainLoop();
 
-extern int output[512];
+extern float output[256];
+extern int decimation;
+extern int latency;
 
 void rearrange(float* data_re,float* data_im,const int N);
 

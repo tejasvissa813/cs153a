@@ -8,15 +8,17 @@
 #include <xil_assert.h>
 #include "stream_grabber.h"
 #include <xio.h>
+#include "bsp.h"
 
 
 static float new_[512];
 static float new_im[512];
 
-int output[512];
+float output[256];
 
 float cos_LUT[9][512];
 float sin_LUT[9][512];
+int latency = -1;
 
 void init_LUT(){
 	for(int j = 0; j < 9; j++){
@@ -29,8 +31,9 @@ void init_LUT(){
 }
 
 __attribute__((section(".text.fft_code")))
-float fft(float* re, float* im, const int N, float sample_f)
+float fft(float* re, float* im, const int N, float s_f, int de)
 {
+	float sample_f = s_f/(float)de;
 //	printf("%f\r\n", re[100]);
 	for ( int i = 0; i < N; i ++){
 //		printf("%d %f\r\n",i, re[i]);
@@ -48,20 +51,36 @@ float fft(float* re, float* im, const int N, float sample_f)
     int place = -1;
     int size = N / 2;
     //xil_printf("%d\n\r", start);
+    float avg = 0;
+    for(int i = 0; i < size;i++){
+    	output[i] = 0;
+    }
+
+//    output[de] = 1;
+    int tem = de/8;
     for (int i = 6; i < size; i ++){
         float val = (new_[i]*new_[i] - new_im[i]*new_im[i]);
+        if (val < 0)val = -val;
+
+        int p = i /tem;
+        if (p < 256){
+        	if(output[p] <= val){
+        		output[p] = val;
+        	}
+        }
+
 //        printf("%d %f\r\n",i, val);
 //        int idx = i / (size/10);
 //        bins[idx] += (int) val;
 //        bin_count[idx]++;
-        if (val < 0)val = -val;
         if (val > max){
             max = val;
             place = i;
         }
     }
-    int start = (15 * N) / sample_f;
-    if(place < start) return 0;
+//    int start = (15 * N) / sample_f;
+
+//    if(place < start) return 0;
     return (sample_f/N) * place;
 }
 
@@ -134,7 +153,7 @@ const double pi = 3.1415926;
 int int_buffer[SAMPLES];
 static float q[SAMPLES];
 static float w[SAMPLES];
-int decimation = 1;
+int decimation;
 
 
 
@@ -144,25 +163,43 @@ void read_fsl_values(float* q, int n) {
    unsigned int x;
    stream_grabber_start();
    stream_grabber_wait_enough_samples(1);
+   int no_w_count = 0;
+   long int temp = 0;
 
-   for(i = 0; i < n; i+=decimation) {
-      int_buffer[i/decimation] = stream_grabber_read_sample(i);
-      // xil_printf("%d\n",int_buffer[i]);
-      x = int_buffer[i/decimation];
-      x *= 0.5 * (1 - cos(2 * pi * i / (n-1))); //hann window
-      q[i/decimation] = 3.3*x/67108864.0; // 3.3V and 2^26 bit precision.
 
+   for(i = 0; i < n; i+=1) {
+	   temp += stream_grabber_read_sample(i);
+
+//	printf("temp%d\r\n",temp);
+	   no_w_count++;
+
+
+	if(no_w_count == decimation){
+		x = temp/decimation;
+      q[i/decimation] = (float)x * 0.5 * (1 - cos(2 * pi * i / (n-1))); // 3.3V and 2^26 bit precision.
+      temp = 0;
+      no_w_count= 0;
+	}
    }
 }
 
 float mainLoop(){
+
+	int start = fft_timer;
+
 	decimation = 1;
 	read_fsl_values(q, SAMPLES);
 	float sample_f = 100*1000*1000/2048.0;
 	for(int l=0;l<SAMPLES;l++) w[l] = 0;
-	float frequency=fft(q,w,SAMPLES,sample_f);
+	float frequency=fft(q,w,SAMPLES,sample_f, 1);
 
 	decimation = (int)(sample_f/(2 * frequency));
+	for(int de = 1; de < 129; de<<=1){
+		if (decimation <= de){
+			decimation = de/2;
+			break;
+		}
+	}
 	//int convertFreq = (int)(sample_f/(2 * frequency));
 	//while(convertFreq >>= 1) decimation++;
 	//xil_printf("decimation: %d\r\n", decimation);
@@ -170,7 +207,12 @@ float mainLoop(){
 	for(int l=0;l<SAMPLES;l++) q[l] = 0;
 	read_fsl_values(q, SAMPLES*decimation);
 	for(int l=0;l<SAMPLES;l++) w[l] = 0;
-	frequency=fft(q,w,SAMPLES,sample_f/decimation);
+	frequency=fft(q,w,SAMPLES,sample_f, decimation);
+
+	int end = fft_timer;
+
+	fft_timer = 0;
+	latency = end - start;
 
 	return frequency;
 	//xil_printf("frequency: %d Hz\r\n", (int)(frequency+.5));

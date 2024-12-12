@@ -15,9 +15,10 @@
 #include "xspi.h"
 #include "xspi_l.h"
 #include "math.h"
+#include "stdio.h"
 
-#define TEXTX 10
-#define TEXTY 10
+#define TEXTX 5
+#define TEXTY 5
 
 
 int cleared = 0;
@@ -30,6 +31,8 @@ typedef struct Lab2ATag  {               //Lab2A State machine
 	unsigned char note;
 	char text[6];
 	int encode;
+	int time;
+	int encoderTime;
 }  Lab2A;
 
 /* Setup state machines */
@@ -49,21 +52,38 @@ static QState Lab2A_stateDebug3  (Lab2A *me);
 Lab2A AO_Lab2A;
 char notes[12][3]={"C ","C#","D ","D#","E ","F ","F#","G ","G#","A ","A#","B "};
 
+typedef struct {
+    unsigned int r, g, b;
+} RGBColor;
 
-//void draw_triangle(int x, int y){
-//	fillRect(x, y+35, x+40, y+40);
-//	fillRect(x+2, y+30, x+38, y+35);
-//	fillRect(x+5, y+25, x+35, y+30);
-//	fillRect(x+7, y+20, x+33, y+25);
-//	fillRect(x+10, y+15, x+30, y+20);
-//	fillRect(x+12, y+10, x+28, y+15);
-//	fillRect(x+15, y+5, x+25, y+10);
-//	fillRect(x+17, y+0, x+23, y+5);
-//}
-//
+RGBColor background = {10,10,10};
+RGBColor menu = {100,100,100};
+RGBColor high = {0,0,100};
+RGBColor low = {100,0,0};
+
+RGBColor floatToJetColor(float value, float minVal, float maxVal) {
+	value  =value * 0.3;
+    RGBColor color = {0, 0, 0};
+
+    if (value < minVal || value > maxVal) {
+        return color; // Return black for out-of-range values
+    }
+
+    float scaledValue = (value - minVal) / (maxVal - minVal);
+    int greyScale = (int) (256 * scaledValue);
+
+    color.r = (unsigned char)round(255 * fmax(0, fmin(1, 4 * greyScale - 3)));
+	color.g = (unsigned char)round(255 * fmax(0, fmin(1, 4 * fabs(greyScale - 0.75) - 1)));
+	color.b = (unsigned char)round(255 * fmax(0, fmin(1, 1 - 4 * greyScale)));
+
+	return color;
+}
+
 void lcd_reset(){
-	setColor(0, 100, 0);
-	fillRect(TEXTX, TEXTY, 240, TEXTY+25);
+	setColor(background.r, background.g, background.b);
+//	fillRect(TEXTX, TEXTY, 240, TEXTY+25);
+	fillRect(0, 0, 240, 320);
+	//setColor(0,100,0);
 }
 
 void lcd_setup(){
@@ -100,68 +120,38 @@ void lcd_setup(){
 
 	initLCD();
 	clrScr();
-	setColor(0, 100, 0);
+	setColor(background.r, background.g, background.b);
 	fillRect(0, 0, 240, 320);
-	setColor(0, 255, 0);
-
-
-	//setColorBg(0, 100, 0);
-
-//	for(int x = 0; x < 240; x+=40){
-//		for(int y = 0; y < 320; y+=40){
-//			draw_triangle(x, y);
-//		}
-//	}
 }
-//
-//void drawVolume(){
-//	//initLCD();
-//	if(AO_Lab2A.seconds <= 3){
-//		setColor(100, 0, 0);
-//		fillRect(20, 50, 220, 70);
-//		setColor(255, 0, 0);
-//		float percent = (float) AO_Lab2A.volume / 63;
-//		int xVal = 200 * percent;
-//		fillRect(20, 50, 20+xVal, 70);
-//
-//		if(AO_Lab2A.text[4] != "6") lcdPrint(AO_Lab2A.text, 80, 80);
-//
-//		cleared = 0;
-//	} else if(cleared == 0) {
-//		//setXY(20, 50, 220, 70);
-//		setColor(0, 100, 0);
-//		fillRect(20, 50, 220, 70);
-//		fillRect(80, 80, 120, 92); // depends on font size we use
-//		setColor(0, 255, 0);
-//		draw_triangle(0, 40);
-//		draw_triangle(40, 40);
-//		draw_triangle(80, 40);
-//		draw_triangle(80, 80); // also depends on font size/text location
-//		draw_triangle(120, 40);
-//		draw_triangle(160, 40);
-//		draw_triangle(200, 40);
-//		//clrXY();
-//		AO_Lab2A.text[4] = "6";
-//		cleared = 1;
-//	}
-//}
 
 void drawError(int err){
-	setColor(0,100,0);
+	setColor(background.r, background.g , background.b);
 	fillRect(40, 240, 200, 260);
 	float errx = 80 * ((float) err/50);
-	xil_printf("ERRX: %d\r\n", (int) errx);
+	//xil_printf("ERRX: %d\r\n", (int) errx);
 	if(err == 0){
 		setColor(0,100,0);
 	}
 	else if(err > 0){
 		//float errx = 80 * (err/50);
-		setColor(0,0,100);
+		setColor(high.r,high.g,high.b);
 		fillRect(120, 240, 120 + (int)errx, 260);
 	} else {
-		setColor(100,0,0);
+		setColor(low.r,low.g,low.b);
 		fillRect(120 + (int)errx, 240, 120, 260);
 	}
+}
+
+void drawA4(){
+	setColor(150,100,10);
+	fillRect(40, 20, 200, 60);
+	setColor(0,0,100);
+	setFont(&TimesNewRoman_8_Bold);
+
+	char base[12];
+	sprintf(base, "A4: %d", AO_Lab2A.A4);
+	lcdPrint(base, 70, 30);
+
 }
 
 
@@ -171,11 +161,14 @@ void Lab2A_ctor(void)  {
 	AO_Lab2A.A4 = 440;
 	AO_Lab2A.note = 'A';
 	AO_Lab2A.encode = 1;
+	AO_Lab2A.time = 0;
+	AO_Lab2A.encoderTime=0;
 //	AO_Lab2A.text = {"B", "T", "N", "_", "6", "\0"};
 }
 
 int prevNote = -1;
 int prevErr = 60;
+int prevA4 = 440;
 
 
 QState Lab2A_initial(Lab2A *me) {
@@ -195,18 +188,24 @@ QState Lab2A_on(Lab2A *me) {
 		}
 
 		case ENCODER_DOWN: {
-			if(AO_Lab2A.encode && AO_Lab2A.A4 > 420){
-				AO_Lab2A.encode = 0;
+			if( AO_Lab2A.A4 > 420){
+
 				AO_Lab2A.A4--;
 			}
+			xil_printf("\n\rdown");
+			AO_Lab2A.encoderTime = 3;
+			draw_timer = 0;
 			return Q_HANDLED();
 		}
 
 		case ENCODER_UP: {
-			if(AO_Lab2A.encode && AO_Lab2A.A4 < 460){
-				AO_Lab2A.encode = 0;
+			if(AO_Lab2A.A4 < 460){
+
 				AO_Lab2A.A4++;
 			}
+			xil_printf("\n\rup");
+			AO_Lab2A.encoderTime = 3;
+			draw_timer= 0;
 			return Q_HANDLED();
 		}
 
@@ -228,25 +227,28 @@ QState Lab2A_on(Lab2A *me) {
 QState Lab2A_stateMain(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
-			xil_printf("Main State \n");
+			prevNote = -1;
+			prevErr = 60;
+			//xil_printf("Main State \n");
 			lcd_reset();
-			lcdPrint("Main Screen", TEXTX, TEXTY);
-			return Q_HANDLED();
-		}
-
-		case Q_EXIT_SIG: {
-			setColor(0,100,0);
-			fillRect(64, 115, 185, 170);
-			fillRect(40, 240, 200, 260);
+			//lcdPrint("Main Screen", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
 
 		case TICK_SIG: {
+			xil_printf("%d\n\r", latency);
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+			if(AO_Lab2A.encoderTime > 0) AO_Lab2A.encoderTime--;
+
+			setColor(0,0,0);
+			fillRect(100, 300, 150, 320);
+			setColor(0,0,100);
+			setFont(&TimesNewRoman_8_Bold);
+			char freqStr[6];
+			sprintf(freqStr, "%d", (int)freq);
+			lcdPrint(freqStr, 100, 300);
 
 			float base = 261.63 + (AO_Lab2A.A4 - 440);
-			setColor(0,100,0);
-			fillRect(64, 115, 185, 170);
 			int octave = 4;
 			int temp = 0;
 			if(freq == 0) { return Q_HANDLED(); }
@@ -288,22 +290,32 @@ QState Lab2A_stateMain(Lab2A *me) {
 				prevNote = noteIdx;
 
 //				setFont(BigFont);
+				setColor(background.r,background.g,background.b);
+				fillRect(64, 115, 185, 170);
+
+				setColor(0,100,0);
 				setFont(&TimesNewRoman_48_Bold);
 				printChar(notes[noteIdx][0], 65, 120);
 				printChar(notes[noteIdx][1], 112, 120);
 				printChar(oct_c, 145, 120);
 			}
 
-//
-//			for(int i = 0; i < noteIdx; i++){ base *= 1.0595; }
-//			note_temp = (freq/base);
-//			int error = (log2(note_temp) * 1200) + 0.5;
-//
-//			xil_printf("Octave: %d Hz\r\n", octave);
-//			xil_printf("Freq: %d Hz\r\n", (int)freq);
-//			xil_printf("Base: %d Hz\r\n", (int)base);
-//			xil_printf("Note: %d Hz\r\n", noteIdx);
-//			xil_printf("Error: %d Cents\r\n", cents);
+			if(AO_Lab2A.encoderTime == 1 && AO_Lab2A.A4 != prevA4){
+				prevA4 = AO_Lab2A.A4;
+				setColor(0,0,0);
+				fillRect(40, 20, 200, 60);
+			}
+			if(draw_timer != -1){
+				drawA4();
+				if (draw_timer > 3000){
+					draw_timer = -1;
+				}
+			}
+			else{
+				setColor(0,0,0);
+					fillRect(40, 20, 200, 60);
+			}
+
 			return Q_HANDLED();
 		}
 
@@ -321,12 +333,43 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
 			lcd_reset();
-			lcdPrint("FFT Histogram", TEXTX, TEXTY);
+			//lcdPrint("FFT Spectrogram", TEXTX, TEXTY);
+			AO_Lab2A.time = 0;
 			return Q_HANDLED();
 		}
 
 		case TICK_SIG: {
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+			if(AO_Lab2A.encoderTime) AO_Lab2A.encoderTime--;
+
+			if(AO_Lab2A.time > 239){
+				AO_Lab2A.time = 0;
+				return Q_HANDLED();
+			}
+
+			for(int i = 6; i < 256; i++){
+				output[i] = output[i];
+			}
+
+			float max = output[6];
+			float min = output[6];
+			for(int i = 7; i < 256; i++){
+				if(output[i] > max) max = output[i];
+				if(output[i] < min) min = output[i];
+			}
+			for(int i = 6; i < 256; i++){
+				RGBColor c = floatToJetColor(output[i], min, max);
+				setColor(c.r, c.g, c.b);
+				fillRect(AO_Lab2A.time, 256-i+64, AO_Lab2A.time+1, 255-i+64);
+			}
+			AO_Lab2A.time++;
+
+			if(AO_Lab2A.encoderTime == 1 && AO_Lab2A.A4 != prevA4){
+				prevA4 = AO_Lab2A.A4;
+				setColor(0,0,0);
+				fillRect(40, 20, 200, 60);
+			}
+
 			return Q_HANDLED();
 		}
 
@@ -355,6 +398,16 @@ QState Lab2A_stateDebug2(Lab2A *me) {
 
 		case TICK_SIG: {
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
+			if(AO_Lab2A.encoderTime) AO_Lab2A.encoderTime--;
+
+
+
+
+			if(AO_Lab2A.encoderTime == 1){
+				setColor(0,0,0);
+				fillRect(40, 20, 200, 60);
+			}
+
 			return Q_HANDLED();
 		}
 
@@ -377,10 +430,11 @@ QState Lab2A_stateDebug3(Lab2A *me) {
 		case Q_ENTRY_SIG: {
 			xil_printf("Startup Debug 3\n");
 			lcd_reset();
-			lcdPrint("HFSM History", TEXTX, TEXTY);
+			lcdPrint("TEST SIGNALS", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
 		
+
 		case PREV: {
 			return Q_TRAN(&Lab2A_stateDebug2);
 		}
