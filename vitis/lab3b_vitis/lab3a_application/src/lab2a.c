@@ -63,15 +63,17 @@ RGBColor high = {0,0,200};
 RGBColor low = {200,0,0};
 
 RGBColor floatToJetColor(float value, float minVal, float maxVal) {
-	value  =value * 0.3;
     RGBColor color = {0, 0, 0};
-
+    if (maxVal < 0.3)maxVal = 0.3;
     if (value < minVal || value > maxVal) {
-        return color; // Return black for out-of-range values
+        value = minVal;
     }
 
     float scaledValue = (value - minVal) / (maxVal - minVal);
     int greyScale = (int) (256 * scaledValue);
+//    color.r = greyScale;
+//    	color.g = greyScale;
+//    	color.b = greyScale;
 
     color.r = (unsigned char)round(255 * fmax(0, fmin(1, 4 * greyScale - 3)));
 	color.g = (unsigned char)round(255 * fmax(0, fmin(1, 4 * fabs(greyScale - 0.75) - 1)));
@@ -225,6 +227,8 @@ QState Lab2A_on(Lab2A *me) {
 /* Create Lab2A_on state and do any initialization code if needed */
 /******************************************************************/
 
+int prevOctave = -1;
+
 QState Lab2A_stateMain(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
@@ -253,6 +257,7 @@ QState Lab2A_stateMain(Lab2A *me) {
 			int octave = 4;
 			int temp = 0;
 			if(freq == 0) { return Q_HANDLED(); }
+
 			else if(freq > base){
 				temp = (int)(freq/base);
 				while(temp >>= 1){
@@ -269,9 +274,13 @@ QState Lab2A_stateMain(Lab2A *me) {
 				base /= 2;
 			}
 
+			//xil_printf("Base: %d\n\r", (int) base);
+
 
 			float note_temp = (freq/base);
 			int noteIdx = (log2(note_temp) * 12) + 0.5;
+			if(noteIdx > 11) noteIdx = 11;
+			if(noteIdx < 0) noteIdx = 0;
 
 			for(int i = 0; i<noteIdx; i++){
 				base *= 1.05946;
@@ -279,26 +288,38 @@ QState Lab2A_stateMain(Lab2A *me) {
 
 			float error = (freq/base);
 			int cents = (log2(error) * 1200) + 0.5;
+			if(cents >= 50) cents = 49;
 
 			if(cents != prevErr){
 				prevErr = cents;
 				drawError(cents);
+
+				setColor(0,0,0);
+				fillRect(70,200, 170, 220);
+
+				char centStr[10];
+				sprintf(centStr, "%d Cents", cents);
+				lcdPrint_w(centStr, 70, 200);
 			}
 
 			char oct_c = octave + '0';
 
-			if(noteIdx != prevNote){
+			if(noteIdx != prevNote  || octave != prevOctave){
 				prevNote = noteIdx;
+				prevOctave = octave;
 
 //				setFont(BigFont);
 				setColor(background.r,background.g,background.b);
 				fillRect(64, 115, 185, 170);
 
-				setColor(0,100,0);
+				setColor(200,200,200);
 				setFont(&TimesNewRoman_48_Bold);
 				printChar(notes[noteIdx][0], 65, 120);
 				printChar(notes[noteIdx][1], 112, 120);
 				printChar(oct_c, 145, 120);
+
+
+
 			}
 
 			if(AO_Lab2A.encoderTime == 1 && AO_Lab2A.A4 != prevA4){
@@ -322,7 +343,7 @@ QState Lab2A_stateMain(Lab2A *me) {
 					setFont(&TimesNewRoman_8_Bold);
 
 						char base[12] = "   TUNER   ";
-						lcdPrint_w(base, 50, 30);
+						lcdPrint_w(base, 60, 30);
 				}
 			}
 
@@ -360,9 +381,9 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 				return Q_HANDLED();
 			}
 
-			for(int i = 6; i < 256; i++){
-				output[i] = output[i];
-			}
+//			for(int i = 6; i < 256; i++){
+//				output[i] = output[i];
+//			}
 
 			float max = output[6];
 			float min = output[6];
@@ -370,6 +391,14 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 				if(output[i] > max) max = output[i];
 				if(output[i] < min) min = output[i];
 			}
+//			float med = (max + min)/2;
+//			int cc = 0;
+//			for(int i = 7; i < 256; i++){
+//					if(output[i] > med)cc++;
+//			}
+//			if (cc > 80){
+//				max = max *2;
+//			}
 			for(int i = 6; i < 256; i++){
 				RGBColor c = floatToJetColor(output[i], min, max);
 				setColor(c.r, c.g, c.b);
