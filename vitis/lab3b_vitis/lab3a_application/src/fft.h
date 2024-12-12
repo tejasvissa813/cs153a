@@ -29,7 +29,7 @@ Returns
 
 
 void init_LUT();
-float fft(float* q, float* w, int n, float s_f, int de);
+float fft(float* q, float* w, int n, float s_f, int de, int update);
 void read_fsl_values(float* q, int n);
 float mainLoop();
 

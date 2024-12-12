@@ -120,6 +120,7 @@ void setFont(const ILI9341_t3_font_t *f);
 
 void printChar(u8 c, int x, int y);
 void lcdPrint(char *str, int x, int y);
+void lcdPrint_w(char *str, int x, int y);
 
 // get dimensions of a text string under the current font in pixels
 uint16_t measureTextWidth(const char* text);

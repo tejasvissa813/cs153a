@@ -436,8 +436,21 @@ void printChar(u8 c, int x, int y)
 
 void lcdPrint(char *str, int x, int y)
 {
-	setColor(0, 0, 100);
+	setColor(20, 20, 100);
 	setFont(&TimesNewRoman_20_Bold);
+	cursor_x = x;
+	cursor_y = y;
+
+	while (*str) {
+		if (!write(*str++))
+			return;
+	}
+}
+
+void lcdPrint_w(char *str, int x, int y)
+{
+	setColor(200, 200, 200);
+	setFont(&TimesNewRoman_18_Bold);
 	cursor_x = x;
 	cursor_y = y;
 

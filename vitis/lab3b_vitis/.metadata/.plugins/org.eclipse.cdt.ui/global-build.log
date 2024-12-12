@@ -1,27 +1,52 @@
 Nothing to build in platform 'lab3a_platform'
 
-19:58:28 **** Incremental Build of configuration Debug for project lab3a_application ****
+11:46:29 **** Incremental Build of configuration Debug for project lab3a_application ****
 make all 
-'Building file: ../src/fft.c'
+'Building file: ../src/lab2a.c'
 'Invoking: MicroBlaze gcc compiler'
-mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/fft.o" -IC:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/fft.d" -MT"src/fft.o" -o "src/fft.o" "../src/fft.c"
-In file included from ../src/fft.c:3:
-../src/trig.h:15: warning: "PI" redefined
-   15 | #define PI 3.14159265
-      | 
-In file included from ../src/fft.c:1:
-../src/fft.h:28: note: this is the location of the previous definition
-   28 | #define PI 3.141592//65358979323846
-      | 
-../src/fft.c: In function 'fft':
-../src/fft.c:54:11: warning: unused variable 'avg' [-Wunused-variable]
-   54 |     float avg = 0;
-      |           ^~~
-../src/fft.c: In function 'compute':
-../src/fft.c:109:15: warning: unused variable 'pi' [-Wunused-variable]
-  109 |   const float pi = -3.1415926;
-      |               ^~
-'Finished building: ../src/fft.c'
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/lab2a.o" -IC:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include -mlittle-endian -mxl-barrel-shift -mxl-pattern-compare -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/lab2a.d" -MT"src/lab2a.o" -o "src/lab2a.o" "../src/lab2a.c"
+In file included from ../src/qpn_port.h:38,
+                 from ../src/lab2a.c:8:
+C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xbasic_types.h:102:2: warning: #warning The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert. [-Wcpp]
+  102 | #warning  The xbasics_type.h file is deprecated and users should use xil_types.h and xil_assert.
+      |  ^~~~~~~
+C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xbasic_types.h:103:2: warning: #warning Please refer the Standalone BSP UG647 for further details [-Wcpp]
+  103 | #warning  Please refer the Standalone BSP UG647 for further details
+      |  ^~~~~~~
+In file included from C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xgpio.h:116,
+                 from ../src/qpn_port.h:34,
+                 from ../src/lab2a.c:8:
+../src/lab2a.c: In function 'lcd_setup':
+C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xstatus.h:44:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   44 | #define XST_DEVICE_NOT_FOUND            2L
+      |                                         ^~
+../src/lab2a.c:100:24: note: in expansion of macro 'XST_DEVICE_NOT_FOUND'
+  100 |                 return XST_DEVICE_NOT_FOUND;
+      |                        ^~~~~~~~~~~~~~~~~~~~
+../src/lab2a.c:90:6: note: declared here
+   90 | void lcd_setup(){
+      |      ^~~~~~~~~
+In file included from C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xgpio.h:116,
+                 from ../src/qpn_port.h:34,
+                 from ../src/lab2a.c:8:
+C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/sw/lab3a_platform/standalone_domain/bspinclude/include/xstatus.h:43:41: warning: 'return' with a value, in function returning void [-Wreturn-type]
+   43 | #define XST_FAILURE                     1L
+      |                                         ^~
+../src/lab2a.c:106:24: note: in expansion of macro 'XST_FAILURE'
+  106 |                 return XST_FAILURE;
+      |                        ^~~~~~~~~~~
+../src/lab2a.c:90:6: note: declared here
+   90 | void lcd_setup(){
+      |      ^~~~~~~~~
+../src/lab2a.c:91:22: warning: unused variable 'dc' [-Wunused-variable]
+   91 |         static XGpio dc;
+      |                      ^~
+At top level:
+../src/lab2a.c:91:22: warning: 'dc' defined but not used [-Wunused-variable]
+../src/lab2a.c:521:8: warning: 'Lab2A_stateDebug3' defined but not used [-Wunused-function]
+  521 | QState Lab2A_stateDebug3(Lab2A *me) {
+      |        ^~~~~~~~~~~~~~~~~
+'Finished building: ../src/lab2a.c'
 ' '
 'Building target: lab3a_application.elf'
 'Invoking: MicroBlaze gcc linker'
@@ -31,9 +56,17 @@ mb-gcc -Wl,-T -Wl,../src/lscript.ld -LC:/Users/tejasvissapragada/Documents/GitHu
 'Invoking: MicroBlaze Print Size'
 mb-size lab3a_application.elf  |tee "lab3a_application.elf.size"
    text	   data	    bss	    dec	    hex	filename
- 128008	   1996	  54868	 184872	  2d228	lab3a_application.elf
+ 131532	   1992	  54884	 188408	  2dff8	lab3a_application.elf
 'Finished building: lab3a_application.elf.size'
 ' '
-19:58:29 **** Incremental Build of configuration Debug for project lab3a_system ****
+11:46:30 **** Incremental Build of configuration Debug for project lab3a_system ****
+make all 
+Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."
+Nothing to build in platform 'lab3a_platform'
+
+11:46:57 **** Incremental Build of configuration Debug for project lab3a_application ****
+make all 
+make: Nothing to be done for 'all'.
+11:46:58 **** Incremental Build of configuration Debug for project lab3a_system ****
 make all 
 Skipping SD card image generation. Reason: "The system project only has applications for microblaze processors."

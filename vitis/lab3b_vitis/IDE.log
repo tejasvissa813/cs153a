@@ -16505,3 +16505,1118 @@ con
 ----------------End of Script----------------
 
 19:58:38 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+20:01:35 INFO  : Disconnected from the channel tcfchan#109.
+10:24:11 DEBUG : Logs will be stored at 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/IDE.log'.
+10:24:12 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\temp_xsdb_launch_script.tcl
+10:24:19 INFO  : Registering command handlers for Vitis TCF services
+10:24:20 INFO  : Platform repository initialization has completed.
+10:24:22 INFO  : XSCT server has started successfully.
+10:24:22 INFO  : plnx-install-location is set to ''
+10:24:22 INFO  : Successfully done setting XSCT server connection channel  
+10:24:27 INFO  : Successfully done setting workspace for the tool. 
+10:24:27 INFO  : Successfully done query RDI_DATADIR 
+10:25:46 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:25:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:26:05 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:26:05 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:26:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:26:10 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:26:10 INFO  : 'jtag frequency' command is executed.
+10:26:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:26:12 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:26:12 INFO  : Context for processor 'microblaze_0' is selected.
+10:26:12 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:26:12 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:26:12 INFO  : Context for processor 'microblaze_0' is selected.
+10:26:12 INFO  : System reset is completed.
+10:26:15 INFO  : 'after 3000' command is executed.
+10:26:15 INFO  : Context for processor 'microblaze_0' is selected.
+10:26:16 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:26:16 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:26:16 INFO  : Context for processor 'microblaze_0' is selected.
+10:26:16 INFO  : 'con' command is executed.
+10:26:16 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:26:16 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:32:21 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:32:53 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:32:56 INFO  : Disconnected from the channel tcfchan#1.
+10:32:57 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:33:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:33:07 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:33:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:33:10 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:33:10 INFO  : 'jtag frequency' command is executed.
+10:33:10 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:33:13 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:33:13 INFO  : Context for processor 'microblaze_0' is selected.
+10:33:13 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:33:13 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:33:14 INFO  : Context for processor 'microblaze_0' is selected.
+10:33:14 INFO  : System reset is completed.
+10:33:17 INFO  : 'after 3000' command is executed.
+10:33:17 INFO  : Context for processor 'microblaze_0' is selected.
+10:33:17 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:33:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:33:17 INFO  : Context for processor 'microblaze_0' is selected.
+10:33:18 INFO  : 'con' command is executed.
+10:33:18 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:33:18 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:36:29 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:36:30 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:36:33 INFO  : Disconnected from the channel tcfchan#2.
+10:36:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:36:43 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:36:43 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:36:47 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:36:47 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:36:47 INFO  : 'jtag frequency' command is executed.
+10:36:47 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:36:50 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:36:50 INFO  : Context for processor 'microblaze_0' is selected.
+10:36:50 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:36:50 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:36:50 INFO  : Context for processor 'microblaze_0' is selected.
+10:36:50 INFO  : System reset is completed.
+10:36:53 INFO  : 'after 3000' command is executed.
+10:36:53 INFO  : Context for processor 'microblaze_0' is selected.
+10:36:54 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:36:54 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:36:54 INFO  : Context for processor 'microblaze_0' is selected.
+10:36:54 INFO  : 'con' command is executed.
+10:36:54 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:36:54 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:40:22 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:40:24 INFO  : Disconnected from the channel tcfchan#3.
+10:40:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:40:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:40:34 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:40:37 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:40:37 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:40:37 INFO  : 'jtag frequency' command is executed.
+10:40:37 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:40:40 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:40:40 INFO  : Context for processor 'microblaze_0' is selected.
+10:40:40 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:40:40 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:40:40 INFO  : Context for processor 'microblaze_0' is selected.
+10:40:40 INFO  : System reset is completed.
+10:40:43 INFO  : 'after 3000' command is executed.
+10:40:43 INFO  : Context for processor 'microblaze_0' is selected.
+10:40:44 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:40:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:40:44 INFO  : Context for processor 'microblaze_0' is selected.
+10:40:44 INFO  : 'con' command is executed.
+10:40:44 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:40:44 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:42:30 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:42:34 INFO  : Disconnected from the channel tcfchan#4.
+10:42:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:42:44 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:42:44 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:42:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:42:48 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:42:48 INFO  : 'jtag frequency' command is executed.
+10:42:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:42:51 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:42:51 INFO  : Context for processor 'microblaze_0' is selected.
+10:42:51 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:42:51 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:42:51 INFO  : Context for processor 'microblaze_0' is selected.
+10:42:51 INFO  : System reset is completed.
+10:42:54 INFO  : 'after 3000' command is executed.
+10:42:54 INFO  : Context for processor 'microblaze_0' is selected.
+10:42:55 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:42:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:42:55 INFO  : Context for processor 'microblaze_0' is selected.
+10:42:55 INFO  : 'con' command is executed.
+10:42:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:42:55 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:44:02 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:44:04 INFO  : Disconnected from the channel tcfchan#5.
+10:44:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:44:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:44:14 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:44:20 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:44:20 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:44:20 INFO  : 'jtag frequency' command is executed.
+10:44:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:44:22 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:44:22 INFO  : Context for processor 'microblaze_0' is selected.
+10:44:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:44:23 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:44:23 INFO  : Context for processor 'microblaze_0' is selected.
+10:44:23 INFO  : System reset is completed.
+10:44:26 INFO  : 'after 3000' command is executed.
+10:44:26 INFO  : Context for processor 'microblaze_0' is selected.
+10:44:27 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:44:27 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:44:27 INFO  : Context for processor 'microblaze_0' is selected.
+10:44:27 INFO  : 'con' command is executed.
+10:44:27 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:44:27 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:45:05 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:45:09 INFO  : Disconnected from the channel tcfchan#6.
+10:45:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:45:19 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:45:19 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:45:32 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:45:36 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:45:36 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:45:36 INFO  : 'jtag frequency' command is executed.
+10:45:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:45:38 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:45:38 INFO  : Context for processor 'microblaze_0' is selected.
+10:45:38 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:45:38 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:45:38 INFO  : Context for processor 'microblaze_0' is selected.
+10:45:38 INFO  : System reset is completed.
+10:45:41 INFO  : 'after 3000' command is executed.
+10:45:41 INFO  : Context for processor 'microblaze_0' is selected.
+10:45:42 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:45:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:45:42 INFO  : Context for processor 'microblaze_0' is selected.
+10:45:42 INFO  : 'con' command is executed.
+10:45:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:45:42 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:47:35 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:47:43 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:47:48 INFO  : Disconnected from the channel tcfchan#7.
+10:47:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:47:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:47:58 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:48:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:48:00 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:48:00 INFO  : 'jtag frequency' command is executed.
+10:48:01 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:48:03 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:48:03 INFO  : Context for processor 'microblaze_0' is selected.
+10:48:03 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:48:03 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:48:04 INFO  : Context for processor 'microblaze_0' is selected.
+10:48:04 INFO  : System reset is completed.
+10:48:07 INFO  : 'after 3000' command is executed.
+10:48:07 INFO  : Context for processor 'microblaze_0' is selected.
+10:48:07 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:48:07 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:48:07 INFO  : Context for processor 'microblaze_0' is selected.
+10:48:07 INFO  : 'con' command is executed.
+10:48:07 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:48:07 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+10:54:54 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+10:54:58 INFO  : Disconnected from the channel tcfchan#8.
+10:54:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:55:08 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+10:55:08 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+10:55:13 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:55:13 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+10:55:13 INFO  : 'jtag frequency' command is executed.
+10:55:13 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+10:55:16 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+10:55:16 INFO  : Context for processor 'microblaze_0' is selected.
+10:55:16 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+10:55:16 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+10:55:16 INFO  : Context for processor 'microblaze_0' is selected.
+10:55:16 INFO  : System reset is completed.
+10:55:19 INFO  : 'after 3000' command is executed.
+10:55:19 INFO  : Context for processor 'microblaze_0' is selected.
+10:55:20 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+10:55:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+10:55:20 INFO  : Context for processor 'microblaze_0' is selected.
+10:55:20 INFO  : 'con' command is executed.
+10:55:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+10:55:20 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:00:34 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:00:38 INFO  : Disconnected from the channel tcfchan#9.
+11:00:39 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:00:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:00:49 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+11:00:54 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:00:54 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:00:54 INFO  : 'jtag frequency' command is executed.
+11:00:54 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:00:56 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:00:56 INFO  : Context for processor 'microblaze_0' is selected.
+11:00:57 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:00:57 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:00:57 INFO  : Context for processor 'microblaze_0' is selected.
+11:00:57 INFO  : System reset is completed.
+11:01:00 INFO  : 'after 3000' command is executed.
+11:01:00 INFO  : Context for processor 'microblaze_0' is selected.
+11:01:01 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:01:01 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:01:01 INFO  : Context for processor 'microblaze_0' is selected.
+11:01:01 INFO  : 'con' command is executed.
+11:01:01 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:01:01 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:02:17 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:02:29 INFO  : Disconnected from the channel tcfchan#10.
+11:02:30 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:02:39 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:02:39 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+11:02:48 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:02:48 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:02:48 INFO  : 'jtag frequency' command is executed.
+11:02:48 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:02:51 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:02:51 INFO  : Context for processor 'microblaze_0' is selected.
+11:02:51 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:02:51 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:02:51 INFO  : Context for processor 'microblaze_0' is selected.
+11:02:51 INFO  : System reset is completed.
+11:02:54 INFO  : 'after 3000' command is executed.
+11:02:54 INFO  : Context for processor 'microblaze_0' is selected.
+11:02:55 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:02:55 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:02:55 INFO  : Context for processor 'microblaze_0' is selected.
+11:02:55 INFO  : 'con' command is executed.
+11:02:55 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:02:55 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:17:00 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:17:03 INFO  : Disconnected from the channel tcfchan#11.
+11:17:04 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:17:07 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:17:07 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:17:07 INFO  : 'jtag frequency' command is executed.
+11:17:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:17:10 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:17:10 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:11 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:17:14 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+----------------End of Script----------------
+
+11:17:14 ERROR : Could not find FPGA device on the board for connection 'Local'.
+
+
+Troubleshooting hints:
+1. Check whether board is connected to system properly.
+2. In case of zynq board, check whether Digilent/Xilinx cable switch settings are correct.
+3. If you are using Xilinx Platform Cable USB, ensure that status LED is green.
+11:17:14 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:17:14 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:14 INFO  : System reset is completed.
+11:17:17 INFO  : 'after 3000' command is executed.
+11:17:17 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:17 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:17:17 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:17:17 INFO  : Context for processor 'microblaze_0' is selected.
+11:17:17 INFO  : 'con' command is executed.
+11:17:17 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:17:17 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:17:43 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:18:05 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:18:07 INFO  : Disconnected from the channel tcfchan#12.
+11:18:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:18:08 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:18:08 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:18:08 INFO  : 'jtag frequency' command is executed.
+11:18:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:18:10 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:18:10 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:11 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:18:11 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:18:11 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:11 INFO  : System reset is completed.
+11:18:11 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:18:14 INFO  : 'after 3000' command is executed.
+11:18:14 INFO  : 'jtag frequency' command is executed.
+11:18:14 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:15 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:18:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:18:15 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:18:17 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:18:17 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:17 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:17 ERROR : Already running
+11:18:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:18:17 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:18:17 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:17 INFO  : System reset is completed.
+11:18:20 INFO  : 'after 3000' command is executed.
+11:18:20 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:21 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:18:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:18:21 INFO  : Context for processor 'microblaze_0' is selected.
+11:18:21 INFO  : 'con' command is executed.
+11:18:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:18:21 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:19:34 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:19:39 INFO  : Disconnected from the channel tcfchan#13.
+11:19:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:19:41 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:19:41 INFO  : 'jtag frequency' command is executed.
+11:19:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:19:43 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:19:43 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:19:44 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:19:44 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:44 INFO  : System reset is completed.
+11:19:47 INFO  : 'after 3000' command is executed.
+11:19:47 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:47 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:19:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:19:48 INFO  : Context for processor 'microblaze_0' is selected.
+11:19:48 INFO  : 'con' command is executed.
+11:19:48 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:19:48 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:22:35 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:22:41 INFO  : Disconnected from the channel tcfchan#14.
+11:22:42 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:22:42 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:22:42 INFO  : 'jtag frequency' command is executed.
+11:22:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:22:45 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:22:45 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:45 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:22:45 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:22:45 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:45 INFO  : System reset is completed.
+11:22:48 INFO  : 'after 3000' command is executed.
+11:22:49 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:49 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:22:49 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:22:49 INFO  : Context for processor 'microblaze_0' is selected.
+11:22:49 INFO  : 'con' command is executed.
+11:22:49 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:22:49 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:24:32 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:24:39 INFO  : Disconnected from the channel tcfchan#15.
+11:24:40 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:24:40 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:24:40 INFO  : 'jtag frequency' command is executed.
+11:24:40 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:24:42 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:24:42 INFO  : Context for processor 'microblaze_0' is selected.
+11:24:43 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:24:43 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:24:43 INFO  : Context for processor 'microblaze_0' is selected.
+11:24:43 INFO  : System reset is completed.
+11:24:46 INFO  : 'after 3000' command is executed.
+11:24:46 INFO  : Context for processor 'microblaze_0' is selected.
+11:24:47 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:24:47 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:24:47 INFO  : Context for processor 'microblaze_0' is selected.
+11:24:47 INFO  : 'con' command is executed.
+11:24:47 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:24:47 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:26:57 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:27:01 INFO  : Disconnected from the channel tcfchan#16.
+11:27:03 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:27:03 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:27:03 INFO  : 'jtag frequency' command is executed.
+11:27:03 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:27:05 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:27:05 INFO  : Context for processor 'microblaze_0' is selected.
+11:27:06 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:27:06 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:27:06 INFO  : Context for processor 'microblaze_0' is selected.
+11:27:06 INFO  : System reset is completed.
+11:27:09 INFO  : 'after 3000' command is executed.
+11:27:09 INFO  : Context for processor 'microblaze_0' is selected.
+11:27:10 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:27:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:27:10 INFO  : Context for processor 'microblaze_0' is selected.
+11:27:10 INFO  : 'con' command is executed.
+11:27:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:27:10 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:29:32 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:29:34 INFO  : Disconnected from the channel tcfchan#17.
+11:29:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:29:35 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:29:35 INFO  : 'jtag frequency' command is executed.
+11:29:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:29:37 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:29:37 INFO  : Context for processor 'microblaze_0' is selected.
+11:29:38 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:29:38 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:29:38 INFO  : Context for processor 'microblaze_0' is selected.
+11:29:38 INFO  : System reset is completed.
+11:29:41 INFO  : 'after 3000' command is executed.
+11:29:41 INFO  : Context for processor 'microblaze_0' is selected.
+11:29:42 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:29:42 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:29:42 INFO  : Context for processor 'microblaze_0' is selected.
+11:29:42 INFO  : 'con' command is executed.
+11:29:42 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:29:42 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:30:26 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:31:45 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:31:58 INFO  : Disconnected from the channel tcfchan#18.
+11:31:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:31:59 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:31:59 INFO  : 'jtag frequency' command is executed.
+11:31:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:32:02 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:32:02 INFO  : Context for processor 'microblaze_0' is selected.
+11:32:02 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:32:02 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:32:02 INFO  : Context for processor 'microblaze_0' is selected.
+11:32:02 INFO  : System reset is completed.
+11:32:05 INFO  : 'after 3000' command is executed.
+11:32:05 INFO  : Context for processor 'microblaze_0' is selected.
+11:32:06 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:32:06 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:32:06 INFO  : Context for processor 'microblaze_0' is selected.
+11:32:06 INFO  : 'con' command is executed.
+11:32:06 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:32:06 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:34:18 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:34:21 INFO  : Disconnected from the channel tcfchan#19.
+11:34:22 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:34:22 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:34:22 INFO  : 'jtag frequency' command is executed.
+11:34:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:34:24 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:34:24 INFO  : Context for processor 'microblaze_0' is selected.
+11:34:25 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:34:25 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:34:25 INFO  : Context for processor 'microblaze_0' is selected.
+11:34:25 INFO  : System reset is completed.
+11:34:28 INFO  : 'after 3000' command is executed.
+11:34:28 INFO  : Context for processor 'microblaze_0' is selected.
+11:34:29 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:34:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:34:29 INFO  : Context for processor 'microblaze_0' is selected.
+11:34:29 INFO  : 'con' command is executed.
+11:34:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:34:29 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:35:40 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:36:37 INFO  : Disconnected from the channel tcfchan#20.
+11:36:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:36:38 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:36:38 INFO  : 'jtag frequency' command is executed.
+11:36:38 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:36:41 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:36:41 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:41 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:36:41 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:36:41 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:41 INFO  : System reset is completed.
+11:36:44 INFO  : 'after 3000' command is executed.
+11:36:44 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:45 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:36:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:36:45 INFO  : Context for processor 'microblaze_0' is selected.
+11:36:45 INFO  : 'con' command is executed.
+11:36:45 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:36:45 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:38:33 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:38:55 INFO  : Disconnected from the channel tcfchan#21.
+11:38:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:38:56 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:38:56 INFO  : 'jtag frequency' command is executed.
+11:38:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:38:59 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:38:59 INFO  : Context for processor 'microblaze_0' is selected.
+11:38:59 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:38:59 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:38:59 INFO  : Context for processor 'microblaze_0' is selected.
+11:38:59 INFO  : System reset is completed.
+11:39:02 INFO  : 'after 3000' command is executed.
+11:39:03 INFO  : Context for processor 'microblaze_0' is selected.
+11:39:03 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:39:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:39:03 INFO  : Context for processor 'microblaze_0' is selected.
+11:39:03 INFO  : 'con' command is executed.
+11:39:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:39:03 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:39:51 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:39:55 INFO  : Disconnected from the channel tcfchan#22.
+11:39:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:39:57 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:39:57 INFO  : 'jtag frequency' command is executed.
+11:39:57 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:39:59 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:39:59 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:00 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:40:00 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:40:00 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:00 INFO  : System reset is completed.
+11:40:03 INFO  : 'after 3000' command is executed.
+11:40:03 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:04 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:40:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:40:04 INFO  : Context for processor 'microblaze_0' is selected.
+11:40:04 INFO  : 'con' command is executed.
+11:40:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:40:04 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:43:03 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:43:23 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:43:26 INFO  : Disconnected from the channel tcfchan#23.
+11:43:27 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:43:27 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:43:27 INFO  : 'jtag frequency' command is executed.
+11:43:27 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:43:29 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:43:29 INFO  : Context for processor 'microblaze_0' is selected.
+11:43:30 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:43:30 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:43:30 INFO  : Context for processor 'microblaze_0' is selected.
+11:43:30 INFO  : System reset is completed.
+11:43:33 INFO  : 'after 3000' command is executed.
+11:43:33 INFO  : Context for processor 'microblaze_0' is selected.
+11:43:34 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:43:34 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:43:34 INFO  : Context for processor 'microblaze_0' is selected.
+11:43:34 INFO  : 'con' command is executed.
+11:43:34 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:43:34 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'
+11:46:29 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:46:57 INFO  : Checking for BSP changes to sync application flags for project 'lab3a_application'...
+11:47:13 INFO  : Disconnected from the channel tcfchan#24.
+11:47:14 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+11:47:14 INFO  : Jtag cable 'Digilent Nexys A7 -100T 210292BCFA48A' is selected.
+11:47:14 INFO  : 'jtag frequency' command is executed.
+11:47:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}' command is executed.
+11:47:16 INFO  : Device configured successfully with "C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit"
+11:47:16 INFO  : Context for processor 'microblaze_0' is selected.
+11:47:17 INFO  : Hardware design and registers information is loaded from 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa'.
+11:47:17 INFO  : 'configparams mdm-detect-bscan-mask 2' command is executed.
+11:47:17 INFO  : Context for processor 'microblaze_0' is selected.
+11:47:17 INFO  : System reset is completed.
+11:47:20 INFO  : 'after 3000' command is executed.
+11:47:20 INFO  : Context for processor 'microblaze_0' is selected.
+11:47:21 INFO  : The application 'C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf' is downloaded to processor 'microblaze_0'.
+11:47:21 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -filter {jtag_cable_name =~ "Digilent Nexys A7 -100T 210292BCFA48A" && level==0 && jtag_device_ctx=="jsn-Nexys A7 -100T-210292BCFA48A-13631093-0"}
+fpga -file C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+loadhw -hw C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_platform/export/lab3a_platform/hw/design_1_wrapper.xsa -regs
+configparams mdm-detect-bscan-mask 2
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+rst -system
+after 3000
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+dow C:/Users/tejasvissapragada/Documents/GitHub/cs153a/vitis/lab3b_vitis/lab3a_application/Debug/lab3a_application.elf
+----------------End of Script----------------
+
+11:47:21 INFO  : Context for processor 'microblaze_0' is selected.
+11:47:21 INFO  : 'con' command is executed.
+11:47:21 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*microblaze*#0" && bscan=="USER2" }
+con
+----------------End of Script----------------
+
+11:47:21 INFO  : Launch script is exported to file 'C:\Users\tejasvissapragada\Documents\GitHub\cs153a\vitis\lab3b_vitis\lab3a_system\_ide\scripts\debugger_lab3a_application-default.tcl'

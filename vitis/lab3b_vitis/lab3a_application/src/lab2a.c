@@ -22,6 +22,7 @@
 
 
 int cleared = 0;
+int show_screen = 0;
 
 
 
@@ -56,10 +57,10 @@ typedef struct {
     unsigned int r, g, b;
 } RGBColor;
 
-RGBColor background = {10,10,10};
+RGBColor background = {0,0,0};
 RGBColor menu = {100,100,100};
-RGBColor high = {0,0,100};
-RGBColor low = {100,0,0};
+RGBColor high = {0,0,200};
+RGBColor low = {200,0,0};
 
 RGBColor floatToJetColor(float value, float minVal, float maxVal) {
 	value  =value * 0.3;
@@ -232,21 +233,21 @@ QState Lab2A_stateMain(Lab2A *me) {
 			//xil_printf("Main State \n");
 			lcd_reset();
 			//lcdPrint("Main Screen", TEXTX, TEXTY);
+			show_screen = 0;
 			return Q_HANDLED();
 		}
 
 		case TICK_SIG: {
-			xil_printf("%d\n\r", latency);
 			if(AO_Lab2A.encode == 0) AO_Lab2A.encode = 1;
 			if(AO_Lab2A.encoderTime > 0) AO_Lab2A.encoderTime--;
 
 			setColor(0,0,0);
-			fillRect(100, 300, 150, 320);
+			fillRect(100, 300, 170, 320);
 			setColor(0,0,100);
 			setFont(&TimesNewRoman_8_Bold);
 			char freqStr[6];
 			sprintf(freqStr, "%d", (int)freq);
-			lcdPrint(freqStr, 100, 300);
+			lcdPrint_w(freqStr, 100, 300);
 
 			float base = 261.63 + (AO_Lab2A.A4 - 440);
 			int octave = 4;
@@ -307,13 +308,22 @@ QState Lab2A_stateMain(Lab2A *me) {
 			}
 			if(draw_timer != -1){
 				drawA4();
+				show_screen = 0;
 				if (draw_timer > 3000){
 					draw_timer = -1;
 				}
 			}
 			else{
-				setColor(0,0,0);
+				if (show_screen == 0){
+					setColor(0,0,0);
 					fillRect(40, 20, 200, 60);
+					show_screen = 1;
+					setColor(200,200,200);
+					setFont(&TimesNewRoman_8_Bold);
+
+						char base[12] = "   TUNER   ";
+						lcdPrint_w(base, 50, 30);
+				}
 			}
 
 			return Q_HANDLED();
@@ -335,6 +345,7 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 			lcd_reset();
 			//lcdPrint("FFT Spectrogram", TEXTX, TEXTY);
 			AO_Lab2A.time = 0;
+			show_screen = 0;
 			return Q_HANDLED();
 		}
 
@@ -343,6 +354,8 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 			if(AO_Lab2A.encoderTime) AO_Lab2A.encoderTime--;
 
 			if(AO_Lab2A.time > 239){
+				setColor(0,0,0);
+				fillRect(0, 64, 240, 64+256);
 				AO_Lab2A.time = 0;
 				return Q_HANDLED();
 			}
@@ -369,7 +382,32 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 				setColor(0,0,0);
 				fillRect(40, 20, 200, 60);
 			}
+			if(draw_timer != -1){
+							drawA4();
+							show_screen = 0;
+							if (draw_timer > 3000){
+								draw_timer = -1;
+							}
+						}
+						else{
+							if (show_screen == 0){
+								setColor(0,0,0);
+								fillRect(40, 20, 200, 60);
+								show_screen = 1;
+								setColor(200,200,200);
+								setFont(&TimesNewRoman_8_Bold);
+								char base[12] = "SPECTROGRAM";
+								lcdPrint_w(base, 25, 30);
+							}
+						}
 
+			return Q_HANDLED();
+		}
+
+		case MIDDLE: {
+			setColor(0,0,0);
+			fillRect(0, 64, 240, 64+256);
+			AO_Lab2A.time = 0;
 			return Q_HANDLED();
 		}
 
@@ -387,12 +425,24 @@ QState Lab2A_stateDebug1(Lab2A *me) {
 
 }
 
+int prevLat = -1;
+int prevDec = -1;
+
 QState Lab2A_stateDebug2(Lab2A *me) {
 	switch (Q_SIG(me)) {
 		case Q_ENTRY_SIG: {
 			xil_printf("Startup Debug 2\n");
 			lcd_reset();
-			lcdPrint("FFT Settings", TEXTX, TEXTY);
+			//lcdPrint("FFT Settings", TEXTX, TEXTY);
+			setColor(0,100,0);
+			setFont(&TimesNewRoman_8_Bold);
+			//
+			//lcdPrint("STATS", 70, 80);
+			setColor(0,100,0);
+			setFont(&TimesNewRoman_8_Bold);
+			lcdPrint_w("LAT: ", 10, 120);
+			lcdPrint_w("DEC: ", 10, 160);
+			show_screen = 0;
 			return Q_HANDLED();
 		}
 
@@ -401,12 +451,55 @@ QState Lab2A_stateDebug2(Lab2A *me) {
 			if(AO_Lab2A.encoderTime) AO_Lab2A.encoderTime--;
 
 
+			if(latency != prevLat){
+				setColor(0,0,0);
+				fillRect(90, 120, 150, 140);
+				setColor(0,100,0);
+
+				char latStr[9];
+				sprintf(latStr, "%d ms", latency);
+				lcdPrint_w(latStr, 90, 120);
+
+				prevLat = latency;
+			}
+
+			if(decimation != prevDec){
+				setColor(0,0,0);
+				fillRect(90, 155, 150, 180);
+				setColor(0,100,0);
+
+				char decStr[6];
+				sprintf(decStr, "x%d", decimation);
+				lcdPrint_w(decStr, 90, 160);
+
+				prevDec = decimation;
+			}
 
 
-			if(AO_Lab2A.encoderTime == 1){
+			if(AO_Lab2A.encoderTime == 1 && AO_Lab2A.A4 != prevA4){
+				prevA4 = AO_Lab2A.A4;
 				setColor(0,0,0);
 				fillRect(40, 20, 200, 60);
 			}
+			if(draw_timer != -1){
+							drawA4();
+							show_screen = 0;
+							if (draw_timer > 3000){
+								draw_timer = -1;
+							}
+						}
+						else{
+							if (show_screen == 0){
+								setColor(0,0,0);
+								fillRect(40, 20, 200, 60);
+								show_screen = 1;
+								setColor(200,200,200);
+								setFont(&TimesNewRoman_8_Bold);
+
+									char base[12] = " STATISTICS";
+									lcdPrint_w(base, 40, 30);
+							}
+						}
 
 			return Q_HANDLED();
 		}
@@ -415,9 +508,9 @@ QState Lab2A_stateDebug2(Lab2A *me) {
 			return Q_TRAN(&Lab2A_stateDebug1);
 		}
 
-		case NEXT: {
-			return Q_TRAN(&Lab2A_stateDebug3);
-		}
+//		case NEXT: {
+//			return Q_TRAN(&Lab2A_stateDebug3);
+//		}
 
 	}
 
@@ -433,7 +526,7 @@ QState Lab2A_stateDebug3(Lab2A *me) {
 			lcdPrint("TEST SIGNALS", TEXTX, TEXTY);
 			return Q_HANDLED();
 		}
-		
+
 
 		case PREV: {
 			return Q_TRAN(&Lab2A_stateDebug2);

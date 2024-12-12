@@ -31,7 +31,7 @@ void init_LUT(){
 }
 
 __attribute__((section(".text.fft_code")))
-float fft(float* re, float* im, const int N, float s_f, int de)
+float fft(float* re, float* im, const int N, float s_f, int de, int update)
 {
 	float sample_f = s_f/(float)de;
 //	printf("%f\r\n", re[100]);
@@ -52,8 +52,10 @@ float fft(float* re, float* im, const int N, float s_f, int de)
     int size = N / 2;
     //xil_printf("%d\n\r", start);
     float avg = 0;
-    for(int i = 0; i < size;i++){
-    	output[i] = 0;
+    if(update){
+		for(int i = 0; i < size;i++){
+			output[i] = 0;
+		}
     }
 
 //    output[de] = 1;
@@ -62,11 +64,13 @@ float fft(float* re, float* im, const int N, float s_f, int de)
         float val = (new_[i]*new_[i] - new_im[i]*new_im[i]);
         if (val < 0)val = -val;
 
-        int p = i /tem;
-        if (p < 256){
-        	if(output[p] <= val){
-        		output[p] = val;
-        	}
+        if(update){
+			int p = i /tem;
+			if (p < 256){
+				if(output[p] <= val){
+					output[p] = val;
+				}
+			}
         }
 
 //        printf("%d %f\r\n",i, val);
@@ -191,15 +195,12 @@ float mainLoop(){
 	read_fsl_values(q, SAMPLES);
 	float sample_f = 100*1000*1000/2048.0;
 	for(int l=0;l<SAMPLES;l++) w[l] = 0;
-	float frequency=fft(q,w,SAMPLES,sample_f, 1);
+	float frequency=fft(q,w,SAMPLES,sample_f, 1, 0);
 
 	decimation = (int)(sample_f/(2 * frequency));
-	for(int de = 1; de < 129; de<<=1){
-		if (decimation <= de){
-			decimation = de/2;
-			break;
-		}
-	}
+	int de = 0;
+	while(decimation >>= 1) de++;
+	decimation = 1 << de;
 	//int convertFreq = (int)(sample_f/(2 * frequency));
 	//while(convertFreq >>= 1) decimation++;
 	//xil_printf("decimation: %d\r\n", decimation);
@@ -207,7 +208,7 @@ float mainLoop(){
 	for(int l=0;l<SAMPLES;l++) q[l] = 0;
 	read_fsl_values(q, SAMPLES*decimation);
 	for(int l=0;l<SAMPLES;l++) w[l] = 0;
-	frequency=fft(q,w,SAMPLES,sample_f, decimation);
+	frequency=fft(q,w,SAMPLES,sample_f, decimation, 1);
 
 	int end = fft_timer;
 

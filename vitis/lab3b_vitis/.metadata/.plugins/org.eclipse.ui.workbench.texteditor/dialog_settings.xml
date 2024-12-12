@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="tot_time"/>
+		<item key="selection" value="ENCODER_DOWN"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="ENCODER_DOWN"/>
+			<item value="draw_time"/>
+			<item value="drawA4"/>
+			<item value="ENCODER_UP"/>
+			<item value="print"/>
+			<item value="output"/>
+			<item value="encoer"/>
+			<item value="cleared"/>
+			<item value="setColor"/>
+			<item value="setColot"/>
 			<item value="tot_time"/>
 			<item value="__attribute__((section(&quot;.text.fsl_code&quot;)))"/>
 			<item value="__attribute__((section(&quot;.text.fft_code&quot;)))"/>
 			<item value="fft"/>
 			<item value="859019673"/>
-			<item value="807534548"/>
-			<item value="800008f8"/>
-			<item value="FFT_CODE_END"/>
-			<item value="FFT_CODE_START"/>
-			<item value=".text.fft_code"/>
-			<item value="xil"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="826"/>
-		<item key="DIALOG_Y_ORIGIN" value="268"/>
+		<item key="DIALOG_X_ORIGIN" value="1472"/>
+		<item key="DIALOG_Y_ORIGIN" value="167"/>
 		<item key="DIALOG_WIDTH" value="284"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
-		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI"/>
 	</section>
 </section>

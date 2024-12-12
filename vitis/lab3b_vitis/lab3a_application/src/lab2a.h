@@ -14,10 +14,12 @@ enum Lab2ASignals {
 	TICK_SIG,
 	NEXT,
 	PREV,
+	MIDDLE
 };
 
 
 extern struct Lab2ATag AO_Lab2A;
+extern int show_screen;
 
 
 void Lab2A_ctor(void);

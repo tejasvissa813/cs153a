@@ -93,7 +93,7 @@ void GpioHandler(void *CallbackRef) {
 	XGpio *GpioPtr = (XGpio *)CallbackRef;
 	unsigned int buttonVal = XGpio_DiscreteRead(&ButtonGpio, 1);
 	if(buttonVal == 1){
-		xil_printf("BTN 1");
+		QActive_postISR((QActive *)&AO_Lab2A, MIDDLE);
 	}
 	else if(buttonVal == 2){
 		QActive_postISR((QActive *)&AO_Lab2A, PREV);
